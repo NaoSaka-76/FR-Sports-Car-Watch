@@ -9,11 +9,14 @@ exact URLs and HTML structure snippets):
   - SUPER GT GT500/GT300, Formula Drift Japan, D1GP: static HTML, real schedule AND
     standings data scraped directly.
   - Formula Drift (US) Pro class: Fredric Aasbo (Papadakis Racing, Rockstar Energy
-    Toyota GR Supra) and Simen Olsen race GR Supras. formulad.com does embed real
-    schedule/standings data server-rendered, but inside a Next.js internal "flight"
-    stream format with no stability guarantee (same risk class as the skill's ARA
-    case study) rather than a documented HTML table — link-out only by design, not
-    because the site is unreachable.
+    Toyota GR Supra) and Simen Olsen race GR Supras. formulad.com/standings/2026/pro
+    IS real, static, server-rendered HTML (re-verified 2026-08-22 with a browser
+    User-Agent, and again with this project's own bot User-Agent — both return the
+    same data) — a div-based CSS grid rather than a `<table>`, scraped directly (see
+    standings.py's fetch_formula_drift_pro_standings docstring for the exact class
+    names). The schedule page (formulad.com/schedule) is a separate Next.js route
+    that still has no data in raw HTML — schedule stays link-out only; only
+    standings were fixed here.
   - Supercars Championship (Australia): the Gen3-spec GR Supra joined the grid new
     for 2026 via Walkinshaw Andretti United — confirmed 2026 driver lineup is
     #1 Chaz Mostert and #2 Ryan Wood (WAU Racing), with Toyota fielding at least 4
@@ -28,7 +31,12 @@ import urllib.parse
 
 from .common import dedupe_by_url, fetch_google_news_rss, sort_by_recency
 from .schedule import fetch_all_schedules
-from .standings import fetch_d1gp_standings, fetch_fdj_standings, fetch_super_gt_standings
+from .standings import (
+    fetch_d1gp_standings,
+    fetch_fdj_standings,
+    fetch_formula_drift_pro_standings,
+    fetch_super_gt_standings,
+)
 
 
 def _search_link(query: str) -> str:
@@ -140,12 +148,10 @@ REGIONS = {
                         ('"Formula Drift" PRO championship standings Toyota OR "GR Supra"', "en-US", "US", "US:en"),
                     ],
                 },
-                # formulad.com/schedule と /standings/2026/pro は実データを含むが、Next.jsの
-                # 内部flight-stream形式(非公開・非文書化)に埋め込まれておりHTMLテーブルのような
-                # 安定した構造ではないため、誤解析リスクを避け公式サイトへのリンクのみとする。
+                # standings/2026/proは静的HTML(div grid)として実データを取得(standings.py参照)。
+                # scheduleページは依然として生HTMLにデータがないため、リンクのみのまま。
                 "schedule_link": "https://www.formulad.com/schedule",
                 "standings_url": "https://www.formulad.com/standings/2026/pro",
-                "js_rendered_note": True,
             },
         ],
     },
@@ -227,6 +233,7 @@ def fetch() -> dict:
     gt300_chart = fetch_super_gt_standings(clazz="gt300")
     fdj_chart = fetch_fdj_standings()
     d1gp_chart = fetch_d1gp_standings()
+    fd_pro_chart = fetch_formula_drift_pro_standings()
 
     for series in result["japan"]["series"]:
         if series["key"] == "super_gt_gt500":
@@ -260,6 +267,17 @@ def fetch() -> dict:
                 d1gp_chart["error"]
                 or "D1GP公式サイト(d1gp.co.jp)のシリーズランキング実データ。"
                 "齋藤(FAT FIVE RACING #87)・手塚(WEINS Toyota神奈川 #90)等、GR Supraで参戦する"
+                "ドライバーには目印を付けています。"
+            )
+
+    for series in result["us"]["series"]:
+        if series["key"] == "formula_drift_pro":
+            series["standings_chart"] = fd_pro_chart["standings"]
+            series["standings_error"] = bool(fd_pro_chart["error"])
+            series["standings_chart_note"] = (
+                fd_pro_chart["error"]
+                or "Formula Drift公式サイト(formulad.com)のPROクラスランキング実データ。"
+                "Fredric Aasbo(Papadakis Racing)・Simen Olsen等、GR Supraで参戦する"
                 "ドライバーには目印を付けています。"
             )
 

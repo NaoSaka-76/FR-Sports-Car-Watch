@@ -11,6 +11,20 @@ Verified against live pages (2026-08-22):
   - D1GP: https://d1gp.co.jp/{2026-slug}/ — a Japanese URL-encoded slug found by
     browsing the site nav (not a stable-looking path, so it's read from a constant
     here rather than re-discovered every run; re-verify if this section goes empty).
+  - Formula Drift (US) Pro: https://www.formulad.com/standings/2026/pro — IS real,
+    server-rendered static HTML (re-verified 2026-08-22 with a browser User-Agent;
+    an earlier pass without one apparently got a different/blocked response and
+    wrongly concluded this was JS-only). Not a `<table>` — a div-based CSS grid
+    (`<div class="standings-grid grid ..." role="row">`), so the parser here
+    targets specific class strings instead of table/tr/td tags: the rank cell has
+    class `text-xl lg:text-2xl...`, the driver name is inside
+    `<span class="uppercase truncate">`, the car number follows as `#<!-- -->NNN`,
+    and the season-total points cell is the one with class
+    `text-base lg:text-lg py-2 pr-2 flex items-center justify-end` (distinct from
+    the "points behind leader" cell that follows it, and from the header row's
+    cells which lack the `text-xl lg:text-2xl` / `text-base lg:text-lg` size
+    classes). Re-verify this class-name scheme if the section goes empty — it's a
+    Next.js site and rebuilds can change generated class names.
 
 GR Supra / GR Supra GT500 entrants are flagged (`is_supra`) using a name list
 gathered from official team/driver sourcing, not by string-matching "Supra" in the
@@ -34,6 +48,7 @@ D1GP_STANDINGS_URL = (
     "%e3%82%b7%e3%83%aa%e3%83%bc%e3%82%ba%e3%83%a9%e3%83%b3%e3%82%ad%e3%83%b3"
     "%e3%82%b0/"
 )
+FORMULA_DRIFT_PRO_STANDINGS_URL = "https://www.formulad.com/standings/2026/pro"
 
 # GRスープラ(GT500)で参戦するワークスチームのドライバー名(公式発表ベース)。
 _GT500_SUPRA_DRIVERS = {
@@ -50,6 +65,10 @@ _GT300_SUPRA_DRIVERS = {"hiroki yoshida", "seita nonaka"}
 _D1GP_SUPRA_CAR_NUMBERS = {"87", "90"}
 # FDJでGR Supraを駆るドライバー(松山英樹/北斗, CUSCO Racing)。
 _FDJ_SUPRA_DRIVER_NAME_FRAGMENTS = {"matsuyama"}
+# Formula Drift(米国PROクラス)でGR Supraを駆るドライバー
+# (Fredric Aasbo: Papadakis Racing Rockstar Energy Toyota GR Supra、
+#  Simen Olsen: 同じくGR Supraで参戦)。
+_FORMULA_DRIFT_PRO_SUPRA_DRIVER_NAME_FRAGMENTS = {"aasbo", "olsen"}
 
 
 def _session() -> requests.Session:
@@ -168,6 +187,57 @@ def fetch_fdj_standings(limit: int = 15) -> dict:
                     "name": name or f"#{car_no}",
                     "car": f"No.{car_no}",
                     "points": int(points_text),
+                    "is_supra": is_supra,
+                }
+            )
+            if len(results) >= limit:
+                break
+
+        return {
+            "standings": results,
+            "error": None if results else "現在、順位データが空です(シーズン開幕前などの可能性があります)",
+        }
+    except Exception as exc:  # noqa: BLE001
+        return {"standings": [], "error": f"取得エラー: {exc}"}
+
+
+def fetch_formula_drift_pro_standings(limit: int = 15) -> dict:
+    session = _session()
+    try:
+        resp = session.get(FORMULA_DRIFT_PRO_STANDINGS_URL, timeout=REQUEST_TIMEOUT)
+        resp.raise_for_status()
+        html_text = resp.text
+
+        # div-based CSS grid, not a <table>: 1つの"row"は次の"standings-grid grid"
+        # 出現位置までの区間として切り出す。
+        rows = re.findall(
+            r'<div class="standings-grid grid[^"]*"[^>]*role="row">.*?(?=<div class="standings-grid grid|\Z)',
+            html_text,
+            re.S,
+        )
+        results: list[dict] = []
+        for row in rows:
+            if 'role="columnheader"' in row:
+                continue
+            rank_m = re.search(r'<div role="cell" class="text-xl lg:text-2xl[^"]*"[^>]*>(\d+)</div>', row)
+            name_m = re.search(r'<span class="uppercase truncate">([^<]+)</span>', row)
+            if not rank_m or not name_m:
+                continue
+            car_m = re.search(r"#<!-- -->(\d+)", row)
+            total_m = re.search(
+                r'<div role="cell" class="text-base lg:text-lg py-2 pr-2 flex items-center justify-end"[^>]*>(-?\d+)</div>',
+                row,
+            )
+            name = html_module.unescape(name_m.group(1)).strip()
+            car_no = car_m.group(1) if car_m else "?"
+            points = int(total_m.group(1)) if total_m else 0
+            is_supra = any(frag in name.lower() for frag in _FORMULA_DRIFT_PRO_SUPRA_DRIVER_NAME_FRAGMENTS)
+            results.append(
+                {
+                    "position": int(rank_m.group(1)),
+                    "name": name,
+                    "car": f"No.{car_no}",
+                    "points": points,
                     "is_supra": is_supra,
                 }
             )
