@@ -84,6 +84,8 @@
       photoCredit: "写真: ",
       viaCommons: "、Wikimedia Commonsより",
       productionStatusLabel: "生産状況: ",
+      trimTopBadge: "最上位/特別仕様",
+      trimBaseBadge: "最廉価",
       sections: {
         official_news: {
           title: "① 公式リリース(GRスープラ / GT4 / GT500)",
@@ -228,6 +230,8 @@
       sentimentSuffixPositive: " — classified as positive",
       sentimentSuffixNegative: " — classified as negative",
       titleUnknown: "(untitled)",
+      trimTopBadge: "Top / special edition",
+      trimBaseBadge: "Base / cheapest",
       photoCredit: "Photo: ",
       viaCommons: ", via Wikimedia Commons",
       productionStatusLabel: "Production status: ",
@@ -835,26 +839,52 @@
     body.appendChild(el("h3", "car-card__model", model));
     var description = pick(car.description);
     if (description) body.appendChild(el("p", "car-card__desc", description));
-    body.appendChild(el("div", "car-card__price", pick(car.price)));
 
-    if (car.production_status) {
-      var statusText = pick(car.production_status);
-      var isDiscontinued = /discontin|生産終了|終了/i.test(statusText);
-      body.appendChild(
-        el(
-          "div",
-          "car-card__status" + (isDiscontinued ? " car-card__status--discontinued" : ""),
-          i18n.productionStatusLabel + statusText
-        )
+    function buildStatusEl(productionStatus) {
+      if (!productionStatus) return null;
+      var statusText = pick(productionStatus);
+      return el(
+        "div",
+        "car-card__status" + (/discontin|生産終了|終了/i.test(statusText) ? " car-card__status--discontinued" : ""),
+        i18n.productionStatusLabel + statusText
       );
     }
 
-    var specList = el("dl", "car-card__specs");
-    (car.specs || []).forEach(function (spec) {
-      specList.appendChild(el("dt", null, i18n.carSpecs[spec.key] || spec.key));
-      specList.appendChild(el("dd", null, pick(spec.value)));
-    });
-    body.appendChild(specList);
+    function buildSpecList(specs) {
+      var specList = el("dl", "car-card__specs");
+      (specs || []).forEach(function (spec) {
+        specList.appendChild(el("dt", null, i18n.carSpecs[spec.key] || spec.key));
+        specList.appendChild(el("dd", null, pick(spec.value)));
+      });
+      return specList;
+    }
+
+    if (car.trims && car.trims.length > 0) {
+      // 最上位(特別仕様)〜最廉価まで、トリムごとに区切って積み上げ表示。
+      car.trims.forEach(function (trim, idx) {
+        var trimBlock = el("div", "car-card__trim");
+        var trimHead = el("div", "car-card__trim-head");
+        trimHead.appendChild(el("span", "car-card__trim-label", pick(trim.label)));
+        if (idx === 0) {
+          trimHead.appendChild(el("span", "car-card__trim-badge car-card__trim-badge--top", i18n.trimTopBadge));
+        } else if (idx === car.trims.length - 1 && car.trims.length > 1) {
+          trimHead.appendChild(el("span", "car-card__trim-badge car-card__trim-badge--base", i18n.trimBaseBadge));
+        }
+        trimBlock.appendChild(trimHead);
+        trimBlock.appendChild(el("div", "car-card__price", pick(trim.price)));
+        var trimStatusEl = buildStatusEl(trim.production_status);
+        if (trimStatusEl) trimBlock.appendChild(trimStatusEl);
+        trimBlock.appendChild(buildSpecList(trim.specs));
+        body.appendChild(trimBlock);
+        if (idx < car.trims.length - 1) body.appendChild(el("hr", "car-card__trim-divider"));
+      });
+    } else {
+      // 旧スキーマ(単一トリム)へのフォールバック。
+      body.appendChild(el("div", "car-card__price", pick(car.price)));
+      var legacyStatusEl = buildStatusEl(car.production_status);
+      if (legacyStatusEl) body.appendChild(legacyStatusEl);
+      body.appendChild(buildSpecList(car.specs));
+    }
 
     var link = el("a", "series-card__link", i18n.linkOfficial);
     link.href = car.official_url;

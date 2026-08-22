@@ -1038,6 +1038,50 @@ a { color: inherit; }
   font-weight: 700;
 }
 
+.car-card__trim {
+  display: flex;
+  flex-direction: column;
+}
+
+.car-card__trim-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.car-card__trim-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.car-card__trim-badge {
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 1px 6px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.car-card__trim-badge--top {
+  color: var(--spotlight);
+  border: 1px solid var(--spotlight);
+}
+
+.car-card__trim-badge--base {
+  color: var(--ink-muted);
+  border: 1px solid var(--line);
+}
+
+.car-card__trim-divider {
+  border: none;
+  border-top: 1px dashed var(--line);
+  margin: 10px 0;
+}
+
 .car-card__specs-title {
   font-family: var(--font-display);
   font-weight: 700;
