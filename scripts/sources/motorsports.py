@@ -20,9 +20,11 @@ exact URLs and HTML structure snippets):
   - Supercars Championship (Australia): the Gen3-spec GR Supra joined the grid new
     for 2026 via Walkinshaw Andretti United — confirmed 2026 driver lineup is
     #1 Chaz Mostert and #2 Ryan Wood (WAU Racing), with Toyota fielding at least 4
-    Gen3 Supras total across the field. supercars.com/schedule has no data in raw
-    HTML (JS-rendered) and the standings page has the same Next.js flight-stream
-    situation as Formula Drift US — both link-out only.
+    Gen3 Supras total across the field. standings/2026/supercars IS real data
+    (re-verified 2026-08-23, see standings.py's fetch_supercars_standings docstring
+    for how it's extracted from a Next.js RSC flight payload) — scraped directly.
+    supercars.com/schedule still has no event data anywhere in its initial payload
+    (checked directly, not assumed) — schedule stays link-out only.
 """
 
 from __future__ import annotations
@@ -36,6 +38,7 @@ from .standings import (
     fetch_fdj_standings,
     fetch_formula_drift_pro_standings,
     fetch_super_gt_standings,
+    fetch_supercars_standings,
 )
 
 
@@ -175,12 +178,12 @@ REGIONS = {
                         ("Supercars Championship standings Toyota OR \"GR Supra\"", "en-AU", "AU", "AU:en"),
                     ],
                 },
-                # supercars.com/scheduleはJS描画で生HTMLにデータなし。standingsページは
-                # 実データを含むがformulad.com同様Next.jsの内部flight-stream形式のため、
-                # 誤解析リスクを避け両方とも公式サイトへのリンクのみとする。
+                # standings/2026/supercarsはNext.jsのflight-stream内にJSON配列として
+                # 実データを含み、抽出して直接スクレイピングする(standings.py参照)。
+                # scheduleページは生HTML/初期ペイロードのどちらにもイベントデータが
+                # 存在しないため、引き続きリンクのみとする。
                 "schedule_link": "https://www.supercars.com/schedule",
                 "standings_url": "https://www.supercars.com/standings/2026/supercars",
-                "js_rendered_note": True,
             },
         ],
     },
@@ -234,6 +237,7 @@ def fetch() -> dict:
     fdj_chart = fetch_fdj_standings()
     d1gp_chart = fetch_d1gp_standings()
     fd_pro_chart = fetch_formula_drift_pro_standings()
+    supercars_chart = fetch_supercars_standings()
 
     for series in result["japan"]["series"]:
         if series["key"] == "super_gt_gt500":
@@ -279,6 +283,17 @@ def fetch() -> dict:
                 or "Formula Drift公式サイト(formulad.com)のPROクラスランキング実データ。"
                 "Fredric Aasbo(Papadakis Racing)・Simen Olsen等、GR Supraで参戦する"
                 "ドライバーには目印を付けています。"
+            )
+
+    for series in result["australia"]["series"]:
+        if series["key"] == "supercars_championship":
+            series["standings_chart"] = supercars_chart["standings"]
+            series["standings_error"] = bool(supercars_chart["error"])
+            series["standings_chart_note"] = (
+                supercars_chart["error"]
+                or "Supercars Championship公式サイト(supercars.com)のドライバーズ"
+                "ランキング実データ。WAU Racingの#1 Chaz Mostert・#2 Ryan Wood"
+                "(Gen3 GR Supra)には目印を付けています。"
             )
 
     default_note = (

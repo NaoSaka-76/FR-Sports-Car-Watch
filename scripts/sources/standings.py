@@ -25,6 +25,20 @@ Verified against live pages (2026-08-22):
     cells which lack the `text-xl lg:text-2xl` / `text-base lg:text-lg` size
     classes). Re-verify this class-name scheme if the section goes empty — it's a
     Next.js site and rebuilds can change generated class names.
+  - Supercars Championship (Australia): https://www.supercars.com/standings/2026/supercars
+    — re-verified 2026-08-23 with a browser User-Agent: real season standings ARE
+    present, but as a genuine Next.js RSC "flight" payload (`self.__next_f.push([N,
+    "<json-escaped string>"])`) rather than HTML markup at all — the driver list is a
+    `"driverStats":[...]` JSON array double-encoded inside that pushed string. See
+    `_extract_next_flight_array()` below for the two-step decode (parse the push()
+    call as a JSON array literal, then bracket-match the named array out of the
+    resulting string and json.loads it). This is a real internal implementation
+    detail of the site's framework, not a documented API — it can break silently on
+    a site rebuild if the chunk stops containing this key or the field names change;
+    re-verify if this section goes empty. The `/schedule` page, by contrast, has no
+    event data anywhere in its initial HTML/flight payload (checked directly) — it's
+    fetched by client-side JS after hydration from an endpoint this project doesn't
+    have visibility into, so schedule stays link-out only; only standings were fixed.
 
 GR Supra / GR Supra GT500 entrants are flagged (`is_supra`) using a name list
 gathered from official team/driver sourcing, not by string-matching "Supra" in the
@@ -35,6 +49,7 @@ per-team pages do).
 from __future__ import annotations
 
 import html as html_module
+import json
 import re
 
 import requests
@@ -49,6 +64,7 @@ D1GP_STANDINGS_URL = (
     "%e3%82%b0/"
 )
 FORMULA_DRIFT_PRO_STANDINGS_URL = "https://www.formulad.com/standings/2026/pro"
+SUPERCARS_STANDINGS_URL = "https://www.supercars.com/standings/2026/supercars"
 
 # GRスープラ(GT500)で参戦するワークスチームのドライバー名(公式発表ベース)。
 _GT500_SUPRA_DRIVERS = {
@@ -69,6 +85,9 @@ _FDJ_SUPRA_DRIVER_NAME_FRAGMENTS = {"matsuyama"}
 # (Fredric Aasbo: Papadakis Racing Rockstar Energy Toyota GR Supra、
 #  Simen Olsen: 同じくGR Supraで参戦)。
 _FORMULA_DRIFT_PRO_SUPRA_DRIVER_NAME_FRAGMENTS = {"aasbo", "olsen"}
+# Supercars ChampionshipでGen3 GR Supraを駆るドライバー
+# (WAU Racing: #1 Chaz Mostert, #2 Ryan Wood)。
+_SUPERCARS_SUPRA_DRIVER_NAME_FRAGMENTS = {"mostert", "ryan wood"}
 
 
 def _session() -> requests.Session:
@@ -79,6 +98,72 @@ def _session() -> requests.Session:
 
 def _strip_tags(text: str) -> str:
     return re.sub(r"<[^>]+>", "", text).strip()
+
+
+def _extract_next_flight_array(html_text: str, array_key: str) -> list | None:
+    """Pull a named JSON array out of a Next.js RSC "flight" payload.
+
+    The data isn't in the page's HTML markup — it's inside a
+    `<script>self.__next_f.push([N, "<json-escaped string>"])</script>` chunk. The
+    pushed string is itself a JSON-escaped blob containing a second, ordinary JSON
+    array under `array_key` (e.g. `"driverStats":[...]`). Two-step decode:
+      1. Locate the <script> tag whose raw (still-escaped) text contains
+         `\"{array_key}\":[` and parse its `push([...])` call as a JSON array
+         literal — this un-escapes the inner string in one pass.
+      2. Within that now-plain-JSON string, bracket-match the array starting right
+         after `"{array_key}":` (tracking string state so brackets inside quoted
+         values don't confuse the depth count) and `json.loads` just that slice.
+    Returns None if the key isn't found anywhere in the page.
+    """
+    needle = f'\\"{array_key}\\":['
+    pos = html_text.find(needle)
+    if pos == -1:
+        return None
+
+    script_start = html_text.rfind("<script", 0, pos)
+    script_end = html_text.find("</script>", pos)
+    script_content = html_text[script_start:script_end]
+
+    push_idx = script_content.find("push([")
+    if push_idx == -1:
+        return None
+    push_arg = script_content[push_idx + len("push(") :].rstrip()
+    if push_arg.endswith(")"):
+        push_arg = push_arg[:-1]
+    outer = json.loads(push_arg)
+    inner_text = outer[1] if len(outer) > 1 else outer[0]
+
+    key_pos = inner_text.find(f'"{array_key}":[')
+    if key_pos == -1:
+        return None
+    array_start = key_pos + len(f'"{array_key}":')
+
+    depth = 0
+    in_str = False
+    escaped = False
+    i = array_start
+    while i < len(inner_text):
+        ch = inner_text[i]
+        if in_str:
+            if escaped:
+                escaped = False
+            elif ch == "\\":
+                escaped = True
+            elif ch == '"':
+                in_str = False
+        else:
+            if ch == '"':
+                in_str = True
+            elif ch in "[{":
+                depth += 1
+            elif ch in "]}":
+                depth -= 1
+                if depth == 0:
+                    i += 1
+                    break
+        i += 1
+
+    return json.loads(inner_text[array_start:i])
 
 
 def fetch_super_gt_standings(clazz: str = "gt500", limit: int = 15) -> dict:
@@ -296,6 +381,50 @@ def fetch_d1gp_standings(limit: int = 15) -> dict:
                     "name": name,
                     "car": f"No.{car_no}",
                     "points": int(points_text) if points_text else 0,
+                    "is_supra": is_supra,
+                }
+            )
+            if len(results) >= limit:
+                break
+
+        return {
+            "standings": results,
+            "error": None if results else "現在、順位データが空です(シーズン開幕前などの可能性があります)",
+        }
+    except Exception as exc:  # noqa: BLE001
+        return {"standings": [], "error": f"取得エラー: {exc}"}
+
+
+def fetch_supercars_standings(limit: int = 15) -> dict:
+    session = _session()
+    try:
+        resp = session.get(SUPERCARS_STANDINGS_URL, timeout=REQUEST_TIMEOUT)
+        resp.raise_for_status()
+        html_text = resp.text
+
+        driver_stats = _extract_next_flight_array(html_text, "driverStats")
+        if not driver_stats:
+            return {"standings": [], "error": "順位表の構造を特定できませんでした"}
+
+        ranked = sorted(
+            driver_stats,
+            key=lambda d: d.get("totalSeasonPoints", 0),
+            reverse=True,
+        )
+        results: list[dict] = []
+        for position, d in enumerate(ranked, start=1):
+            name = html_module.unescape(str(d.get("driverName", ""))).strip()
+            if not name:
+                continue
+            car_no = str(d.get("driverNumber", "?"))
+            points = int(d.get("totalSeasonPoints", 0) or 0)
+            is_supra = any(frag in name.lower() for frag in _SUPERCARS_SUPRA_DRIVER_NAME_FRAGMENTS)
+            results.append(
+                {
+                    "position": position,
+                    "name": name,
+                    "car": f"No.{car_no}",
+                    "points": points,
                     "is_supra": is_supra,
                 }
             )
