@@ -1,0 +1,1093 @@
+/* FR Sports Car Watch — dark garage/boost-gauge dashboard, heritage turbo-orange accent */
+
+:root {
+  --bg: #14100c;
+  --surface: #1c1712;
+  --surface-sunken: #241d16;
+  --ink: #f5f1ea;
+  --ink-muted: #a89e8f;
+  --line: #362c22;
+
+  --accent: #ff7a1a;
+  --accent-soft: #3a2410;
+  --accent-ink: #ffab5e;
+
+  --good: #35c98a;
+  --good-soft: #123527;
+  --critical: #ff5a5a;
+  --critical-soft: #3a1414;
+  --neutral: #9a9184;
+  --neutral-soft: #241e17;
+  --warn: #e2ab52;
+
+  /* 地域識別カラー(モータースポーツ・装飾用途) */
+  --region-jp: #4fb3e0;
+  --region-jp-soft: #12293a;
+  --region-us: #6f7bff;
+  --region-us-soft: #1c1f45;
+  --region-au: #4fd3a0;
+  --region-au-soft: #10382c;
+
+  /* Supra自身を強調するスポットライトカラー */
+  --spotlight: #ff7a1a;
+  --spotlight-soft: #3a2410;
+  --spotlight-glow: rgba(255, 122, 26, 0.35);
+
+  /* 直6エンジン/世代タブなどの補助アクセント */
+  --accent2: #4fb3e0;
+  --accent2-soft: #12293a;
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4), 0 2px 10px rgba(0, 0, 0, 0.3);
+  --shadow-2: 0 8px 28px rgba(0, 0, 0, 0.5);
+
+  --font-display: "Oswald", "Noto Sans JP", sans-serif;
+  --font-body: "Noto Sans JP", "IBM Plex Sans", "Hiragino Sans", sans-serif;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f3efe7;
+    --surface: #ffffff;
+    --surface-sunken: #ece5d8;
+    --ink: #1c1712;
+    --ink-muted: #6b6154;
+    --line: #ddd3c1;
+
+    --accent: #c85a00;
+    --accent-soft: #fbe8d6;
+    --accent-ink: #c85a00;
+
+    --good: #157a4c;
+    --good-soft: #e2f4ea;
+    --critical: #c4362d;
+    --critical-soft: #fbe6e4;
+    --neutral: #78705f;
+    --neutral-soft: #ece5d8;
+    --warn: #9a6607;
+
+    --region-jp: #1f6fa8;
+    --region-jp-soft: #e2eef6;
+    --region-us: #3946c9;
+    --region-us-soft: #e5e6fa;
+    --region-au: #128064;
+    --region-au-soft: #dcf4ec;
+
+    --spotlight: #c85a00;
+    --spotlight-soft: #fbe8d6;
+    --spotlight-glow: rgba(200, 90, 0, 0.18);
+
+    --accent2: #1f6fa8;
+    --accent2-soft: #e2eef6;
+
+    --shadow-1: 0 1px 2px rgba(27, 22, 16, 0.05), 0 2px 8px rgba(27, 22, 16, 0.04);
+    --shadow-2: 0 4px 16px rgba(27, 22, 16, 0.08);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .panel { animation: rise 0.4s ease backwards; }
+  .panel:nth-child(1) { animation-delay: 0.02s; }
+  .panel:nth-child(2) { animation-delay: 0.06s; }
+  .panel:nth-child(3) { animation-delay: 0.10s; }
+  .panel:nth-child(4) { animation-delay: 0.14s; }
+  .panel:nth-child(5) { animation-delay: 0.18s; }
+  .panel:nth-child(6) { animation-delay: 0.22s; }
+  .status-dot { animation: pulse 2.2s ease-in-out infinite; }
+  .standings-chart__row--spotlight { animation: glow 2.4s ease-in-out infinite; }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 3px var(--accent-soft); }
+  50% { box-shadow: 0 0 0 6px transparent; }
+}
+@keyframes glow {
+  0%, 100% { box-shadow: inset 3px 0 0 var(--spotlight); }
+  50% { box-shadow: inset 3px 0 0 var(--spotlight), 0 0 14px var(--spotlight-glow); }
+}
+
+/* ---- Masthead ---- */
+
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-bottom: 2px solid var(--accent);
+  background:
+    repeating-linear-gradient(
+      -55deg,
+      var(--accent-soft) 0, var(--accent-soft) 3px,
+      transparent 3px, transparent 40px
+    ),
+    var(--surface);
+  box-shadow: var(--shadow-2);
+  overflow: hidden;
+}
+
+.masthead__flag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 160px;
+  height: 100%;
+  opacity: 0.4;
+  background-image:
+    linear-gradient(90deg, var(--ink) 25%, transparent 25%),
+    linear-gradient(-90deg, var(--ink) 25%, transparent 25%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 20px;
+  mask-image: linear-gradient(to left, black, transparent);
+  -webkit-mask-image: linear-gradient(to left, black, transparent);
+  pointer-events: none;
+}
+
+.masthead__inner {
+  position: relative;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 30px 24px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.masthead__title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.masthead__mark {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+.masthead__mark svg { width: 100%; height: 100%; }
+
+.masthead__eyebrow {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--accent-ink);
+  margin-bottom: 6px;
+}
+
+.masthead__title h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: italic;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: 0.01em;
+  text-wrap: balance;
+  color: var(--ink);
+}
+
+.masthead__title-accent { color: var(--accent); }
+
+.masthead__status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--good);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+  flex-shrink: 0;
+}
+
+.status-dot.is-stale { background: var(--warn); }
+.status-dot.is-error { background: var(--critical); }
+
+.schedule-chips {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chip {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.chip-label {
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.04em;
+}
+
+.lang-toggle {
+  display: flex;
+  gap: 4px;
+  padding: 3px;
+  border-radius: 999px;
+  background: var(--surface-sunken);
+  border: 1px solid var(--line);
+}
+
+.lang-toggle__btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.74rem;
+  letter-spacing: 0.02em;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: var(--ink-muted);
+  cursor: pointer;
+}
+
+.lang-toggle__btn:hover { color: var(--ink); }
+
+.lang-toggle__btn.is-active {
+  background: var(--accent);
+  color: #1c1712;
+}
+
+/* ---- Stat strip ---- */
+
+.stats {
+  max-width: 1360px;
+  margin: 22px auto 0;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+}
+
+.stat-tile {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--accent);
+  border-radius: 10px;
+  box-shadow: var(--shadow-1);
+  padding: 14px 16px;
+}
+
+.stat-tile__label {
+  font-size: 0.74rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+}
+
+.stat-tile__value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.8rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.stat-tile__value small {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  margin-left: 4px;
+}
+
+/* ---- Board / grid ---- */
+
+.board {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 22px 24px 64px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+.board__loading,
+.board__error {
+  grid-column: 1 / -1;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--ink-muted);
+  padding: 40px 0;
+  text-align: center;
+}
+
+.panel {
+  grid-column: span 12;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow-1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@media (min-width: 900px) {
+  .panel--wide { grid-column: span 7; }
+  .panel--narrow { grid-column: span 5; }
+  .panel--half { grid-column: span 6; }
+  .panel--full { grid-column: span 12; }
+}
+
+.panel__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.panel__icon {
+  width: 20px;
+  height: 20px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.panel__icon svg { width: 100%; height: 100%; }
+
+.panel__title {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.005em;
+  flex: 1;
+}
+
+.panel__count {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.panel__note {
+  margin: 0;
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--ink-muted);
+  background: var(--surface-sunken);
+  border-bottom: 1px solid var(--line);
+}
+
+.tab-group {
+  display: flex;
+  gap: 6px;
+  padding: 12px 20px 0;
+  flex-wrap: wrap;
+}
+
+.tab-group--sub { padding: 8px 0 0; }
+
+.tab-group__btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink-muted);
+  cursor: pointer;
+}
+
+.tab-group__btn:hover {
+  border-color: var(--accent);
+  color: var(--ink);
+}
+
+.tab-group__btn.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #1c1712;
+}
+
+.tab-group__btn--gen.is-active {
+  background: var(--accent2);
+  border-color: var(--accent2);
+  color: #14100c;
+}
+
+.panel__list {
+  list-style: none;
+  margin: 0;
+  padding: 6px 8px;
+  max-height: 460px;
+  overflow-y: auto;
+}
+
+/* ---- Item rows (generic, and sentiment-coded) ---- */
+
+.item {
+  display: flex;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 7px;
+  border-left: 3px solid transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+.item:hover,
+.item:focus-visible {
+  background: var(--surface-sunken);
+}
+
+.item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.item--positive { border-left-color: var(--good); }
+.item--negative { border-left-color: var(--critical); }
+
+.item__thumb {
+  width: 108px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+  background: var(--surface-sunken);
+}
+
+.item__body { flex: 1; min-width: 0; }
+
+.item__title {
+  display: block;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+.item__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 5px;
+  font-size: 0.76rem;
+  color: var(--ink-muted);
+}
+
+.item__metric {
+  margin-left: auto;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--accent-ink);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.sentiment-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+  padding: 1px 7px;
+  border-radius: 999px;
+}
+.sentiment-pill--positive { background: var(--good-soft); color: var(--good); }
+.sentiment-pill--negative { background: var(--critical-soft); color: var(--critical); }
+
+.sentiment-pill[data-tip] {
+  position: relative;
+  cursor: help;
+}
+
+.sentiment-pill[data-tip]:hover::after,
+.sentiment-pill[data-tip]:focus-visible::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 0;
+  top: calc(100% + 8px);
+  z-index: 30;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 7px 10px;
+  border-radius: 7px;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  white-space: normal;
+  width: max-content;
+  max-width: 240px;
+  box-shadow: var(--shadow-2);
+  pointer-events: none;
+}
+
+.sentiment-pill[data-tip]:hover::before,
+.sentiment-pill[data-tip]:focus-visible::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 100%;
+  border: 5px solid transparent;
+  border-bottom-color: var(--ink);
+  z-index: 31;
+}
+
+.panel__empty {
+  padding: 24px 20px;
+  color: var(--ink-muted);
+  font-size: 0.88rem;
+}
+
+/* ---- Rival sub-cards (topics / YouTube, grouped per rival) ---- */
+
+.rival-grid {
+  padding: 16px 20px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.rival-card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-sunken);
+}
+
+.rival-card__header {
+  padding: 10px 14px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.rival-card .panel__list {
+  max-height: 260px;
+}
+
+/* ---- Motorsports panel (region groups of series cards) ---- */
+
+.motorsports {
+  padding: 4px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.motorsports-region {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.motorsports-region__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.motorsports-region:first-child .motorsports-region__title {
+  border-top: none;
+  padding-top: 0;
+}
+
+.motorsports-region__flag {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.motorsports-region__count {
+  margin-left: auto;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.76rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.02em;
+}
+
+.motorsports-region__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.series-card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+}
+
+.series-card__header {
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #14100c;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.series-card--japan { --region-color: var(--region-jp); --region-color-soft: var(--region-jp-soft); }
+.series-card--us { --region-color: var(--region-us); --region-color-soft: var(--region-us-soft); }
+.series-card--australia { --region-color: var(--region-au); --region-color-soft: var(--region-au-soft); }
+
+.series-card__header { background: var(--region-color); }
+
+.series-card__desc {
+  margin: 0;
+  padding: 10px 14px;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--ink-muted);
+  border-bottom: 1px solid var(--line);
+}
+
+/* ---- Standings chart (実データによる順位グラフ) ---- */
+
+.standings-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 8px 14px 10px;
+}
+
+.standings-chart__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 6px 3px 8px;
+  border-left: 3px solid transparent;
+  border-radius: 5px;
+}
+
+.standings-chart__row--spotlight {
+  border-left-color: var(--spotlight);
+  background: var(--spotlight-soft);
+}
+
+.standings-chart__name-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.supra-tag {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  color: var(--spotlight);
+  background: var(--spotlight-soft);
+  border: 1px solid var(--spotlight);
+  border-radius: 999px;
+  padding: 0px 6px;
+  white-space: nowrap;
+}
+
+.standings-chart__sub {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  margin-bottom: 3px;
+}
+
+.standings-chart__pos {
+  width: 20px;
+  flex-shrink: 0;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+}
+
+.standings-chart__main {
+  flex: 1;
+  min-width: 0;
+}
+
+.standings-chart__name {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.standings-chart__track {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--region-color-soft, var(--surface-sunken));
+  overflow: hidden;
+}
+
+.standings-chart__fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--region-color, var(--accent));
+}
+
+.standings-chart__row--spotlight .standings-chart__fill {
+  background: var(--spotlight);
+}
+
+.standings-chart__points {
+  width: 34px;
+  flex-shrink: 0;
+  text-align: right;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.series-card__chart-note {
+  margin: 4px 14px 8px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: var(--surface-sunken);
+}
+
+/* ---- Race schedule ---- */
+
+.schedule-next {
+  margin: 8px 14px 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--region-color-soft, var(--accent-soft));
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.schedule-next__label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--region-color, var(--accent));
+  background: var(--surface);
+  padding: 1px 7px;
+  border-radius: 999px;
+}
+
+.schedule-next__date {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.schedule-next__track {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+}
+
+.schedule-list {
+  list-style: none;
+  margin: 0;
+  padding: 2px 14px 10px;
+  max-height: 160px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.schedule-list__item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 0.78rem;
+}
+
+.schedule-list__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--neutral);
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.schedule-list__item--upcoming .schedule-list__dot {
+  background: var(--region-color, var(--accent));
+}
+
+.schedule-list__item--completed { color: var(--ink-muted); }
+.schedule-list__item--completed .schedule-list__label { text-decoration: line-through; text-decoration-color: var(--line); }
+
+.schedule-list__date {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.schedule-list__label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.series-card__group {
+  border-top: 1px solid var(--line);
+}
+
+.series-card__group-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  padding: 9px 14px 4px;
+}
+
+.series-card__group .panel__list {
+  padding: 2px 6px 6px;
+  max-height: 220px;
+}
+
+.series-card__link,
+.rival-card__link {
+  margin: 4px 14px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.76rem;
+  letter-spacing: 0.02em;
+  color: var(--region-color, var(--accent));
+  text-decoration: none;
+  padding: 7px 12px;
+  border: 1px solid var(--region-color, var(--accent));
+  border-radius: 7px;
+  align-self: flex-start;
+}
+.series-card__link:hover,
+.rival-card__link:hover { background: var(--region-color-soft, var(--accent-soft)); }
+
+/* ---- Rival / Supra car catalog ---- */
+
+.car-grid {
+  padding: 16px 20px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.car-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--surface-sunken);
+}
+
+.car-card--spotlight {
+  border-color: var(--spotlight);
+  box-shadow: 0 0 0 1px var(--spotlight), 0 0 20px var(--spotlight-glow);
+}
+
+.car-card__photo {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.car-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.car-card__photo--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--surface), var(--surface-sunken));
+}
+
+.car-card__photo-icon {
+  width: 44px;
+  height: 44px;
+  color: var(--ink-muted);
+  opacity: 0.5;
+}
+.car-card__photo-icon svg { width: 100%; height: 100%; }
+
+.car-card__badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--surface);
+}
+
+.car-card__body {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 16px 16px;
+  gap: 6px;
+}
+
+.car-card__manufacturer {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+}
+
+.car-card__model {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.005em;
+}
+
+.car-card__desc {
+  margin: 2px 0 4px;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--ink-muted);
+}
+
+.car-card__price {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: var(--accent-ink);
+  margin-bottom: 2px;
+}
+
+.car-card__status {
+  font-size: 0.74rem;
+  color: var(--ink-muted);
+  margin-bottom: 4px;
+}
+
+.car-card__status--discontinued {
+  color: var(--warn);
+  font-weight: 700;
+}
+
+.car-card__specs-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  margin-top: 6px;
+}
+
+.car-card__specs {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 10px;
+  margin: 0 0 10px;
+  font-size: 0.8rem;
+}
+
+.car-card__specs dt {
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+.car-card__specs dd {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.car-card__credit {
+  margin: 4px 0 0;
+  font-size: 0.68rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+.car-card__credit a {
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+}
+
+/* ---- Footer ---- */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 20px 24px 40px;
+}
+
+.site-footer p {
+  max-width: 1360px;
+  margin: 0 auto;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--ink-muted);
+}
