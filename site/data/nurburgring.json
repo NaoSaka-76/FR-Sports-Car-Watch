@@ -1,0 +1,2149 @@
+{
+  "updated": "2026-08-23",
+  "note": {
+    "ja": "ニュルブルクリンク・ノルドシュライフェ(20.6〜20.832km、計測区間はメーカー・年により異なる)で公式にタイム計測された、公道走行可能な市販車(限定生産モデル含む)のラップタイムを速い順にまとめた手動更新の参考リストです。レース専用車・プロトタイプ・ワンメイクレーサーは対象外。計測区間の違い(20.6km版と20.832km版で通常4.4〜4.6秒程度の差)、年式・タイヤ・空力/軽量化オプションの違いにより単純比較はできない点にご注意ください。GT3/GT4RS/GT2RS/Taycanなど複数車種で「標準」と「Mantheyキット」の記録が混在しているため、車名表記で区別しています。",
+    "en": "A hand-curated, manually updated reference list of officially timed laps at the Nürburgring Nordschleife (measured over either the 20.6km or 20.832km configuration depending on the manufacturer/year) for road-legal production cars, including limited-run special editions, sorted fastest to slowest. Pure race cars, prototypes, and one-make racers are excluded. Note that the two common timing distances typically differ by about 4.4-4.6 seconds for the same run, and model year, tires, and optional aero/weight packages also affect comparability, so times should not be compared too literally. Several nameplates (GT3, GT4 RS, GT2 RS, Taycan) have separate 'standard' and 'with Manthey Kit' entries — check the car name carefully."
+  },
+  "cars": [
+    {
+      "rank": 1,
+      "manufacturer": "MERCEDES-AMG",
+      "model": {
+        "ja": "AMG ONE",
+        "en": "AMG ONE"
+      },
+      "lap_time": "6:29.090",
+      "year": 2024,
+      "note": {
+        "ja": "世界限定275台。F1由来のハイブリッドパワートレインを積む公道走行可能な最速市販車で、市販車として初めて6分30秒の壁を破った。2024年9月23日、Maro Engel選手のドライブでニュルブルクリンク公式記録として樹立(公証人立ち会い)。",
+        "en": "Limited to 275 units worldwide. Powered by an F1-derived hybrid powertrain, it is the fastest road-legal production car around the Nordschleife and the first to break the 6:30 barrier. Set on September 23, 2024 by Maro Engel as an official, notary-witnessed Nürburgring record."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "1.6L V6ターボ+F1由来ハイブリッド(電動モーター4基)",
+            "en": "1.6L turbocharged V6 + F1-derived hybrid system (4 electric motors)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "システム合計1,063PS(1,049馬力)",
+            "en": "1,063 PS (1,049 hp) combined system output"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "非公表(F1由来ハイブリッドのため単一数値は未公表)",
+            "en": "Not officially published as a single figure (complex F1-derived hybrid system)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "約1,695kg(乾燥重量、3,737lbs)",
+            "en": "approx. 3,737 lbs (1,695 kg, dry weight)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "8速オートメイテッドマニュアル(リア)+電動モーター(フロント、AWD)",
+            "en": "8-speed automated manual (rear) + electric motors (front, AWD)"
+          }
+        }
+      ],
+      "youtube_url": "https://www.youtube.com/watch?v=yx80Q-CVcvA",
+      "source_url": "https://media.mbusa.com/releases/release-9ce9755cd9dcbb00611364b99f035b12-629090-min-mercedes-amg-one-breaks-its-own-lap-record-on-the-nurburgring-nordschleife"
+    },
+    {
+      "rank": 2,
+      "manufacturer": "PORSCHE",
+      "model": {
+        "ja": "911 GT2 RS(991.2、Mantheyキット装着)",
+        "en": "911 GT2 RS (991.2, with Manthey Kit)"
+      },
+      "lap_time": "6:38.835",
+      "year": 2021,
+      "note": {
+        "ja": "ポルシェ公認のチューニングパッケージ「Mantheyキット」を装着。エンジンは無改造で、空力・サスペンションのみ強化。2021年6月14日、Lars Kern選手のドライブで公証人立ち会いのもと記録樹立(20.6km区間、20.832kmのフルラップでは6:43.300)。",
+        "en": "Fitted with the Porsche-approved 'Manthey Kit' tuning package. The engine is unmodified; only aerodynamics and suspension were upgraded. Set on June 14, 2021 by Lars Kern, notary-witnessed (this is the 20.6km-segment time; the full 20.832km lap was 6:43.300)."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "3.8L 水平対向6気筒ツインターボ(無改造)",
+            "en": "3.8L twin-turbocharged flat-6 (unmodified)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "700PS(690馬力)",
+            "en": "700 PS (690 hp)"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "750Nm(553lb-ft)",
+            "en": "553 lb-ft (750 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "約1,470kg(3,241lbs、Weissachパッケージ)",
+            "en": "approx. 3,241 lbs (1,470 kg, with Weissach package)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "7速PDK(FR)",
+            "en": "7-speed PDK (RWD)"
+          }
+        }
+      ],
+      "youtube_url": "https://www.youtube.com/watch?v=zcER39YHVxI",
+      "source_url": "https://newsroom.porsche.com/en/2021/products/porsche-911-gt2-rs-manthey-performance-kit-lap-record-nuerburgring-nordschleife-24884.html"
+    },
+    {
+      "rank": 3,
+      "manufacturer": "MERCEDES-AMG",
+      "model": {
+        "ja": "AMG GT Black Series",
+        "en": "AMG GT Black Series"
+      },
+      "lap_time": "6:43.616",
+      "year": 2020,
+      "note": {
+        "ja": "無改造の量産状態で記録樹立。2020年11月4日、気温7℃・路面湿潤という悪条件下でMaro Engel選手がドライブ。当時のアヴェンタドールSVJの記録を1.36秒更新した。",
+        "en": "Set in unmodified, as-delivered production form. Driven by Maro Engel on November 4, 2020 under difficult conditions (7°C air temperature, damp track). It beat the Aventador SVJ's prior record by 1.36 seconds."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "4.0L フラットプレーンクランクV8ツインターボ",
+            "en": "4.0L twin-turbocharged flat-plane-crank V8"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "730PS(720馬力)",
+            "en": "730 PS (720 hp)"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "800Nm(590lb-ft)",
+            "en": "590 lb-ft (800 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "1,665kg(3,671lbs)",
+            "en": "3,671 lbs (1,665 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "7速AMG SPEEDSHIFT DCT(FR)",
+            "en": "7-speed AMG SPEEDSHIFT DCT (RWD)"
+          }
+        }
+      ],
+      "youtube_url": "https://www.youtube.com/watch?v=9--oZuqtlFY",
+      "source_url": "https://media.mbusa.com/releases/release-34b22cdf3837beba024634fab1052abc-mercedes-amg-gt-black-series-is-fastest-production-car-on-the-nurburgring-nordschleife"
+    },
+    {
+      "rank": 4,
+      "manufacturer": "PORSCHE",
+      "model": {
+        "ja": "911 GT3 RS(992、標準/Weissachパッケージ)",
+        "en": "911 GT3 RS (992, standard / Weissach Package)"
+      },
+      "lap_time": "6:44.848",
+      "year": 2022,
+      "note": {
+        "ja": "重要な訂正:この記録はMantheyキット装着車ではなく、無改造の標準GT3 RS(Weissachパッケージ)によるもの(20.6km区間タイム。20.832kmのフルラップでは6:49.328)。2022年10月、Jörg Bergmeister選手が樹立。なお、後年(2025年4月)にMantheyキット装着の992.1型GT3 RSが別途6:45.389(20.832kmフルラップ)を記録している。",
+        "en": "Correction from initial sourcing: this record belongs to the unmodified standard GT3 RS with Weissach Package, not a Manthey Kit car (this is the 20.6km-segment time; the full 20.832km lap was 6:49.328). Set by Jörg Bergmeister in October 2022. Note that a separate, Manthey Kit-equipped 992.1 GT3 RS later ran 6:45.389 (full 20.832km lap) in April 2025."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "4.0L 自然吸気水平対向6気筒",
+            "en": "4.0L naturally aspirated flat-6"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "525PS(518馬力)",
+            "en": "525 PS (518 hp)"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "464Nm(342lb-ft)",
+            "en": "342 lb-ft (464 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "約1,450kg(3,197lbs、Weissachパッケージ)",
+            "en": "approx. 3,197 lbs (1,450 kg, with Weissach package)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "7速PDK(FR)",
+            "en": "7-speed PDK (RWD)"
+          }
+        }
+      ],
+      "youtube_url": "https://www.youtube.com/watch?v=GqVRqARkh8g",
+      "source_url": "https://newsroom.porsche.com/en/2022/products/porsche-911-gt3-rs-dream-lap-nuerburgring-nordschleife-30028.html"
+    },
+    {
+      "rank": 5,
+      "manufacturer": "LAMBORGHINI",
+      "model": {
+        "ja": "アヴェンタドール SVJ",
+        "en": "Aventador SVJ"
+      },
+      "lap_time": "6:44.97",
+      "year": 2018,
+      "note": {
+        "ja": "世界限定900台。2018年、Marco Mapelli選手のドライブで記録樹立。当時のポルシェ911 GT2 RSの記録を上回った。",
+        "en": "Limited to 900 units worldwide. Record set by Marco Mapelli in 2018, beating the Porsche 911 GT2 RS's time at the time."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "6.5L 自然吸気V12",
+            "en": "6.5L naturally aspirated V12"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "770馬力(566kW)",
+            "en": "770 hp (566 kW)"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "720Nm(531lb-ft)",
+            "en": "531 lb-ft (720 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "1,525kg(3,362lbs、乾燥重量)",
+            "en": "3,362 lbs (1,525 kg, dry weight)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "7速ISR自動シングルクラッチ(AWD)",
+            "en": "7-speed ISR automated single-clutch (AWD)"
+          }
+        }
+      ],
+      "youtube_url": "https://www.youtube.com/watch?v=QRsq35Et-EY",
+      "source_url": "https://www.lamborghini.com/en-en/news/aventador-svj-sets-nurburgring-lap-record-ahead-its-unveiling"
+    },
+    {
+      "rank": 6,
+      "manufacturer": "PORSCHE",
+      "model": {
+        "ja": "911 GT2 RS(991.2、標準)",
+        "en": "911 GT2 RS (991.2, standard)"
+      },
+      "lap_time": "6:47.25",
+      "year": 2017,
+      "note": {
+        "ja": "2017年9月20日、Lars Kern選手が量産車として当時のノルドシュライフェ最速記録を樹立(Weissachパッケージ装着)。",
+        "en": "On September 20, 2017, Lars Kern set what was then the fastest production-car lap of the Nordschleife (with Weissach Package)."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "3.8L 水平対向6気筒ツインターボ",
+            "en": "3.8L twin-turbocharged flat-6"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "700PS(690馬力)",
+            "en": "700 PS (690 hp)"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "750Nm(553lb-ft)",
+            "en": "553 lb-ft (750 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "約1,470kg(3,241lbs、Weissachパッケージ)",
+            "en": "approx. 3,241 lbs (1,470 kg, with Weissach package)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "7速PDK(FR)",
+            "en": "7-speed PDK (RWD)"
+          }
+        }
+      ],
+      "source_url": "https://www.motorauthority.com/news/1109135_lamborghini-huracn-performante-destroys-porsche-918s-nrburgring-record"
+    },
+    {
+      "rank": 7,
+      "manufacturer": "CHEVROLET",
+      "model": {
+        "ja": "コルベット ZR1X",
+        "en": "Corvette ZR1X"
+      },
+      "lap_time": "6:49.275",
+      "year": 2025,
+      "note": {
+        "ja": "1,250馬力。ハイブリッドAWDで、米国メーカー製市販車としてニュルブルクリンク史上最速。2025年6月、Drew Cattell(GM車両ダイナミクスエンジニア)がドライブ。",
+        "en": "1,250 hp. Hybrid AWD; the fastest production car ever from an American manufacturer around the Nürburgring. Driven by GM vehicle dynamics engineer Drew Cattell in June 2025."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "5.5L ツインターボV8(LT7)+フロントeモーター(AWDハイブリッド)",
+            "en": "5.5L twin-turbocharged V8 (LT7) + front e-motor (AWD hybrid)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "1,250馬力(V8 1,064馬力+モーター186馬力)",
+            "en": "1,250 hp combined (1,064 hp V8 + 186 hp motor)"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "973lb-ft(1,319Nm)",
+            "en": "973 lb-ft (1,319 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "約1,877kg(4,139lbs)",
+            "en": "approx. 4,139 lbs (1,877 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "8速デュアルクラッチ(後輪)+eモーター(前輪、AWD)",
+            "en": "8-speed dual-clutch (rear) + front e-motor (AWD)"
+          }
+        }
+      ],
+      "youtube_url": "https://www.youtube.com/watch?v=ic7qpuJtHK4",
+      "source_url": "https://news.gm.com/home.detail.html/Pages/news/us/en/2025/jul/0731-Corvette-ZR1X.html"
+    },
+    {
+      "rank": 8,
+      "manufacturer": "CHEVROLET",
+      "model": {
+        "ja": "コルベット ZR1",
+        "en": "Corvette ZR1"
+      },
+      "lap_time": "6:50.763",
+      "year": 2025,
+      "note": {
+        "ja": "1,064馬力。ZR1車両ダイナミクスエンジニアBrian Wallaceがドライブ。コルベット史上最強の非ハイブリッドモデル。",
+        "en": "1,064 hp. Driven by ZR1 vehicle dynamics engineer Brian Wallace. The most powerful non-hybrid Corvette ever built."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "5.5L ツインターボフラットプレーンV8(LT7)",
+            "en": "5.5L twin-turbocharged flat-plane-crank V8 (LT7)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "1,064馬力",
+            "en": "1,064 hp"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "828lb-ft(1,122Nm)",
+            "en": "828 lb-ft (1,122 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "約1,768kg(3,899lbs)",
+            "en": "approx. 3,899 lbs (1,768 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "8速デュアルクラッチ(FR)",
+            "en": "8-speed dual-clutch (RWD)"
+          }
+        }
+      ],
+      "source_url": "https://news.gm.com/home.detail.html/Pages/news/us/en/2025/jul/0731-Corvette-ZR1X-ZR1.html"
+    },
+    {
+      "rank": 9,
+      "manufacturer": "PORSCHE",
+      "model": {
+        "ja": "911 GT3(992.2、Mantheyキット装着)",
+        "en": "911 GT3 (992.2, with Manthey Kit)"
+      },
+      "lap_time": "6:50.863",
+      "year": 2026,
+      "note": {
+        "ja": "2026年型フェイスリフト後の992.2型GT3にMantheyキットを装着。DTMチャンピオンのAyhancan Güven選手がドライブし、旧型992.1のMantheyキット記録(6:55.737)から約5秒、無改造の標準GT3から5.431秒短縮。",
+        "en": "The facelifted 992.2-generation GT3 fitted with the Manthey Kit. Driven by DTM champion Ayhancan Güven, nearly 5 seconds faster than the previous 992.1 Manthey Kit record (6:55.737) and 5.431 seconds faster than the unmodified standard GT3."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "4.0L 自然吸気水平対向6気筒(無改造)",
+            "en": "4.0L naturally aspirated flat-6 (unmodified)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "510PS(502馬力)",
+            "en": "510 PS (502 hp)"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "437Nm(322lb-ft)",
+            "en": "322 lb-ft (437 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "約1,435kg(3,164lbs)",
+            "en": "approx. 3,164 lbs (1,435 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "7速PDK(FR)",
+            "en": "7-speed PDK (RWD)"
+          }
+        }
+      ],
+      "youtube_url": "https://www.youtube.com/watch?v=ln8CVztDsgg",
+      "source_url": "https://www.autoguide.com/auto/manufacturers/porsche/manthey-kit-helps-2026-porsche-911-gt3-beat-its-own-ring-time-44632531"
+    },
+    {
+      "rank": 10,
+      "manufacturer": "LAMBORGHINI",
+      "model": {
+        "ja": "ウラカン ペルフォルマンテ",
+        "en": "Huracán Performante"
+      },
+      "lap_time": "6:52.01",
+      "year": 2017,
+      "note": {
+        "ja": "アクティブエアロシステム「ALA」を初搭載。2016年10月5日、Marco Mapelli選手のドライブで記録樹立、当時のポルシェ918スパイダーの記録を破った。",
+        "en": "The first Lamborghini with the 'ALA' active aero system. Set by Marco Mapelli on October 5, 2016, beating the Porsche 918 Spyder's record at the time."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "5.2L 自然吸気V10",
+            "en": "5.2L naturally aspirated V10"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "640馬力",
+            "en": "640 hp"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "600Nm(442lb-ft)",
+            "en": "442 lb-ft (600 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "約1,382kg(3,047lbs)",
+            "en": "approx. 3,047 lbs (1,382 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "7速デュアルクラッチ(AWD)",
+            "en": "7-speed dual-clutch (AWD)"
+          }
+        }
+      ],
+      "source_url": "https://www.motorauthority.com/news/1109135_lamborghini-huracn-performante-destroys-porsche-918s-nrburgring-record"
+    },
+    {
+      "rank": 11,
+      "manufacturer": "PORSCHE",
+      "model": {
+        "ja": "911 GT3(992、標準)",
+        "en": "911 GT3 (992, standard)"
+      },
+      "lap_time": "6:55.294",
+      "year": 2022,
+      "note": {
+        "ja": "無改造の標準GT3(20.6km区間タイム。20.832kmのフルラップでは6:59.927)。",
+        "en": "Unmodified standard GT3 (this is the 20.6km-segment time; the full 20.832km lap was 6:59.927)."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "4.0L 自然吸気水平対向6気筒",
+            "en": "4.0L naturally aspirated flat-6"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "510PS(502馬力)",
+            "en": "510 PS (502 hp)"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "437Nm(322lb-ft)",
+            "en": "322 lb-ft (437 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "1,487kg(3,278lbs)",
+            "en": "3,278 lbs (1,487 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "6速MT/7速PDK(FR)",
+            "en": "6-speed manual or 7-speed PDK (RWD)"
+          }
+        }
+      ],
+      "source_url": "https://newsroom.porsche.com/en/2022/products/porsche-911-gt3-rs-dream-lap-nuerburgring-nordschleife-30028.html"
+    },
+    {
+      "rank": 12,
+      "manufacturer": "PORSCHE",
+      "model": {
+        "ja": "Taycan Turbo GT(Weissachパッケージ+Mantheyキット)",
+        "en": "Taycan Turbo GT (Weissach Package + Manthey Kit)"
+      },
+      "lap_time": "6:55.533",
+      "year": 2026,
+      "note": {
+        "ja": "4ドア/EV初のニュルブルクリンク7分切り。Mantheyキットは2026年6月よりWeissachパッケージ装着のTaycan Turbo GT全車を対象に発売予定。Lars Kern選手がドライブし、従来のTaycan Turbo GT(Weissachパッケージのみ)の記録を12秒、Xiaomi SU7 Ultraの記録を9秒以上更新。",
+        "en": "The first 4-door/EV to break 7 minutes at the Nürburgring. The Manthey Kit goes on sale from June 2026 for every Weissach-package Taycan Turbo GT. Driven by Lars Kern, 12 seconds faster than the standard Weissach-package Taycan Turbo GT and over 9 seconds faster than the Xiaomi SU7 Ultra."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "デュアルモーターAWD(800V級プラットフォーム)",
+            "en": "Dual-motor AWD (800V-class platform)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "600kW(804馬力、通常時)/730kW(978馬力、Attackモード)",
+            "en": "600 kW (804 hp) standard / 730 kW (978 hp) in Attack Mode"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "1,270Nm(ローンチコントロール時)",
+            "en": "1,270 Nm (with Launch Control)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "約2.3トン",
+            "en": "approx. 2.3 tonnes"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "2速AT(リア)/1速(フロント)、AWD",
+            "en": "2-speed automatic (rear) / 1-speed (front), AWD"
+          }
+        }
+      ],
+      "youtube_url": "https://www.youtube.com/watch?v=ibNH4GBFDQ8",
+      "source_url": "https://newsroom.porsche.com/en/2026/products/porsche-taycan-turbo-gt-manthey-kit-record-nordschleife-42424.html"
+    },
+    {
+      "rank": 13,
+      "manufacturer": "PORSCHE",
+      "model": {
+        "ja": "911 GT3(992、Mantheyキット装着、通称「GT3 MR」)",
+        "en": "911 GT3 (992.1, with Manthey Kit, a.k.a. 'GT3 MR')"
+      },
+      "lap_time": "6:55.737",
+      "year": 2024,
+      "note": {
+        "ja": "フェイスリフト前の992.1型GT3にMantheyキットを装着した最初の記録(後継の992.2型は6:50.863、上位ランク参照)。Kévin Estre選手がドライブし、無改造の標準GT3を4.19秒上回った。",
+        "en": "The original Manthey Kit record for the pre-facelift 992.1 GT3 (the later 992.2 version ran 6:50.863, see higher rank above). Driven by Kévin Estre, 4.19 seconds faster than the unmodified standard GT3."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "4.0L 自然吸気水平対向6気筒(無改造)",
+            "en": "4.0L naturally aspirated flat-6 (unmodified)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "510PS(502馬力)",
+            "en": "510 PS (502 hp)"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "437Nm(322lb-ft)",
+            "en": "322 lb-ft (437 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "約1,435kg(3,164lbs、チタン製ロールケージで軽量化)",
+            "en": "approx. 3,164 lbs (1,435 kg, lightened with a titanium roll cage)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "7速PDK(FR)",
+            "en": "7-speed PDK (RWD)"
+          }
+        }
+      ],
+      "source_url": "https://autofreak.com/porsche-911-gt3-rs-manthey-racing-nurburgring-record-2024/"
+    },
+    {
+      "rank": 14,
+      "manufacturer": "PORSCHE",
+      "model": {
+        "ja": "911 GT3 RS(991.2、標準)",
+        "en": "911 GT3 RS (991.2, standard)"
+      },
+      "lap_time": "6:56.4",
+      "year": 2018,
+      "note": {
+        "ja": "2018年4月16日、Kevin Estre選手が記録樹立(Weissachパッケージ)。先代991.1型RSを23.6秒、918スパイダーを上回った。",
+        "en": "Set by Kevin Estre on April 16, 2018 (with Weissach Package). 23.6 seconds faster than the previous 991.1 RS, and faster than the 918 Spyder."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "4.0L 自然吸気水平対向6気筒",
+            "en": "4.0L naturally aspirated flat-6"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "520馬力",
+            "en": "520 hp"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "470Nm(346lb-ft)",
+            "en": "346 lb-ft (470 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "1,430kg(3,153lbs)",
+            "en": "3,153 lbs (1,430 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "7速PDK(FR)",
+            "en": "7-speed PDK (RWD)"
+          }
+        }
+      ],
+      "source_url": "https://www.autoevolution.com/cars/porsche-911-gt3-rs-2018.html"
+    },
+    {
+      "rank": 15,
+      "manufacturer": "PORSCHE",
+      "model": {
+        "ja": "918スパイダー(Weissachパッケージ)",
+        "en": "918 Spyder (Weissach package)"
+      },
+      "lap_time": "6:57.00",
+      "year": 2013,
+      "note": {
+        "ja": "世界限定918台。市販車として初めてニュルブルクリンク7分の壁を破った歴史的モデル。2013年9月4日、Marc Lieb選手が記録樹立。",
+        "en": "Limited to 918 units worldwide. The historic first production car to break the 7-minute barrier at the Nürburgring. Set by Marc Lieb on September 4, 2013."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "4.6L 自然吸気V8+電動モーター2基(プラグインハイブリッド)",
+            "en": "4.6L naturally aspirated V8 + 2 electric motors (plug-in hybrid)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "システム合計887馬力",
+            "en": "887 hp combined system output"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "1,275Nm(940lb-ft)",
+            "en": "940 lb-ft (1,275 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "1,640kg(3,616lbs、Weissachパッケージ)",
+            "en": "3,616 lbs (1,640 kg, with Weissach package)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "7速PDK(AWD)",
+            "en": "7-speed PDK (AWD)"
+          }
+        }
+      ],
+      "youtube_url": "https://www.youtube.com/watch?v=PWyPefsCZaM",
+      "source_url": "https://www.motorauthority.com/news/1086847_porsche-918-spyder-claims-top-production-nrburgring-nordschleife-lap-time"
+    },
+    {
+      "rank": 16,
+      "manufacturer": "FORD",
+      "model": {
+        "ja": "マスタング GTD",
+        "en": "Mustang GTD"
+      },
+      "lap_time": "6:57.685",
+      "year": 2025,
+      "note": {
+        "ja": "米国メーカー製市販車として初めてニュルブルクリンク7分の壁を破った(2024年10月17日、Dirk Müller選手)。なお、同車は別のオンボード動画で6:52.072という、より速いタイムも記録している(こちらは非公式・広報用の走行との報道もあり、公式発表として広く報じられているのは6:57.685)。",
+        "en": "The first American-brand production car to break the 7-minute barrier at the Nürburgring (October 17, 2024, driven by Dirk Müller). Note: an onboard video also shows the same car running a faster 6:52.072, though 6:57.685 is the figure most widely reported as the official record — treat the faster figure as a less-formally-verified data point."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "5.2L スーパーチャージドV8",
+            "en": "5.2L supercharged V8"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "815馬力",
+            "en": "815 hp"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "約664lb-ft(900Nm)",
+            "en": "approx. 664 lb-ft (900 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "約1,814kg(4,000lbs)",
+            "en": "approx. 4,000 lbs (1,814 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "8速デュアルクラッチ(FR)",
+            "en": "8-speed dual-clutch (RWD)"
+          }
+        }
+      ],
+      "youtube_url": "https://www.youtube.com/watch?v=Fxw6mf_5j-U",
+      "source_url": "https://www.fordracing.com/articles/series/road-racing/2026/4/mustang-gtd-record-time-nurburgring"
+    },
+    {
+      "rank": 17,
+      "manufacturer": "YANGWANG (BYD)",
+      "model": {
+        "ja": "U9 Xtreme",
+        "en": "U9 Xtreme"
+      },
+      "lap_time": "6:59.157",
+      "year": 2025,
+      "note": {
+        "ja": "世界限定30台以下。4モーターEVで電動ハイパーカーとして初めて7分の壁を破った。2025年8月22日記録樹立。",
+        "en": "Limited to no more than 30 units worldwide. A four-motor EV; the first electric hypercar to break the 7-minute barrier. Set on August 22, 2025."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "4モーターAWD(1,200V級プラットフォーム)",
+            "en": "Four-motor AWD (1,200V-class platform)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "約3,000馬力以上(合計2,220kW)",
+            "en": "3,000+ hp combined (2,220 kW total)"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "非公表(4モーター独立トルクベクタリング)",
+            "en": "Not officially published as a single figure (independent torque vectoring across 4 motors)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "非公表",
+            "en": "Not officially disclosed"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "モーター直結×4(AWD)",
+            "en": "Direct-drive per motor x4 (AWD)"
+          }
+        }
+      ],
+      "youtube_url": "https://www.youtube.com/watch?v=5ijer_-uNbA",
+      "source_url": "https://carnewschina.com/2025/09/20/byd-unveiled-the-yangwang-u9-xtreme-achieving-496-22-km-h-a-nurburgring-lap-of-659-157byd-unveils-the-yangwang-u9-xtreme-achieving-496-22-km-h-a-nurburgring-lap-of-659-157/"
+    },
+    {
+      "rank": 18,
+      "manufacturer": "PORSCHE",
+      "model": {
+        "ja": "718 Cayman GT4 RS(Mantheyキット装着)",
+        "en": "718 Cayman GT4 RS (with Manthey Kit)"
+      },
+      "lap_time": "7:03.121",
+      "year": 2023,
+      "note": {
+        "ja": "公証人立ち会いのもとJörg Bergmeister選手が記録樹立、標準GT4 RSを6.179秒更新(公式発表値)。一部情報源では6:58.1という、より速いタイムも見られるが、計測方法・条件の詳細が確認できないため、公式発表の7:03.121を採用。",
+        "en": "Set by Jörg Bergmeister, notary-witnessed, 6.179 seconds faster than the standard GT4 RS (this is the officially announced figure). Some sources cite a faster 6:58.1, but the measurement conditions for that figure could not be confirmed, so the official 7:03.121 is used here."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "4.0L 自然吸気水平対向6気筒(無改造)",
+            "en": "4.0L naturally aspirated flat-6 (unmodified)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "500PS(493馬力)",
+            "en": "500 PS (493 hp)"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "449Nm(331lb-ft)",
+            "en": "331 lb-ft (449 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "約1,415kg(3,120lbs)",
+            "en": "approx. 3,120 lbs (1,415 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "7速PDK(MT設定なし、FR)",
+            "en": "7-speed PDK only (RWD)"
+          }
+        }
+      ],
+      "youtube_url": "https://www.youtube.com/watch?v=SMaQX7MID5I",
+      "source_url": "https://www.nuerburgring.de/news/porsche-718-gt4-rs-setzt-mit-manthey-kit-neue-offizielle-rundenzeit?locale=en"
+    },
+    {
+      "rank": 19,
+      "manufacturer": "RIMAC",
+      "model": {
+        "ja": "ネヴェーラ",
+        "en": "Nevera"
+      },
+      "lap_time": "7:05.298",
+      "year": 2023,
+      "note": {
+        "ja": "世界限定150台。量産EVとして当時最速のニュルブルクリンク記録。2023年8月18日、Martin Kodrić選手のドライブで記録樹立。",
+        "en": "Limited to 150 units worldwide. Was the fastest production-EV Nürburgring record at the time. Set by Martin Kodrić on August 18, 2023."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "4モーターAWD(バッテリー容量120kWh)",
+            "en": "Four-motor AWD (120 kWh battery)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "1,914馬力",
+            "en": "1,914 hp"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "2,360Nm(1,740lb-ft)",
+            "en": "1,740 lb-ft (2,360 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "約2,150kg(4,740lbs)",
+            "en": "approx. 4,740 lbs (2,150 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "モーター直結(前1速/後2速)、AWD",
+            "en": "Direct-drive (1-speed front / 2-speed rear), AWD"
+          }
+        }
+      ],
+      "youtube_url": "https://www.youtube.com/watch?v=L7oRLhYHfRc",
+      "source_url": "https://www.techeblog.com/rimac-nevera-nurburgring-record-electric-production-car/"
+    },
+    {
+      "rank": 20,
+      "manufacturer": "NISSAN",
+      "model": {
+        "ja": "GT-R NISMO(トラックオプションパッケージ装着)",
+        "en": "GT-R Nismo (with track options package)"
+      },
+      "lap_time": "7:08.679",
+      "year": 2020,
+      "note": {
+        "ja": "「N-Attackパッケージ」装着。Michael Krumm選手(NISMOブランドアンバサダー)のドライブで記録樹立、当時の量産車最速記録。",
+        "en": "Fitted with the 'N-Attack Package'. Set by Michael Krumm (NISMO brand ambassador), the fastest volume-production-car record at the time."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "3.8L V6 ツインターボ(VR38DETT)",
+            "en": "3.8L twin-turbocharged V6 (VR38DETT)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "600馬力",
+            "en": "600 hp"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "652Nm(481lb-ft)",
+            "en": "481 lb-ft (652 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "約1,720kg(3,792lbs、N-Attackパッケージで軽量化)",
+            "en": "approx. 3,792 lbs (1,720 kg, lightened with N-Attack package)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "6速デュアルクラッチ(AWD)",
+            "en": "6-speed dual-clutch (AWD)"
+          }
+        }
+      ],
+      "youtube_url": "https://www.youtube.com/watch?v=1VPm3CZiQjc",
+      "source_url": "https://usa.nissannews.com/en-US/videos/krumm-attacks-n-rburgring-in-nissan-nismo-gt-r"
+    },
+    {
+      "rank": 21,
+      "manufacturer": "PORSCHE",
+      "model": {
+        "ja": "718 Cayman GT4 RS(標準、Mantheyキットなし)",
+        "en": "718 Cayman GT4 RS (standard, no Manthey kit)"
+      },
+      "lap_time": "7:09.3",
+      "year": 2021,
+      "note": {
+        "ja": "無改造の標準車。情報源により20.6km区間換算で7:04.51とする表記もあり、若干の揺れがある点に注意。",
+        "en": "Unmodified standard car. Some sources cite 7:04.51 on the older 20.6km-segment measurement standard — treat this as a minor source discrepancy."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "4.0L 自然吸気水平対向6気筒",
+            "en": "4.0L naturally aspirated flat-6"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "500PS(493馬力)",
+            "en": "500 PS (493 hp)"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "449Nm(331lb-ft)",
+            "en": "331 lb-ft (449 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "1,464kg(3,227lbs)",
+            "en": "3,227 lbs (1,464 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "7速PDK(MT設定なし、FR)",
+            "en": "7-speed PDK only (RWD)"
+          }
+        }
+      ],
+      "source_url": "https://www.thedrive.com/news/42806/new-porsche-718-cayman-gt4-rs-laps-nurburgring-quicker-than-last-911-gt3"
+    },
+    {
+      "rank": 22,
+      "manufacturer": "CHEVROLET",
+      "model": {
+        "ja": "コルベット Z06",
+        "en": "Corvette Z06"
+      },
+      "lap_time": "7:11.826",
+      "year": 2025,
+      "note": {
+        "ja": "自然吸気V8。GM車両性能マネージャーAaron Linkがドライブ。",
+        "en": "Naturally aspirated V8. Driven by GM vehicle performance manager Aaron Link."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "5.5L 自然吸気フラットプレーンV8(LT6)",
+            "en": "5.5L naturally aspirated flat-plane-crank V8 (LT6)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "670馬力",
+            "en": "670 hp"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "624Nm(460lb-ft)",
+            "en": "460 lb-ft (624 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "約1,588kg(3,500lbs)",
+            "en": "approx. 3,500 lbs (1,588 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "8速デュアルクラッチ(FR)",
+            "en": "8-speed dual-clutch (RWD)"
+          }
+        }
+      ],
+      "youtube_url": "https://www.youtube.com/watch?v=RNPI5xCwU74",
+      "source_url": "https://nuerburgring.de/news/7-11-826-6-50-763-6-49-275-der-chevrolet-corvette-z06-zr1-und-zr1x-erobern-die-nordschleife-in-rekordzeit?locale=en"
+    },
+    {
+      "manufacturer": "DODGE",
+      "model": {
+        "ja": "バイパー SRT10 ACR",
+        "en": "Viper SRT10 ACR"
+      },
+      "lap_time": "7:12.13",
+      "year": 2011,
+      "note": {
+        "ja": "重要な訂正:このタイムは2016年型ACR(第5世代、VX1型)ではなく、2011年9月に先代(第4世代、ZB型)のViper SRT10 ACRがDominik Farnbacher選手のドライブで樹立した記録。後継の2017年型ACR(第5世代)は7:03.45とさらに更新している。",
+        "en": "Correction from initial sourcing: this time was not set by the 2016 ACR (5th-gen, VX1) but by the previous-generation (4th-gen, ZB) Viper SRT10 ACR, driven by Dominik Farnbacher in September 2011. The later 2017 ACR (5th-gen) went on to run an even faster 7:03.45."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "8.4L 自然吸気V10",
+            "en": "8.4L naturally aspirated V10"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "600馬力",
+            "en": "600 hp"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "759Nm(560lb-ft)",
+            "en": "560 lb-ft (759 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "約1,535kg(3,384lbs)",
+            "en": "approx. 3,384 lbs (1,535 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "6速MT(FR)",
+            "en": "6-speed manual (RWD)"
+          }
+        }
+      ],
+      "source_url": "https://www.prnewswire.com/news-releases/dodge-viper-srt10-acr-reclaims-production-car-lap-record-at-nurburgring-with-71213-130633168.html",
+      "rank": 23
+    },
+    {
+      "rank": 24,
+      "manufacturer": "LEXUS",
+      "model": {
+        "ja": "LFA ニュルブルクリンクパッケージ",
+        "en": "LFA Nürburgring Package"
+      },
+      "lap_time": "7:14.64",
+      "year": 2011,
+      "note": {
+        "ja": "全500台のLFAのうち50台限定の設定だったが、最終的に64台が生産された。当時の量産車最速記録。テストドライバーの飯田章選手が記録樹立。",
+        "en": "Planned as a 50-unit-limited variant of the 500-unit LFA, though 64 were ultimately built. Was the fastest production-car record at the time. Set by test driver Akira Iida."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "4.8L 自然吸気V10",
+            "en": "4.8L naturally aspirated V10"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "571PS(563馬力)",
+            "en": "571 PS (563 hp)"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "480Nm(354lb-ft)",
+            "en": "354 lb-ft (480 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "1,470kg(3,241lbs)",
+            "en": "3,241 lbs (1,470 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "6速AMT(ASG、FR)",
+            "en": "6-speed automated manual (ASG, RWD)"
+          }
+        }
+      ],
+      "youtube_url": "https://www.youtube.com/watch?v=uYYdFHK__xQ",
+      "source_url": "https://blog.lexus.co.uk/lexus-lfa-nurburgring-package-laps-the-nurburgring-track-in-a-record-breaking-7-14/"
+    },
+    {
+      "rank": 25,
+      "manufacturer": "CHEVROLET",
+      "model": {
+        "ja": "カマロ ZL1 1LE",
+        "en": "Camaro ZL1 1LE"
+      },
+      "lap_time": "7:16.04",
+      "year": 2018,
+      "note": {
+        "ja": "歴代カマロ最速のニュルブルクリンク記録。2024年モデルをもって生産終了(北米カマロ全体が2024年に一時生産終了、将来的な復活をGMが示唆)。",
+        "en": "The fastest Nürburgring time of any Camaro ever. Production ended after MY2024 (the Camaro nameplate as a whole paused production in 2024; GM has signaled a future revival)."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "6.2L スーパーチャージドV8(LT4)",
+            "en": "6.2L supercharged V8 (LT4)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "650馬力",
+            "en": "650 hp"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "650lb-ft(881Nm)",
+            "en": "650 lb-ft (881 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "約1,721kg(3,794lbs、ZL1比で軽量化)",
+            "en": "approx. 3,794 lbs (1,721 kg, lighter than the standard ZL1)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "6速MT/10速AT(FR)",
+            "en": "6-speed manual or 10-speed automatic (RWD)"
+          }
+        }
+      ],
+      "youtube_url": "https://www.youtube.com/watch?v=5_xrAMCYlCo",
+      "source_url": "https://www.autoevolution.com/news/2018-chevrolet-camaro-zl1-1le-sets-71604-nurburgring-lap-heres-the-pov-video-118822.html"
+    },
+    {
+      "rank": 26,
+      "manufacturer": "BMW",
+      "model": {
+        "ja": "M4 CSL",
+        "en": "M4 CSL"
+      },
+      "lap_time": "7:18.137",
+      "year": 2022,
+      "note": {
+        "ja": "BMWグループ市販車として歴代最速のニュルブルクリンク記録。世界限定1,000台(完売済み)。",
+        "en": "The fastest Nürburgring time of any BMW Group production car ever. Limited to 1,000 units worldwide (now sold out)."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "3.0L 直列6気筒ツインターボ(S58)",
+            "en": "3.0L twin-turbocharged inline-6 (S58)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "543馬力",
+            "en": "543 hp"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "650Nm(479lb-ft)",
+            "en": "479 lb-ft (650 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "約1,625kg(3,584lbs)",
+            "en": "approx. 3,584 lbs (1,625 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "8速AT(FR)",
+            "en": "8-speed automatic (RWD)"
+          }
+        }
+      ],
+      "youtube_url": "https://www.youtube.com/watch?v=CtSqZOz3sGs",
+      "source_url": "https://www.bmw-m.com/en/topics/magazine-article-pool/bmw-m4-csl-rekord-nurburgring-nordschleife.html"
+    },
+    {
+      "rank": 27,
+      "manufacturer": "BMW",
+      "model": {
+        "ja": "M4 CS",
+        "en": "M4 CS"
+      },
+      "lap_time": "7:21.989",
+      "year": 2024,
+      "note": {
+        "ja": "2026年モデルで設定廃止となり、現在は新規注文不可。",
+        "en": "Dropped from the lineup for MY2026 and no longer orderable."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "3.0L 直列6気筒ツインターボ(S58)",
+            "en": "3.0L twin-turbocharged inline-6 (S58)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "543馬力",
+            "en": "543 hp"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "650Nm(479lb-ft)",
+            "en": "479 lb-ft (650 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "1,770kg(3,902lbs)",
+            "en": "3,902 lbs (1,770 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "8速AT(FR)",
+            "en": "8-speed automatic (RWD)"
+          }
+        }
+      ],
+      "source_url": "https://www.bmwusa.com/vehicles/m-series/bmw-4-series-m-models/bmw-m4-coupe.html"
+    },
+    {
+      "rank": 28,
+      "manufacturer": "BMW",
+      "model": {
+        "ja": "M2 CS",
+        "en": "M2 CS"
+      },
+      "lap_time": "7:25.5",
+      "year": 2025,
+      "note": {
+        "ja": "コンパクトカークラスの記録。2025年4月11日、開発エンジニアJörg Weidingerがドライブし、従来のクラス最速記録を8秒更新。",
+        "en": "A record for the compact-car class. Driven by development engineer Jörg Weidinger on April 11, 2025, beating the previous class-best time by 8 seconds."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "3.0L 直列6気筒ツインターボ(S58)",
+            "en": "3.0L twin-turbocharged inline-6 (S58)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "523馬力",
+            "en": "523 hp"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "649Nm(479lb-ft)",
+            "en": "479 lb-ft (649 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "1,710kg(3,770lbs)",
+            "en": "3,770 lbs (1,710 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "8速AT(MT設定なし、FR)",
+            "en": "8-speed automatic only (RWD)"
+          }
+        }
+      ],
+      "source_url": "https://www.press.bmwgroup.com/usa/article/detail/T0451163EN_US/the-bmw-m2-cs-sets-a-new-record-of-7:25-5-on-the-nuerburgring-nordschleife?language=en_US"
+    },
+    {
+      "rank": 29,
+      "manufacturer": "BMW",
+      "model": {
+        "ja": "M3 CS",
+        "en": "M3 CS"
+      },
+      "lap_time": "7:28.760",
+      "year": 2024,
+      "note": {
+        "ja": "M3 Competitionより約34kg軽量。",
+        "en": "About 34 kg (75 lbs) lighter than the M3 Competition."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "3.0L 直列6気筒ツインターボ(S58)",
+            "en": "3.0L twin-turbocharged inline-6 (S58)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "543馬力",
+            "en": "543 hp"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "650Nm(479lb-ft)",
+            "en": "479 lb-ft (650 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "約1,708kg(3,765lbs)",
+            "en": "approx. 3,765 lbs (1,708 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "8速AT(FR/AWD設定あり)",
+            "en": "8-speed automatic (RWD; AWD available)"
+          }
+        }
+      ],
+      "source_url": "https://www.znmperformance.com/znm-performance-blog/bmw-m3-cs-m4-csl-nurburgring-lap-records/"
+    },
+    {
+      "rank": 30,
+      "manufacturer": "PORSCHE",
+      "model": {
+        "ja": "718 Cayman GT4(標準、非RS)",
+        "en": "718 Cayman GT4 (standard, non-RS)"
+      },
+      "lap_time": "7:32",
+      "year": 2019,
+      "note": {
+        "ja": "GT4 RSの前身にあたる無改造の標準車。",
+        "en": "The unmodified standard car that preceded the GT4 RS."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "4.0L 自然吸気水平対向6気筒",
+            "en": "4.0L naturally aspirated flat-6"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "414馬力",
+            "en": "414 hp"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "420Nm(309lb-ft)",
+            "en": "309 lb-ft (420 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "約1,420kg(3,131lbs)",
+            "en": "approx. 3,131 lbs (1,420 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "6速MT(FR)",
+            "en": "6-speed manual (RWD)"
+          }
+        }
+      ],
+      "source_url": "https://fastestlaps.com/tests/231ahrm4mb7a"
+    },
+    {
+      "rank": 31,
+      "manufacturer": "BMW",
+      "model": {
+        "ja": "M2(標準グレード、G87)",
+        "en": "M2 (standard, G87)"
+      },
+      "lap_time": "7:38.7",
+      "year": 2023,
+      "note": {
+        "ja": "無改造の標準グレード。",
+        "en": "Unmodified standard trim."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "3.0L 直列6気筒ツインターボ(S58)",
+            "en": "3.0L twin-turbocharged inline-6 (S58)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "473馬力",
+            "en": "473 hp"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "550Nm(406lb-ft)",
+            "en": "406 lb-ft (550 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "1,730kg(3,814lbs)",
+            "en": "3,814 lbs (1,730 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "6速MT/8速AT(FR)",
+            "en": "6-speed manual or 8-speed automatic (RWD)"
+          }
+        }
+      ],
+      "source_url": "https://www.bmwusa.com/vehicles/m-series/bmw-2-series-m-models/bmw-m2-coupe.html"
+    },
+    {
+      "rank": 32,
+      "manufacturer": "BMW",
+      "model": {
+        "ja": "M3 Competition xDrive(セダン)",
+        "en": "M3 Competition xDrive (sedan)"
+      },
+      "lap_time": "7:43.65",
+      "year": 2022,
+      "note": {
+        "ja": "4ドアAWDセダンとしての記録。",
+        "en": "The record for the 4-door AWD sedan configuration."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "3.0L 直列6気筒ツインターボ(S58)",
+            "en": "3.0L twin-turbocharged inline-6 (S58)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "523馬力",
+            "en": "523 hp"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "650Nm(479lb-ft)",
+            "en": "479 lb-ft (650 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "1,810kg(3,990lbs)",
+            "en": "3,990 lbs (1,810 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "8速AT(AWD)",
+            "en": "8-speed automatic (AWD)"
+          }
+        }
+      ],
+      "source_url": "https://www.bmwusa.com/vehicles/m-series/m3.html"
+    },
+    {
+      "rank": 33,
+      "manufacturer": "HONDA",
+      "model": {
+        "ja": "シビック タイプR(FL5)",
+        "en": "Civic Type R (FL5)"
+      },
+      "lap_time": "7:44.881",
+      "year": 2023,
+      "note": {
+        "ja": "当時のFF(前輪駆動)車記録(その後さらに更新されている)。2023年3月24日、ホンダ開発チームが記録樹立、ルノー メガーヌRS トロフィーRの記録を上回った。",
+        "en": "The FWD-car record at the time (since surpassed). Set by Honda's development team on March 24, 2023, beating the Renault Mégane RS Trophy-R's record."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "2.0L 直列4気筒ターボ(K20C1)",
+            "en": "2.0L turbocharged inline-4 (K20C1)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "329PS(325馬力、欧州/日本仕様)",
+            "en": "329 PS (325 hp, Europe/Japan spec)"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "420Nm(310lb-ft)",
+            "en": "310 lb-ft (420 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "1,429kg(3,150lbs)",
+            "en": "3,150 lbs (1,429 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "6速MT(FF)",
+            "en": "6-speed manual (FWD)"
+          }
+        }
+      ],
+      "youtube_url": "https://www.youtube.com/watch?v=fFEc_-2c4u8",
+      "source_url": "https://global.honda/en/topics/2023/4_2023-04-20eng.html"
+    },
+    {
+      "rank": 34,
+      "manufacturer": "RENAULT",
+      "model": {
+        "ja": "メガーヌ RS トロフィーR",
+        "en": "Mégane RS Trophy-R"
+      },
+      "lap_time": "7:45.389",
+      "year": 2019,
+      "note": {
+        "ja": "20.832kmフルラップでのタイム(20.6km区間では7:40.1)。限定生産で、2019年当時のFF車記録保持者(2023年のシビック タイプRに更新されるまで)。",
+        "en": "This is the full 20.832km-lap time (7:40.1 on the 20.6km segment). Limited production; held the FWD-car record from 2019 until the 2023 Civic Type R surpassed it."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "1.8L 直列4気筒ターボ",
+            "en": "1.8L turbocharged inline-4"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "300PS(296馬力)",
+            "en": "300 PS (296 hp)"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "400Nm(295lb-ft)",
+            "en": "295 lb-ft (400 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "1,306kg(2,879lbs)",
+            "en": "2,879 lbs (1,306 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "6速MT(FF)",
+            "en": "6-speed manual (FWD)"
+          }
+        }
+      ],
+      "youtube_url": "https://www.youtube.com/watch?v=jLfbxuN75lA",
+      "source_url": "https://media.alpinecars.com/new-megane-rs-trophy-r-record-at-the-nurburgring-for-the-best-performing-model-ever-marketed-by-renault/"
+    },
+    {
+      "rank": 35,
+      "manufacturer": "PORSCHE",
+      "model": {
+        "ja": "718 Cayman S(981型)",
+        "en": "718 Cayman S (981-generation)"
+      },
+      "lap_time": "7:46.7",
+      "year": 2016,
+      "note": {
+        "ja": "718(982型)登場前、自然吸気フラット6を積む981型末期のケイマンによる記録。",
+        "en": "Set by a late-981-generation, naturally aspirated flat-6 Cayman before the turbocharged 718 (982) generation arrived."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "3.4L 自然吸気水平対向6気筒",
+            "en": "3.4L naturally aspirated flat-6"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "325馬力",
+            "en": "325 hp"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "370Nm(273lb-ft)",
+            "en": "273 lb-ft (370 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "約1,345kg(2,965lbs)",
+            "en": "approx. 2,965 lbs (1,345 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "6速MT/7速PDK(FR)",
+            "en": "6-speed manual or 7-speed PDK (RWD)"
+          }
+        }
+      ],
+      "source_url": "https://fastestlaps.com/tests/kch13z58l4bd"
+    },
+    {
+      "rank": 36,
+      "manufacturer": "VOLKSWAGEN",
+      "model": {
+        "ja": "ゴルフ GTI クラブスポーツS",
+        "en": "Golf GTI Clubsport S"
+      },
+      "lap_time": "7:47.19",
+      "year": 2016,
+      "note": {
+        "ja": "限定生産、後席なしの軽量特別仕様。当時のFF車記録。",
+        "en": "Limited production, lightweight special edition with no rear seats. The FWD-car record at the time."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "2.0L 直列4気筒ターボ",
+            "en": "2.0L turbocharged inline-4"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "306馬力",
+            "en": "306 hp"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "380Nm(280lb-ft)",
+            "en": "280 lb-ft (380 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "1,285kg(2,833lbs)",
+            "en": "2,833 lbs (1,285 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "6速MT(FF)",
+            "en": "6-speed manual (FWD)"
+          }
+        }
+      ],
+      "source_url": "https://www.volkswagen-newsroom.com/en/international-driving-presentation-the-new-golf-gti-clubsport-s-2776/record-breaking-lap-of-the-nuerburgring-the-golf-gti-clubsport-s-at-the-green-hell-2790"
+    },
+    {
+      "rank": 37,
+      "manufacturer": "VOLKSWAGEN",
+      "model": {
+        "ja": "ゴルフR「20 Years」",
+        "en": "Golf R '20 Years'"
+      },
+      "lap_time": "7:47.31",
+      "year": 2023,
+      "note": {
+        "ja": "ゴルフR発売20周年記念限定モデル。歴代ゴルフR最速。Benjamin Leuchter選手がドライブ。",
+        "en": "A limited edition marking 20 years of the Golf R. The fastest Golf R ever. Driven by Benjamin Leuchter."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "2.0L 直列4気筒ターボ(EA888)",
+            "en": "2.0L turbocharged inline-4 (EA888)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "333PS(328馬力)",
+            "en": "333 PS (328 hp)"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "約420Nm(310lb-ft)",
+            "en": "approx. 310 lb-ft (420 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "約1,560kg(3,439lbs)",
+            "en": "approx. 3,439 lbs (1,560 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "7速DSG(AWD、4Motion)",
+            "en": "7-speed DSG (AWD, 4Motion)"
+          }
+        }
+      ],
+      "source_url": "https://www.volkswagen-newsroom.com/en/press-releases/the-golf-r-20-years-is-the-fastest-volkswagen-r-ever-on-the-nuerburgring-nordschleife-15124"
+    },
+    {
+      "rank": 38,
+      "manufacturer": "VOLKSWAGEN",
+      "model": {
+        "ja": "ゴルフ GTI クラブスポーツ(標準)",
+        "en": "Golf GTI Clubsport (standard)"
+      },
+      "lap_time": "8:03",
+      "year": 2020,
+      "note": {
+        "ja": "本リストの中で唯一8分を超えるタイムだが、参考情報として掲載。専用の「ニュルブルクリンクモード」を搭載。",
+        "en": "The only entry on this list over 8 minutes, included here for reference. Features a dedicated 'Nürburgring mode' driving profile."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "2.0L 直列4気筒ターボ",
+            "en": "2.0L turbocharged inline-4"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "300PS(296馬力)",
+            "en": "300 PS (296 hp)"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "400Nm(295lb-ft)",
+            "en": "295 lb-ft (400 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "1,471kg(3,243lbs)",
+            "en": "3,243 lbs (1,471 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "7速DSG(FF)",
+            "en": "7-speed DSG (FWD)"
+          }
+        }
+      ],
+      "source_url": "https://fastestlaps.com/tests/sgusir5z5z0k"
+    },
+    {
+      "rank": 39,
+      "manufacturer": "PORSCHE",
+      "model": {
+        "ja": "718 Cayman GTS 4.0",
+        "en": "718 Cayman GTS 4.0"
+      },
+      "lap_time": "非公開/N/A",
+      "year": 2019,
+      "note": {
+        "ja": "ノルドシュライフェでの公式ラップタイムは確認できなかった。確認できたのは、より短い「GPスプリント」コース(ノルドシュライフェとは別レイアウト)での1:38.8というタイムのみ。捏造を避けるため、順位を付けず参考情報としてリスト末尾に掲載。",
+        "en": "No official Nordschleife lap time could be confirmed for this trim. The only figure found was a 1:38.8 time on the separate, shorter 'GP-Sprint' circuit (a different layout from the Nordschleife). Listed here at the end for reference, without a fabricated ranking, to avoid inventing data."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "4.0L 自然吸気水平対向6気筒",
+            "en": "4.0L naturally aspirated flat-6"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "394馬力",
+            "en": "394 hp"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "420Nm(310lb-ft)",
+            "en": "310 lb-ft (420 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "1,470kg(3,241lbs)",
+            "en": "3,241 lbs (1,470 kg)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "6速MT/7速PDK(FR)",
+            "en": "6-speed manual or 7-speed PDK (RWD)"
+          }
+        }
+      ],
+      "source_url": "https://fastestlaps.com/tests/szne8nmv3ogj"
+    },
+    {
+      "rank": 40,
+      "manufacturer": "FORD",
+      "model": {
+        "ja": "マスタング ダークホース(標準、非GTD)",
+        "en": "Mustang Dark Horse (standard, non-GTD)"
+      },
+      "lap_time": "非公開/N/A",
+      "year": 2024,
+      "note": {
+        "ja": "ノルドシュライフェでの公式ラップタイムは確認できなかった(非公式の推定値のみ複数存在)。マスタングGTD(本リスト16位、6:57.685)とは別のトリムであり、混同注意。捏造を避けるため、順位を付けず参考情報としてリスト末尾に掲載。",
+        "en": "No official Nordschleife lap time could be confirmed (only unofficial estimates exist). Not to be confused with the Mustang GTD (rank 16 on this list, 6:57.685), a separate, far more track-focused model. Listed here at the end for reference, without a fabricated ranking, to avoid inventing data."
+      },
+      "is_supra": false,
+      "specs": [
+        {
+          "key": "engine",
+          "value": {
+            "ja": "5.0L 自然吸気V8(Gen 4 Coyote)",
+            "en": "5.0L naturally aspirated V8 (Gen 4 Coyote)"
+          }
+        },
+        {
+          "key": "power",
+          "value": {
+            "ja": "500馬力",
+            "en": "500 hp"
+          }
+        },
+        {
+          "key": "torque",
+          "value": {
+            "ja": "567Nm(418lb-ft)",
+            "en": "418 lb-ft (567 Nm)"
+          }
+        },
+        {
+          "key": "weight",
+          "value": {
+            "ja": "1,800kg(3,968lbs、MT仕様)",
+            "en": "3,968 lbs (1,800 kg, manual)"
+          }
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "ja": "6速MT/10速AT(FR)",
+            "en": "6-speed manual or 10-speed automatic (RWD)"
+          }
+        }
+      ],
+      "source_url": "https://www.mustang7g.com/base-dark-horse-mustang-laps-the-nurburgring/"
+    }
+  ]
+}
