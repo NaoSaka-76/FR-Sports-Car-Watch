@@ -1,31 +1,57 @@
 {
-  "updated": "2026-08-22",
+  "updated": "2026-08-23",
   "note": {
-    "ja": "本カタログに掲載する価格・スペックは各社公表情報等をもとにした参考値であり、市場・年式・グレード・為替レートにより変動します。掲載写真はすべてWikimedia Commonsで公開されているCCライセンス(CC BY / CC BY-SA)画像を使用しています。",
-    "en": "Prices and specifications in this catalog are reference values based on publicly available manufacturer/dealer information and vary by market, model year, trim, and exchange rate; all photos are CC-licensed (CC BY / CC BY-SA) images sourced from Wikimedia Commons."
+    "ja": "本カタログに掲載する価格・スペックは各社公表情報等をもとにした参考値であり、市場・年式・グレード・為替レートにより変動します。各車は最上位の特別/パフォーマンス仕様から最廉価グレードまでのトリム範囲で掲載しています。掲載写真はすべてWikimedia Commonsで公開されているCCライセンス(CC BY / CC BY-SA)画像を使用しています。",
+    "en": "Prices and specifications in this catalog are reference values based on publicly available manufacturer/dealer information and vary by market, model year, trim, and exchange rate. Each car is shown across a trim range from its top special/performance edition down to its cheapest base trim; all photos are CC-licensed (CC BY / CC BY-SA) images sourced from Wikimedia Commons."
   },
   "cars": [
     {
       "manufacturer": "TOYOTA",
-      "model": "GR Supra 3.0",
+      "model": "GR Supra",
       "is_supra": true,
       "description": {
-        "ja": "GRスープラは、BMWとの共同開発によって復活した第5世代(A90/A91)のFRスポーツカー。直列6気筒ターボエンジンと軽量な専用ボディを組み合わせ、本カタログにおける価格・性能の基準点となる存在。",
-        "en": "The GR Supra is the fifth-generation (A90/A91) FR sports coupe revived through joint development with BMW. Its turbocharged inline-six and lightweight bespoke chassis make it the benchmark for price and performance in this catalog."
+        "ja": "GRスープラは、BMWとの共同開発によって復活した第5世代(A90/A91)のFRスポーツカー。直列6気筒ターボエンジンと軽量な専用ボディを組み合わせ、本カタログにおける価格・性能の基準点となる存在。現行世代は2026年5月に生産終了予定で、有終の美を飾る世界限定1,500台の特別仕様「MkV Final Edition」が最上位グレードとして設定されている。",
+        "en": "The GR Supra is the fifth-generation (A90/A91) FR sports coupe revived through joint development with BMW. Its turbocharged inline-six and lightweight bespoke chassis make it the benchmark for price and performance in this catalog. This generation is slated to end production in May 2026, capped by the 1,500-unit-worldwide 'MkV Final Edition' as its send-off flagship trim."
       },
-      "price": {
-        "ja": "59,495ドル(3.0 米国参考価格。グレード・地域により変動)",
-        "en": "$59,495 USD (US reference price for the 3.0 base trim; varies by trim/market)"
-      },
-      "specs": [
-        { "key": "engine", "value": { "ja": "3.0L 直列6気筒ターボ(B58)", "en": "3.0L turbocharged inline-6 (B58)" } },
-        { "key": "power", "value": { "ja": "382馬力", "en": "382 hp" } },
-        { "key": "torque", "value": { "ja": "500Nm(368lb-ft)", "en": "368 lb-ft (500 Nm)" } },
-        { "key": "zero_to_60", "value": { "ja": "0-100km/h 3.9秒(8AT)", "en": "0-60mph 3.9 sec (8AT)" } },
-        { "key": "weight", "value": { "ja": "1,548kg(3,411lbs)", "en": "3,411 lbs (1,548 kg)" } },
-        { "key": "transmission", "value": { "ja": "8速AT/6速MT(FR)", "en": "8-speed automatic or 6-speed manual (RWD)" } }
+      "trims": [
+        {
+          "label": { "ja": "GR Supra MkV Final Edition(有終の特別仕様)", "en": "GR Supra MkV Final Edition (send-off special edition)" },
+          "price": { "ja": "69,085ドル(米国参考価格)", "en": "$69,085 USD (US reference price)" },
+          "production_status": { "ja": "世界限定1,500台の特別仕様。2026年5月の現行世代生産終了に合わせた最終モデルとして現行受注中(完売次第終了)。", "en": "Limited to 1,500 units worldwide. Currently orderable as the send-off special edition tied to the end of this generation's production in May 2026 (until sold out)." },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.0L 直列6気筒ターボ(B58)", "en": "3.0L turbocharged inline-6 (B58)" } },
+            { "key": "power", "value": { "ja": "382馬力", "en": "382 hp" } },
+            { "key": "torque", "value": { "ja": "500Nm(368lb-ft)", "en": "368 lb-ft (500 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 3.9秒(8AT)/4.1秒(6MT)", "en": "0-60mph 3.9 sec (8AT) / 4.1 sec (6MT)" } },
+            { "key": "weight", "value": { "ja": "1,548kg(3,411lbs、大型ブレンボブレーキ装着で若干増)", "en": "3,411 lbs (1,548 kg, slightly more with the larger Brembo brakes)" } },
+            { "key": "transmission", "value": { "ja": "8速AT/6速MT(FR)", "en": "8-speed automatic or 6-speed manual (RWD)" } }
+          ]
+        },
+        {
+          "label": { "ja": "GR Supra 3.0 Premium", "en": "GR Supra 3.0 Premium" },
+          "price": { "ja": "62,645ドル(米国参考価格)", "en": "$62,645 USD (US reference price)" },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.0L 直列6気筒ターボ(B58)", "en": "3.0L turbocharged inline-6 (B58)" } },
+            { "key": "power", "value": { "ja": "382馬力", "en": "382 hp" } },
+            { "key": "torque", "value": { "ja": "500Nm(368lb-ft)", "en": "368 lb-ft (500 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 3.9秒(8AT)", "en": "0-60mph 3.9 sec (8AT)" } },
+            { "key": "weight", "value": { "ja": "1,548kg(3,411lbs)", "en": "3,411 lbs (1,548 kg)" } },
+            { "key": "transmission", "value": { "ja": "8速AT/6速MT(FR)", "en": "8-speed automatic or 6-speed manual (RWD)" } }
+          ]
+        },
+        {
+          "label": { "ja": "GR Supra 3.0(標準グレード)", "en": "GR Supra 3.0 (base trim)" },
+          "price": { "ja": "59,495ドル(米国参考価格)", "en": "$59,495 USD (US reference price)" },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.0L 直列6気筒ターボ(B58)", "en": "3.0L turbocharged inline-6 (B58)" } },
+            { "key": "power", "value": { "ja": "382馬力", "en": "382 hp" } },
+            { "key": "torque", "value": { "ja": "500Nm(368lb-ft)", "en": "368 lb-ft (500 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 3.9秒(8AT)", "en": "0-60mph 3.9 sec (8AT)" } },
+            { "key": "weight", "value": { "ja": "1,548kg(3,411lbs)", "en": "3,411 lbs (1,548 kg)" } },
+            { "key": "transmission", "value": { "ja": "8速AT/6速MT(FR)", "en": "8-speed automatic or 6-speed manual (RWD)" } }
+          ]
+        }
       ],
-      "production_status": { "ja": "現行生産中", "en": "In production" },
       "official_url": "https://www.toyota.com/grsupra/",
       "photo": {
         "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Toyota_Supra_GR_%282022%29_%2852575036232%29.jpg/960px-Toyota_Supra_GR_%282022%29_%2852575036232%29.jpg",
@@ -36,25 +62,75 @@
     },
     {
       "manufacturer": "PORSCHE",
-      "model": "911 Carrera",
+      "model": "911",
       "is_supra": false,
       "description": {
-        "ja": "ポルシェを象徴するリアエンジンスポーツカー。エントリーグレードのCarreraでもスープラのほぼ倍の価格帯に入るが、精密なハンドリングとブランド価値で、FRスポーツカーの一つの到達点として位置づけられる。",
-        "en": "Porsche's iconic rear-engine sports car. Even the entry-level Carrera sits at nearly double the Supra's price, but its precision handling and brand cachet position it as a reference point above the Supra's segment."
+        "ja": "ポルシェを象徴するリアエンジンスポーツカー。エントリーグレードのCarreraでもスープラのほぼ倍の価格帯に入るが、GTデパートメントが手がける最上位のGT3 RSまで含めると価格・性能レンジは非常に広い。精密なハンドリングとブランド価値で、FRスポーツカーの一つの到達点として位置づけられる。",
+        "en": "Porsche's iconic rear-engine sports car. Even the entry-level Carrera sits at nearly double the Supra's price, and the range extends much further upward to the GT department's halo GT3 RS. Its precision handling and brand cachet position it as a reference point above the Supra's segment."
       },
-      "price": {
-        "ja": "135,500ドル(2026年型 ベースCarreraクーペ 米国参考価格)",
-        "en": "$135,500 USD (2026 MY base Carrera coupe, US reference price)"
-      },
-      "specs": [
-        { "key": "engine", "value": { "ja": "3.0L 水平対向6気筒ツインターボ", "en": "3.0L twin-turbocharged flat-6" } },
-        { "key": "power", "value": { "ja": "388馬力", "en": "388 hp" } },
-        { "key": "torque", "value": { "ja": "450Nm(331lb-ft)", "en": "331 lb-ft (450 Nm)" } },
-        { "key": "zero_to_60", "value": { "ja": "0-100km/h 約4.0秒(PDK)", "en": "0-60mph approx. 4.0 sec (PDK)" } },
-        { "key": "weight", "value": { "ja": "1,516kg(3,342lbs)", "en": "3,342 lbs (1,516 kg)" } },
-        { "key": "transmission", "value": { "ja": "8速PDK/7速MT(FR、Carrera 4/4SはAWD設定あり)", "en": "8-speed PDK or 7-speed manual (RWD; AWD available on Carrera 4/4S)" } }
+      "trims": [
+        {
+          "label": { "ja": "911 GT3 RS(最上位パフォーマンス仕様)", "en": "911 GT3 RS (top performance trim)" },
+          "price": { "ja": "約250,000ドル(米国参考価格)", "en": "approx. $250,000 USD (US reference price)" },
+          "production_status": { "ja": "現行生産中だが、ディーラー割当制のため新規オーダーは事実上ほぼ受付が困難な状況。", "en": "In production, but allocated through dealers — placing a new order is effectively very difficult." },
+          "specs": [
+            { "key": "engine", "value": { "ja": "4.0L 自然吸気水平対向6気筒", "en": "4.0L naturally aspirated flat-6" } },
+            { "key": "power", "value": { "ja": "518馬力", "en": "518 hp" } },
+            { "key": "torque", "value": { "ja": "464Nm(342lb-ft)", "en": "342 lb-ft (464 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 3.0秒", "en": "0-60mph 3.0 sec" } },
+            { "key": "weight", "value": { "ja": "1,483kg(3,268lbs)", "en": "3,268 lbs (1,483 kg)" } },
+            { "key": "transmission", "value": { "ja": "7速PDK", "en": "7-speed PDK" } }
+          ]
+        },
+        {
+          "label": { "ja": "911 Turbo S(最強AWDグレード)", "en": "911 Turbo S (top AWD trim)" },
+          "price": { "ja": "270,300ドル(米国参考価格)", "en": "$270,300 USD (US reference price)" },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.6L ツインターボ水平対向6気筒(Tハイブリッド)", "en": "3.6L twin-turbocharged flat-6 with T-Hybrid electric assist" } },
+            { "key": "power", "value": { "ja": "701馬力", "en": "701 hp" } },
+            { "key": "torque", "value": { "ja": "800Nm(590lb-ft)", "en": "590 lb-ft (800 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 2.4秒", "en": "0-60mph 2.4 sec" } },
+            { "key": "weight", "value": { "ja": "1,737kg(3,829lbs)", "en": "3,829 lbs (1,737 kg)" } },
+            { "key": "transmission", "value": { "ja": "8速PDK(AWD)", "en": "8-speed PDK (AWD)" } }
+          ]
+        },
+        {
+          "label": { "ja": "911 GT3(NAサウンドのGTグレード)", "en": "911 GT3 (naturally aspirated GT trim)" },
+          "price": { "ja": "235,800ドル(米国参考価格)", "en": "$235,800 USD (US reference price)" },
+          "specs": [
+            { "key": "engine", "value": { "ja": "4.0L 自然吸気水平対向6気筒", "en": "4.0L naturally aspirated flat-6" } },
+            { "key": "power", "value": { "ja": "502馬力", "en": "502 hp" } },
+            { "key": "torque", "value": { "ja": "437Nm(322lb-ft)", "en": "322 lb-ft (437 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 3.2秒", "en": "0-60mph 3.2 sec" } },
+            { "key": "weight", "value": { "ja": "1,487kg(3,278lbs)", "en": "3,278 lbs (1,487 kg)" } },
+            { "key": "transmission", "value": { "ja": "6速MT/7速PDK", "en": "6-speed manual or 7-speed PDK" } }
+          ]
+        },
+        {
+          "label": { "ja": "911 Carrera S", "en": "911 Carrera S" },
+          "price": { "ja": "156,200ドル(米国参考価格)", "en": "$156,200 USD (US reference price)" },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.0L 水平対向6気筒ツインターボ", "en": "3.0L twin-turbocharged flat-6" } },
+            { "key": "power", "value": { "ja": "473馬力", "en": "473 hp" } },
+            { "key": "torque", "value": { "ja": "529Nm(390lb-ft)", "en": "390 lb-ft (529 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 3.1秒(PDK)", "en": "0-60mph 3.1 sec (PDK)" } },
+            { "key": "weight", "value": { "ja": "1,553kg(3,424lbs)", "en": "3,424 lbs (1,553 kg)" } },
+            { "key": "transmission", "value": { "ja": "8速PDK/7速MT", "en": "8-speed PDK or 7-speed manual" } }
+          ]
+        },
+        {
+          "label": { "ja": "911 Carrera(標準グレード)", "en": "911 Carrera (base trim)" },
+          "price": { "ja": "135,500ドル(2026年型 ベースCarreraクーペ 米国参考価格)", "en": "$135,500 USD (2026 MY base Carrera coupe, US reference price)" },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.0L 水平対向6気筒ツインターボ", "en": "3.0L twin-turbocharged flat-6" } },
+            { "key": "power", "value": { "ja": "388馬力", "en": "388 hp" } },
+            { "key": "torque", "value": { "ja": "450Nm(331lb-ft)", "en": "331 lb-ft (450 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 3.7秒(PDK)", "en": "0-60mph 3.7 sec (PDK)" } },
+            { "key": "weight", "value": { "ja": "1,516kg(3,342lbs)", "en": "3,342 lbs (1,516 kg)" } },
+            { "key": "transmission", "value": { "ja": "8速PDK/7速MT(FR、Carrera 4/4SはAWD設定あり)", "en": "8-speed PDK or 7-speed manual (RWD; AWD available on Carrera 4/4S)" } }
+          ]
+        }
       ],
-      "production_status": { "ja": "現行生産中", "en": "In production" },
       "official_url": "https://www.porsche.com/usa/models/911/911-models/carrera/",
       "photo": {
         "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Porsche_992_Carrera_S_coupe_IMG_5838.jpg/960px-Porsche_992_Carrera_S_coupe_IMG_5838.jpg",
@@ -68,25 +144,63 @@
       "model": "718 Cayman",
       "is_supra": false,
       "description": {
-        "ja": "ミッドシップレイアウトを持つポルシェのコンパクトスポーツカー。極めて評価の高いハンドリングでスープラの直接的なライバルとされてきたが、2025年10月にガソリンモデルの生産を終了しており、現在は新車での入手が事実上困難な状況にある。",
-        "en": "Porsche's compact mid-engine sports car, long regarded as one of the Supra's closest handling rivals thanks to its acclaimed dynamics. However, gasoline-engine production ended in October 2025, making it effectively unavailable to order new today."
+        "ja": "ミッドシップレイアウトを持つポルシェのコンパクトスポーツカー。極めて評価の高いハンドリングでスープラの直接的なライバルとされてきたが、2025年10月にガソリンモデルの生産を終了し、新規受注も停止済み。電動後継モデルは開発中止(延期)が報じられており、内燃機関モデルの生産再開の可能性も報道されているが、後継の方向性は2026年8月時点で未確定。本カタログには生産終了直前の最終ラインナップ(主に2025年型)を掲載する。",
+        "en": "Porsche's compact mid-engine sports car, long regarded as one of the Supra's closest handling rivals thanks to its acclaimed dynamics. Gasoline-engine production ended in October 2025 and Porsche has stopped taking new orders. A planned electric successor has reportedly been cancelled/paused, and there are reports Porsche may resume ICE production instead, but the path forward remains unconfirmed as of this research (August 2026). This catalog lists the final lineup (mostly 2025 MY) shortly before production ended."
       },
-      "price": {
-        "ja": "74,795ドル(2025年型ベースグレード、生産終了直前時点の参考価格)",
-        "en": "$74,795 USD (2025 MY base trim, reference price shortly before production ended)"
-      },
-      "specs": [
-        { "key": "engine", "value": { "ja": "2.0L 水平対向4気筒ターボ", "en": "2.0L turbocharged flat-4" } },
-        { "key": "power", "value": { "ja": "300馬力", "en": "300 hp" } },
-        { "key": "torque", "value": { "ja": "380Nm(280lb-ft)", "en": "280 lb-ft (380 Nm)" } },
-        { "key": "zero_to_60", "value": { "ja": "0-100km/h 4.7秒", "en": "0-60mph 4.7 sec" } },
-        { "key": "weight", "value": { "ja": "1,408kg(3,104lbs)", "en": "3,104 lbs (1,408 kg)" } },
-        { "key": "transmission", "value": { "ja": "6速MT/7速PDK(FR、ミッドシップ)", "en": "6-speed manual or 7-speed PDK (RWD, mid-engine)" } }
+      "trims": [
+        {
+          "label": { "ja": "718 Cayman GT4 RS(最終ラインナップの最上位)", "en": "718 Cayman GT4 RS (top trim of the final lineup)" },
+          "price": { "ja": "約166,195ドル(2025年型、生産終了直前の参考価格)", "en": "approx. $166,195 USD (2025 MY, reference price shortly before production ended)" },
+          "production_status": { "ja": "2025年10月のガソリンモデル生産終了に伴い新規受注は終了。生産終了前から需要超過でディーラー在庫は僅少だった。", "en": "Orders closed along with the end of gasoline production in October 2025; even before then, dealer allocations were extremely scarce due to demand far outstripping supply." },
+          "specs": [
+            { "key": "engine", "value": { "ja": "4.0L 自然吸気水平対向6気筒", "en": "4.0L naturally aspirated flat-6" } },
+            { "key": "power", "value": { "ja": "493馬力", "en": "493 hp" } },
+            { "key": "torque", "value": { "ja": "449Nm(331lb-ft)", "en": "331 lb-ft (449 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 3.4秒", "en": "0-60mph 3.4 sec" } },
+            { "key": "weight", "value": { "ja": "1,464kg(3,227lbs)", "en": "3,227 lbs (1,464 kg)" } },
+            { "key": "transmission", "value": { "ja": "7速PDK(MT設定なし)", "en": "7-speed PDK only" } }
+          ]
+        },
+        {
+          "label": { "ja": "718 Cayman GTS 4.0", "en": "718 Cayman GTS 4.0" },
+          "price": { "ja": "約101,695ドル(2025年型、生産終了直前の参考価格)", "en": "approx. $101,695 USD (2025 MY, reference price shortly before production ended)" },
+          "production_status": { "ja": "2025年10月にガソリンモデルの生産を終了し、新規受注は終了済み。", "en": "Gasoline production ended in October 2025; no longer available to order new." },
+          "specs": [
+            { "key": "engine", "value": { "ja": "4.0L 自然吸気水平対向6気筒", "en": "4.0L naturally aspirated flat-6" } },
+            { "key": "power", "value": { "ja": "394馬力", "en": "394 hp" } },
+            { "key": "torque", "value": { "ja": "420Nm(310lb-ft)", "en": "310 lb-ft (420 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 3.8秒(PDK)/4.3秒(MT)", "en": "0-60mph 3.8 sec (PDK) / 4.3 sec (manual)" } },
+            { "key": "weight", "value": { "ja": "1,470kg(3,241lbs)", "en": "3,241 lbs (1,470 kg)" } },
+            { "key": "transmission", "value": { "ja": "6速MT/7速PDK", "en": "6-speed manual or 7-speed PDK" } }
+          ]
+        },
+        {
+          "label": { "ja": "718 Cayman S", "en": "718 Cayman S" },
+          "price": { "ja": "約86,795ドル(2025年型、生産終了直前の参考価格)", "en": "approx. $86,795 USD (2025 MY, reference price shortly before production ended)" },
+          "production_status": { "ja": "2025年10月にガソリンモデルの生産を終了し、新規受注は終了済み。", "en": "Gasoline production ended in October 2025; no longer available to order new." },
+          "specs": [
+            { "key": "engine", "value": { "ja": "2.5L ターボ水平対向4気筒", "en": "2.5L turbocharged flat-4" } },
+            { "key": "power", "value": { "ja": "350馬力", "en": "350 hp" } },
+            { "key": "torque", "value": { "ja": "419Nm(309lb-ft)", "en": "309 lb-ft (419 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 4.2秒", "en": "0-60mph 4.2 sec" } },
+            { "key": "weight", "value": { "ja": "約1,430kg(3,150lbs、推定値)", "en": "approx. 3,150 lbs (1,430 kg, estimated)" } },
+            { "key": "transmission", "value": { "ja": "6速MT/7速PDK", "en": "6-speed manual or 7-speed PDK" } }
+          ]
+        },
+        {
+          "label": { "ja": "718 Cayman(標準グレード、最終ラインナップの最廉価)", "en": "718 Cayman (base trim, cheapest in the final lineup)" },
+          "price": { "ja": "74,795ドル(2025年型、生産終了直前の参考価格)", "en": "$74,795 USD (2025 MY, reference price shortly before production ended)" },
+          "production_status": { "ja": "2025年10月にガソリンモデルの生産を終了し、新規受注は終了済み。", "en": "Gasoline production ended in October 2025; no longer available to order new." },
+          "specs": [
+            { "key": "engine", "value": { "ja": "2.0L ターボ水平対向4気筒", "en": "2.0L turbocharged flat-4" } },
+            { "key": "power", "value": { "ja": "300馬力", "en": "300 hp" } },
+            { "key": "torque", "value": { "ja": "380Nm(280lb-ft)", "en": "280 lb-ft (380 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 4.7秒", "en": "0-60mph 4.7 sec" } },
+            { "key": "weight", "value": { "ja": "1,408kg(3,104lbs)", "en": "3,104 lbs (1,408 kg)" } },
+            { "key": "transmission", "value": { "ja": "6速MT/7速PDK", "en": "6-speed manual or 7-speed PDK" } }
+          ]
+        }
       ],
-      "production_status": {
-        "ja": "2025年10月にガソリン(内燃機関)モデルの生産を終了し、新規受注も停止済み。電動後継モデルは開発中止(延期)が報じられており、内燃機関モデルの生産再開の可能性も報道されているが、後継の方向性は2026年8月時点で未確定。",
-        "en": "Gasoline (ICE) production ended in October 2025 and Porsche has stopped taking new orders. A planned electric successor has reportedly been cancelled/paused, and there are reports Porsche may resume ICE production instead, but the path forward remains unconfirmed as of this research (August 2026)."
-      },
       "official_url": "https://www.porsche.com/usa/models/718/",
       "photo": {
         "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/2018_Porsche_718_Cayman.jpg/960px-2018_Porsche_718_Cayman.jpg",
@@ -97,25 +211,64 @@
     },
     {
       "manufacturer": "CHEVROLET",
-      "model": "Corvette Stingray",
+      "model": "Corvette",
       "is_supra": false,
       "description": {
-        "ja": "ミッドシップ化した第8世代コルベット。6.2L自然吸気V8で490馬力を発生し、スープラを大きくは上回らない価格帯でスーパーカー的な加速性能を提供する、コストパフォーマンスの代表格。",
-        "en": "The mid-engine eighth-generation Corvette pairs a 6.2L naturally aspirated V8 making 490 hp with supercar-like acceleration, at a price not dramatically above the Supra's — a benchmark for value performance."
+        "ja": "ミッドシップ化した第8世代コルベット。ベースのStingrayでもスープラを大きくは上回らない価格帯でスーパーカー的な加速性能を提供する一方、ハイブリッドAWDの最上位ZR1Xまで含めると価格・性能レンジはスーパーカー領域まで広がる、コストパフォーマンスの代表格。",
+        "en": "The mid-engine eighth-generation Corvette spans from the value-oriented Stingray — which offers supercar-like acceleration at a price not dramatically above the Supra's — up to the hybrid-AWD ZR1X flagship, which reaches full supercar pricing and performance."
       },
-      "price": {
-        "ja": "76,635ドル(1LTクーペ 米国参考価格)",
-        "en": "$76,635 USD (1LT coupe, US reference price)"
-      },
-      "specs": [
-        { "key": "engine", "value": { "ja": "6.2L V8 自然吸気(LT2)", "en": "6.2L naturally aspirated V8 (LT2)" } },
-        { "key": "power", "value": { "ja": "490馬力(Z51パッケージ装着時495馬力)", "en": "490 hp (495 hp with Z51 performance exhaust)" } },
-        { "key": "torque", "value": { "ja": "630Nm(465lb-ft)", "en": "465 lb-ft (630 Nm)" } },
-        { "key": "zero_to_60", "value": { "ja": "0-100km/h 2.9秒(Z51パッケージ装着時)", "en": "0-60mph 2.9 sec (with Z51 Performance Package)" } },
-        { "key": "weight", "value": { "ja": "1,527kg(3,366lbs、クーペ)", "en": "3,366 lbs (1,527 kg, coupe)" } },
-        { "key": "transmission", "value": { "ja": "8速デュアルクラッチ(FR、ミッドシップ)", "en": "8-speed dual-clutch (RWD, mid-engine)" } }
+      "trims": [
+        {
+          "label": { "ja": "Corvette ZR1X(AWDハイブリッド最上位)", "en": "Corvette ZR1X (top AWD hybrid trim)" },
+          "price": { "ja": "205,400ドル〜(クーペ、米国参考価格)", "en": "from $205,400 USD (coupe, US reference price)" },
+          "production_status": { "ja": "2026年型として現行受注中(需要により納期変動)。", "en": "Currently orderable as a 2026 model (lead times vary with demand)." },
+          "specs": [
+            { "key": "engine", "value": { "ja": "5.5L ツインターボV8+フロントeモーター(AWDハイブリッド、LT7)", "en": "5.5L twin-turbocharged V8 + front e-motor (AWD hybrid, LT7)" } },
+            { "key": "power", "value": { "ja": "1,250馬力(V8 1,064馬力+モーター186馬力)", "en": "1,250 hp combined (1,064 hp V8 + 186 hp motor)" } },
+            { "key": "torque", "value": { "ja": "973lb-ft", "en": "973 lb-ft" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 約1.9秒", "en": "approx. 0-60mph 1.9 sec" } },
+            { "key": "weight", "value": { "ja": "約1,860kg(4,100lbs)", "en": "approx. 4,100 lbs (1,860 kg)" } },
+            { "key": "transmission", "value": { "ja": "8速デュアルクラッチ(後輪)+eモーター(前輪、AWD)", "en": "8-speed dual-clutch (rear) + front e-motor (AWD)" } }
+          ]
+        },
+        {
+          "label": { "ja": "Corvette ZR1", "en": "Corvette ZR1" },
+          "price": { "ja": "180,400ドル(クーペ、米国参考価格)", "en": "$180,400 USD (coupe, US reference price)" },
+          "production_status": { "ja": "生産中だが部品供給制約により生産が一時停滞しており、納期は不透明。", "en": "In production, but supply constraints on components have periodically slowed output, so delivery timing is uncertain." },
+          "specs": [
+            { "key": "engine", "value": { "ja": "5.5L ツインターボV8(LT7)", "en": "5.5L twin-turbocharged V8 (LT7)" } },
+            { "key": "power", "value": { "ja": "1,064馬力", "en": "1,064 hp" } },
+            { "key": "torque", "value": { "ja": "828lb-ft", "en": "828 lb-ft" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 2.3秒(ZTKパッケージ装着時)", "en": "0-60mph 2.3 sec (with ZTK package)" } },
+            { "key": "weight", "value": { "ja": "約1,665kg(3,670lbs、乾燥重量)", "en": "approx. 3,670 lbs (1,665 kg, dry weight)" } },
+            { "key": "transmission", "value": { "ja": "8速デュアルクラッチ", "en": "8-speed dual-clutch" } }
+          ]
+        },
+        {
+          "label": { "ja": "Corvette Z06", "en": "Corvette Z06" },
+          "price": { "ja": "117,700ドル(クーペ、米国参考価格)", "en": "$117,700 USD (coupe, US reference price)" },
+          "specs": [
+            { "key": "engine", "value": { "ja": "5.5L 自然吸気フラットプレーンV8(LT6)", "en": "5.5L naturally aspirated flat-plane-crank V8 (LT6)" } },
+            { "key": "power", "value": { "ja": "670馬力", "en": "670 hp" } },
+            { "key": "torque", "value": { "ja": "460lb-ft", "en": "460 lb-ft" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 約2.6秒", "en": "approx. 0-60mph 2.6 sec" } },
+            { "key": "weight", "value": { "ja": "約1,588kg(3,500lbs)", "en": "approx. 3,500 lbs (1,588 kg)" } },
+            { "key": "transmission", "value": { "ja": "8速デュアルクラッチ", "en": "8-speed dual-clutch" } }
+          ]
+        },
+        {
+          "label": { "ja": "Corvette Stingray(標準グレード)", "en": "Corvette Stingray (base trim)" },
+          "price": { "ja": "70,000ドル〜(1LTクーペ、目的地諸費用別、米国参考価格)", "en": "from $70,000 USD (1LT coupe, excl. destination fee, US reference price)" },
+          "specs": [
+            { "key": "engine", "value": { "ja": "6.2L V8 自然吸気(LT2)", "en": "6.2L naturally aspirated V8 (LT2)" } },
+            { "key": "power", "value": { "ja": "490馬力(Z51パッケージ装着時495馬力)", "en": "490 hp (495 hp with Z51 performance exhaust)" } },
+            { "key": "torque", "value": { "ja": "630Nm(465lb-ft)", "en": "465 lb-ft (630 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 2.9秒(Z51パッケージ装着時)", "en": "0-60mph 2.9 sec (with Z51 Performance Package)" } },
+            { "key": "weight", "value": { "ja": "1,527kg(3,366lbs、クーペ)", "en": "3,366 lbs (1,527 kg, coupe)" } },
+            { "key": "transmission", "value": { "ja": "8速デュアルクラッチ(FR、ミッドシップ)", "en": "8-speed dual-clutch (RWD, mid-engine)" } }
+          ]
+        }
       ],
-      "production_status": { "ja": "現行生産中", "en": "In production" },
       "official_url": "https://www.chevrolet.com/performance/corvette/stingray",
       "photo": {
         "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/2023_Chevrolet_Corvette_C8_Stingray_LC24.jpg/960px-2023_Chevrolet_Corvette_C8_Stingray_LC24.jpg",
@@ -126,28 +279,66 @@
     },
     {
       "manufacturer": "CHEVROLET",
-      "model": "Camaro SS",
+      "model": "Camaro",
       "is_supra": false,
       "description": {
-        "ja": "V8を搭載する伝統的なFRマッスルカー。2024年モデルを最後に生産終了しており、現行ラインナップには存在しない。GMは将来的な名称復活の方針を示しているが、詳細・発売時期は2026年8月時点で未定。",
-        "en": "A traditional V8-powered RWD muscle car. Production ended after the 2024 model year and it is no longer part of the current lineup; GM has signaled intent to revive the nameplate, but details and timing remain unconfirmed as of August 2026."
+        "ja": "V8を搭載する伝統的なFRマッスルカー。2024年モデルを最後に生産終了しており、現行ラインナップには存在しない。GMは将来的な名称復活の方針を示しているが、詳細・発売時期は2026年8月時点で未定。本カタログには生産終了時点の最終ラインナップを掲載する。",
+        "en": "A traditional V8-powered RWD muscle car. Production ended after the 2024 model year and it is no longer part of the current lineup; GM has signaled intent to revive the nameplate, but details and timing remain unconfirmed as of August 2026. This catalog lists the final lineup at the end of production."
       },
-      "price": {
-        "ja": "43,895ドル(2024年型SS、生産終了時点の参考価格)",
-        "en": "$43,895 USD (2024 MY SS, reference price at end of production)"
-      },
-      "specs": [
-        { "key": "engine", "value": { "ja": "6.2L V8 自然吸気(LT1)", "en": "6.2L naturally aspirated V8 (LT1)" } },
-        { "key": "power", "value": { "ja": "455馬力", "en": "455 hp" } },
-        { "key": "torque", "value": { "ja": "617Nm(455lb-ft)", "en": "455 lb-ft (617 Nm)" } },
-        { "key": "zero_to_60", "value": { "ja": "0-100km/h 約4.0秒(AT)", "en": "0-60mph approx. 4.0 sec (automatic)" } },
-        { "key": "weight", "value": { "ja": "1,547kg(3,410lbs)", "en": "3,410 lbs (1,547 kg)" } },
-        { "key": "transmission", "value": { "ja": "10速AT/6速MT(FR)", "en": "10-speed automatic or 6-speed manual (RWD)" } }
+      "trims": [
+        {
+          "label": { "ja": "Camaro ZL1(最終ラインナップの最上位)", "en": "Camaro ZL1 (top trim of the final lineup)" },
+          "price": { "ja": "72,100ドル(2024年型、生産終了時点の参考価格)", "en": "$72,100 USD (2024 MY, reference price at end of production)" },
+          "production_status": { "ja": "2024年モデル(第6世代)をもって生産終了。軽量化パッケージ「1LE」装着車が最終生産ロットに含まれていたとの報道がある一方、通常オーダー可能な設定としては2024年途中でZL1向け1LEの新規受注が終了したとの情報もあり、詳細は情報源により差異がある。", "en": "Discontinued after the 2024 model year (6th generation). Some reports say a lightweight '1LE' package car was among the very last units built, while other sources say the 1LE option for ZL1 was dropped from regular ordering partway through 2024 — accounts vary on the exact final-lot configuration." },
+          "specs": [
+            { "key": "engine", "value": { "ja": "6.2L スーパーチャージドV8", "en": "6.2L supercharged V8" } },
+            { "key": "power", "value": { "ja": "650馬力", "en": "650 hp" } },
+            { "key": "torque", "value": { "ja": "650lb-ft", "en": "650 lb-ft" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 3.5秒", "en": "0-60mph 3.5 sec" } },
+            { "key": "weight", "value": { "ja": "約1,748kg(3,853lbs)", "en": "approx. 3,853 lbs (1,748 kg)" } },
+            { "key": "transmission", "value": { "ja": "6速MT(標準)/10速AT(FR)", "en": "6-speed manual (standard) or 10-speed automatic (RWD)" } }
+          ]
+        },
+        {
+          "label": { "ja": "Camaro 2SS", "en": "Camaro 2SS" },
+          "price": { "ja": "47,300ドル(2024年型、生産終了時点の参考価格)", "en": "$47,300 USD (2024 MY, reference price at end of production)" },
+          "production_status": { "ja": "2024年モデルをもって生産終了。新規購入不可。", "en": "Discontinued after the 2024 model year; no longer available new." },
+          "specs": [
+            { "key": "engine", "value": { "ja": "6.2L V8 自然吸気(LT1)", "en": "6.2L naturally aspirated V8 (LT1)" } },
+            { "key": "power", "value": { "ja": "455馬力", "en": "455 hp" } },
+            { "key": "torque", "value": { "ja": "455lb-ft", "en": "455 lb-ft" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 約4.0秒", "en": "approx. 0-60mph 4.0 sec" } },
+            { "key": "weight", "value": { "ja": "約1,550kg(3,418lbs)", "en": "approx. 3,418 lbs (1,550 kg)" } },
+            { "key": "transmission", "value": { "ja": "6速MT/10速AT(FR)", "en": "6-speed manual or 10-speed automatic (RWD)" } }
+          ]
+        },
+        {
+          "label": { "ja": "Camaro LT1(トリム)", "en": "Camaro LT1 (trim)" },
+          "price": { "ja": "38,800ドル(2024年型、生産終了時点の参考価格)", "en": "$38,800 USD (2024 MY, reference price at end of production)" },
+          "production_status": { "ja": "2024年モデルをもって生産終了。新規購入不可。", "en": "Discontinued after the 2024 model year; no longer available new." },
+          "specs": [
+            { "key": "engine", "value": { "ja": "6.2L V8 自然吸気(LT1)", "en": "6.2L naturally aspirated V8 (LT1)" } },
+            { "key": "power", "value": { "ja": "455馬力", "en": "455 hp" } },
+            { "key": "torque", "value": { "ja": "455lb-ft", "en": "455 lb-ft" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 4.0秒", "en": "0-60mph 4.0 sec" } },
+            { "key": "weight", "value": { "ja": "約1,641kg(3,618lbs)", "en": "approx. 3,618 lbs (1,641 kg)" } },
+            { "key": "transmission", "value": { "ja": "6速MT/10速AT(FR)", "en": "6-speed manual or 10-speed automatic (RWD)" } }
+          ]
+        },
+        {
+          "label": { "ja": "Camaro 1LT(標準グレード、V6)", "en": "Camaro 1LT (base trim, V6)" },
+          "price": { "ja": "30,900ドル(2024年型、生産終了時点の最廉価グレード)", "en": "$30,900 USD (2024 MY, cheapest trim at end of production)" },
+          "production_status": { "ja": "2024年モデルをもって生産終了。新規購入不可。", "en": "Discontinued after the 2024 model year; no longer available new." },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.6L V6 自然吸気", "en": "3.6L naturally aspirated V6" } },
+            { "key": "power", "value": { "ja": "335馬力", "en": "335 hp" } },
+            { "key": "torque", "value": { "ja": "284lb-ft", "en": "284 lb-ft" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 約5.2〜5.4秒", "en": "approx. 0-60mph 5.2-5.4 sec" } },
+            { "key": "weight", "value": { "ja": "約1,548kg(3,411lbs)", "en": "approx. 3,411 lbs (1,548 kg)" } },
+            { "key": "transmission", "value": { "ja": "6速MT/10速AT(FR)", "en": "6-speed manual or 10-speed automatic (RWD)" } }
+          ]
+        }
       ],
-      "production_status": {
-        "ja": "2024年モデル(第6世代)をもって生産終了。後継モデルなし。GMは2026年に復活を計画中と発表しているが、方向性(ガソリン車か電動SUVか)を含め詳細は未確定。",
-        "en": "Discontinued after the 2024 model year (6th generation); no direct successor. GM has announced plans to revive the nameplate around 2026, but details — including whether it will be a traditional gas car or an electric SUV — remain unconfirmed."
-      },
       "official_url": "https://www.chevrolet.com/legacy/camaro",
       "photo": {
         "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Chevrolet_Camaro_SS_%282021%29_%2853645289735%29.jpg/960px-Chevrolet_Camaro_SS_%282021%29_%2853645289735%29.jpg",
@@ -161,25 +352,76 @@
       "model": "GT-R",
       "is_supra": false,
       "description": {
-        "ja": "「ゴジラ」の愛称で知られる日産の技術の結晶。AWDと双子ターボV6で圧倒的な性能を誇ったが、米国仕様は2024年モデルで終了し、日本を含む世界生産も2025年8月に完全終了した。",
-        "en": "Nissan's technological tour de force, nicknamed \"Godzilla.\" Its AWD twin-turbo V6 delivered overwhelming performance, but the US-market car ended after MY2024, and worldwide production (including Japan) fully concluded in August 2025."
+        "ja": "「ゴジラ」の愛称で知られる日産の技術の結晶。AWDと双子ターボV6で圧倒的な性能を誇ったが、米国仕様は2024年モデルで終了し、日本を含む世界生産も2025年8月に完全終了した。本カタログには米国仕様最終年(2024年モデル)のラインナップを掲載する。",
+        "en": "Nissan's technological tour de force, nicknamed \"Godzilla.\" Its AWD twin-turbo V6 delivered overwhelming performance, but the US-market car ended after MY2024, and worldwide production (including Japan) fully concluded in August 2025. This catalog lists the final US lineup (2024 MY)."
       },
-      "price": {
-        "ja": "121,090ドル(2024年型Premium、米国仕様最終モデルの参考価格)",
-        "en": "$121,090 USD (2024 MY Premium, reference price for the final US-spec model)"
-      },
-      "specs": [
-        { "key": "engine", "value": { "ja": "3.8L V6 ツインターボ(VR38DETT)", "en": "3.8L twin-turbocharged V6 (VR38DETT)" } },
-        { "key": "power", "value": { "ja": "565馬力", "en": "565 hp" } },
-        { "key": "torque", "value": { "ja": "633Nm(467lb-ft)", "en": "467 lb-ft (633 Nm)" } },
-        { "key": "zero_to_60", "value": { "ja": "0-100km/h 3秒未満", "en": "0-60mph under 3.0 sec" } },
-        { "key": "weight", "value": { "ja": "1,784kg(3,933lbs)", "en": "3,933 lbs (1,784 kg)" } },
-        { "key": "transmission", "value": { "ja": "6速デュアルクラッチ(AWD)", "en": "6-speed dual-clutch (AWD)" } }
+      "trims": [
+        {
+          "label": { "ja": "GT-R NISMO(米国仕様最終ラインナップの最上位)", "en": "GT-R NISMO (top trim of the final US lineup)" },
+          "price": { "ja": "220,990ドル(2024年型、米国仕様最終ラインナップの参考価格)", "en": "$220,990 USD (2024 MY, reference price for the final US lineup)" },
+          "production_status": { "ja": "2024年モデルが米国仕様の最終年。日本を含む世界生産も2025年8月に完全終了。", "en": "MY2024 was the final US-market year. Worldwide production, including Japan, ended in August 2025." },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.8L V6 ツインターボ(VR38DETT)", "en": "3.8L twin-turbocharged V6 (VR38DETT)" } },
+            { "key": "power", "value": { "ja": "600馬力", "en": "600 hp" } },
+            { "key": "torque", "value": { "ja": "652Nm(481lb-ft)", "en": "481 lb-ft (652 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 約2.5秒(日産公表値)", "en": "approx. 0-60mph 2.5 sec (Nissan estimate)" } },
+            { "key": "weight", "value": { "ja": "1,754kg(3,867lbs)", "en": "3,867 lbs (1,754 kg)" } },
+            { "key": "transmission", "value": { "ja": "6速デュアルクラッチ(AWD)", "en": "6-speed dual-clutch (AWD)" } }
+          ]
+        },
+        {
+          "label": { "ja": "GT-R T-spec Takumi Edition", "en": "GT-R T-spec Takumi Edition" },
+          "price": { "ja": "151,090ドル(2024年型)", "en": "$151,090 USD (2024 MY)" },
+          "production_status": { "ja": "限定生産の記念エディション(200台未満)。2024年モデルで生産終了。", "en": "Limited-production farewell edition (fewer than 200 units). Discontinued after the 2024 model year." },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.8L V6 ツインターボ(VR38DETT)", "en": "3.8L twin-turbocharged V6 (VR38DETT)" } },
+            { "key": "power", "value": { "ja": "565馬力", "en": "565 hp" } },
+            { "key": "torque", "value": { "ja": "633Nm(467lb-ft)", "en": "467 lb-ft (633 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 約3.0秒", "en": "approx. 0-60mph 3.0 sec" } },
+            { "key": "weight", "value": { "ja": "1,784kg(3,933lbs)", "en": "3,933 lbs (1,784 kg)" } },
+            { "key": "transmission", "value": { "ja": "6速デュアルクラッチ(AWD)", "en": "6-speed dual-clutch (AWD)" } }
+          ]
+        },
+        {
+          "label": { "ja": "GT-R T-spec", "en": "GT-R T-spec" },
+          "price": { "ja": "140,990ドル(2024年型)", "en": "$140,990 USD (2024 MY)" },
+          "production_status": { "ja": "2024年モデルをもって生産終了。", "en": "Discontinued after the 2024 model year." },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.8L V6 ツインターボ(VR38DETT)", "en": "3.8L twin-turbocharged V6 (VR38DETT)" } },
+            { "key": "power", "value": { "ja": "565馬力", "en": "565 hp" } },
+            { "key": "torque", "value": { "ja": "633Nm(467lb-ft)", "en": "467 lb-ft (633 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 約3.0秒", "en": "approx. 0-60mph 3.0 sec" } },
+            { "key": "weight", "value": { "ja": "1,784kg(3,933lbs)", "en": "3,933 lbs (1,784 kg)" } },
+            { "key": "transmission", "value": { "ja": "6速デュアルクラッチ(AWD)", "en": "6-speed dual-clutch (AWD)" } }
+          ]
+        },
+        {
+          "label": { "ja": "GT-R Skyline Edition", "en": "GT-R Skyline Edition" },
+          "price": { "ja": "131,090ドル(2024年型)", "en": "$131,090 USD (2024 MY)" },
+          "production_status": { "ja": "世界限定100台の記念モデル。2024年モデルで生産終了。", "en": "Limited to 100 units worldwide as a farewell model. Discontinued after the 2024 model year." },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.8L V6 ツインターボ(VR38DETT)", "en": "3.8L twin-turbocharged V6 (VR38DETT)" } },
+            { "key": "power", "value": { "ja": "565馬力", "en": "565 hp" } },
+            { "key": "torque", "value": { "ja": "633Nm(467lb-ft)", "en": "467 lb-ft (633 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 約3.0秒", "en": "approx. 0-60mph 3.0 sec" } },
+            { "key": "weight", "value": { "ja": "1,784kg(3,933lbs)", "en": "3,933 lbs (1,784 kg)" } },
+            { "key": "transmission", "value": { "ja": "6速デュアルクラッチ(AWD)", "en": "6-speed dual-clutch (AWD)" } }
+          ]
+        },
+        {
+          "label": { "ja": "GT-R Premium(米国仕様最終ラインナップの最廉価)", "en": "GT-R Premium (cheapest trim in the final US lineup)" },
+          "price": { "ja": "120,990ドル(2024年型)", "en": "$120,990 USD (2024 MY)" },
+          "production_status": { "ja": "2024年モデルで生産終了。日産は次世代GT-Rの投入を示唆しているが、現行モデルは存在しない。", "en": "Discontinued after the 2024 model year. Nissan has signaled intent to bring back a next-generation GT-R, but no current model is on sale." },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.8L V6 ツインターボ(VR38DETT)", "en": "3.8L twin-turbocharged V6 (VR38DETT)" } },
+            { "key": "power", "value": { "ja": "565馬力", "en": "565 hp" } },
+            { "key": "torque", "value": { "ja": "633Nm(467lb-ft)", "en": "467 lb-ft (633 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 約3.0秒", "en": "approx. 0-60mph 3.0 sec" } },
+            { "key": "weight", "value": { "ja": "1,784kg(3,933lbs)", "en": "3,933 lbs (1,784 kg)" } },
+            { "key": "transmission", "value": { "ja": "6速デュアルクラッチ(AWD)", "en": "6-speed dual-clutch (AWD)" } }
+          ]
+        }
       ],
-      "production_status": {
-        "ja": "生産終了。米国向けは2024年モデル(T-Spec Takumi/Skylineエディション)が最終ラインナップ。日本を含む全世界向け生産も2025年8月に終了し、通算生産台数は約48,000台。日産は次世代GT-Rの投入を示唆しているが、現行モデルは存在しない。",
-        "en": "Discontinued worldwide. The 2024 model year (T-Spec Takumi and Skyline farewell editions) was the final US lineup; global production, including Japan, ended in August 2025 after roughly 48,000 units total. Nissan has signaled intent to bring back a next-generation GT-R, but no current model is on sale."
-      },
       "official_url": "https://www.nissanusa.com/vehicles/sports-cars/gt-r.html",
       "photo": {
         "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Nissan_GT-R_R35_at_the_2026_Adelaide_Motorsport_Festival_%28DSCF2567%29.jpg/960px-Nissan_GT-R_R35_at_the_2026_Adelaide_Motorsport_Festival_%28DSCF2567%29.jpg",
@@ -190,25 +432,50 @@
     },
     {
       "manufacturer": "NISSAN",
-      "model": "Z Performance",
+      "model": "Z",
       "is_supra": false,
       "description": {
-        "ja": "フェアレディZの系譜を継ぐ、日産の手頃な価格帯のFRスポーツカー。ツインターボV6とMT設定を残す点でスープラとキャラクターが近く、価格帯でも直接競合するライバル。",
-        "en": "Nissan's accessible FR sports coupe, continuing the Fairlady Z lineage. Its twin-turbo V6 and available manual gearbox give it a character close to the Supra's, and it competes directly on price."
+        "ja": "フェアレディZの系譜を継ぐ、日産の手頃な価格帯のFRスポーツカー。ツインターボV6とMT設定を残す点でスープラとキャラクターが近く、価格帯でも直接競合するライバル。専用チューンのツインターボV6を積む最上位NISMOまで、幅広いグレード構成を持つ。",
+        "en": "Nissan's accessible FR sports coupe, continuing the Fairlady Z lineage. Its twin-turbo V6 and available manual gearbox give it a character close to the Supra's, and it competes directly on price, with a lineup topped by the NISMO's specially tuned twin-turbo V6."
       },
-      "price": {
-        "ja": "54,215ドル(Performanceグレード 米国参考価格)",
-        "en": "$54,215 USD (Performance trim, US reference price)"
-      },
-      "specs": [
-        { "key": "engine", "value": { "ja": "3.0L V6 ツインターボ(VR30DDTT)", "en": "3.0L twin-turbocharged V6 (VR30DDTT)" } },
-        { "key": "power", "value": { "ja": "400馬力", "en": "400 hp" } },
-        { "key": "torque", "value": { "ja": "475Nm(350lb-ft)", "en": "350 lb-ft (475 Nm)" } },
-        { "key": "zero_to_60", "value": { "ja": "0-100km/h 4.3秒(9AT)", "en": "0-60mph 4.3 sec (9-speed automatic)" } },
-        { "key": "weight", "value": { "ja": "1,604kg(3,536lbs)", "en": "3,536 lbs (1,604 kg)" } },
-        { "key": "transmission", "value": { "ja": "9速AT/6速MT(FR)", "en": "9-speed automatic or 6-speed manual (RWD)" } }
+      "trims": [
+        {
+          "label": { "ja": "Z NISMO(最上位パフォーマンス仕様)", "en": "Z NISMO (top performance trim)" },
+          "price": { "ja": "65,750ドル(米国参考価格)", "en": "$65,750 USD (US reference price)" },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.0L V6 ツインターボ(VR30DDTT、NISMO専用チューン)", "en": "3.0L twin-turbocharged V6 (VR30DDTT, NISMO-tuned)" } },
+            { "key": "power", "value": { "ja": "420馬力", "en": "420 hp" } },
+            { "key": "torque", "value": { "ja": "521Nm(384lb-ft)", "en": "384 lb-ft (521 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 約4.5秒", "en": "approx. 0-60mph 4.5 sec" } },
+            { "key": "weight", "value": { "ja": "1,680kg(3,704lbs)", "en": "3,704 lbs (1,680 kg)" } },
+            { "key": "transmission", "value": { "ja": "9速AT(FR、MT設定なし)", "en": "9-speed automatic only (RWD)" } }
+          ]
+        },
+        {
+          "label": { "ja": "Z Performance", "en": "Z Performance" },
+          "price": { "ja": "52,970ドル(米国参考価格)", "en": "$52,970 USD (US reference price)" },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.0L V6 ツインターボ(VR30DDTT)", "en": "3.0L twin-turbocharged V6 (VR30DDTT)" } },
+            { "key": "power", "value": { "ja": "400馬力", "en": "400 hp" } },
+            { "key": "torque", "value": { "ja": "475Nm(350lb-ft)", "en": "350 lb-ft (475 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 約4.5秒(9AT)", "en": "approx. 0-60mph 4.5 sec (9-speed automatic)" } },
+            { "key": "weight", "value": { "ja": "約1,634kg(3,602lbs、AT仕様)", "en": "approx. 3,602 lbs (1,634 kg, automatic)" } },
+            { "key": "transmission", "value": { "ja": "6速MT/9速AT(FR)", "en": "6-speed manual or 9-speed automatic (RWD)" } }
+          ]
+        },
+        {
+          "label": { "ja": "Z Sport(標準グレード)", "en": "Z Sport (base trim)" },
+          "price": { "ja": "42,970ドル(米国参考価格、最廉価グレード)", "en": "$42,970 USD (US reference price, cheapest trim)" },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.0L V6 ツインターボ(VR30DDTT)", "en": "3.0L twin-turbocharged V6 (VR30DDTT)" } },
+            { "key": "power", "value": { "ja": "400馬力", "en": "400 hp" } },
+            { "key": "torque", "value": { "ja": "475Nm(350lb-ft)", "en": "350 lb-ft (475 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 約4.7秒", "en": "approx. 0-60mph 4.7 sec" } },
+            { "key": "weight", "value": { "ja": "約1,581kg(3,486lbs、MT仕様)", "en": "approx. 3,486 lbs (1,581 kg, manual)" } },
+            { "key": "transmission", "value": { "ja": "6速MT/9速AT(FR)", "en": "6-speed manual or 9-speed automatic (RWD)" } }
+          ]
+        }
       ],
-      "production_status": { "ja": "現行生産中", "en": "In production" },
       "official_url": "https://www.nissanusa.com/vehicles/sports-cars/z.html",
       "photo": {
         "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/2023_Nissan_Z_RZ34_in_Granite_Black%2C_front_left%2C_05-05-2024.jpg/960px-2023_Nissan_Z_RZ34_in_Granite_Black%2C_front_left%2C_05-05-2024.jpg",
@@ -222,22 +489,49 @@
       "model": "M2",
       "is_supra": false,
       "description": {
-        "ja": "BMW Mラインナップのエントリーモデル。スープラと同系統のS58型直6ターボを搭載したコンパクトな車体で、FRらしい俊敏なハンドリングを提供する、価格帯も近いライバル。",
-        "en": "The entry point to BMW's M lineup. Its compact RWD body houses a turbocharged inline-six from the same S58 family related to the Supra's B58, delivering agile handling at a similar price point."
+        "ja": "BMW Mラインナップのエントリーモデル。スープラと同系統のS58型直6ターボを搭載したコンパクトな車体で、FRらしい俊敏なハンドリングを提供する、価格帯も近いライバル。台数限定の特別仕様「M2 CS」と「M2 Turbo Design Edition」が標準M2の上位に位置する。",
+        "en": "The entry point to BMW's M lineup. Its compact RWD body houses a turbocharged inline-six from the same S58 family related to the Supra's B58, delivering agile handling at a similar price point. Two limited-run special editions, the 'M2 CS' and 'M2 Turbo Design Edition,' sit above the standard M2."
       },
-      "price": {
-        "ja": "69,375ドル(米国参考価格)",
-        "en": "$69,375 USD (US reference price)"
-      },
-      "specs": [
-        { "key": "engine", "value": { "ja": "3.0L 直列6気筒ツインターボ(S58)", "en": "3.0L twin-turbocharged inline-6 (S58)" } },
-        { "key": "power", "value": { "ja": "473馬力", "en": "473 hp" } },
-        { "key": "torque", "value": { "ja": "550Nm(406lb-ft、MT)", "en": "406 lb-ft (550 Nm, manual)" } },
-        { "key": "zero_to_60", "value": { "ja": "0-100km/h 3.9秒(8速AT)", "en": "0-60mph 3.9 sec (8-speed automatic)" } },
-        { "key": "weight", "value": { "ja": "1,730kg(3,814lbs)", "en": "3,814 lbs (1,730 kg)" } },
-        { "key": "transmission", "value": { "ja": "6速MT/8速AT(FR)", "en": "6-speed manual or 8-speed automatic (RWD)" } }
+      "trims": [
+        {
+          "label": { "ja": "M2 CS(最上位特別仕様)", "en": "M2 CS (top special edition)" },
+          "price": { "ja": "98,600ドル(米国参考価格)", "en": "$98,600 USD (US reference price)" },
+          "production_status": { "ja": "2026年モデル限定の特別仕様として現行受注中(数量限定)。", "en": "Currently orderable as a MY2026-only special edition, in limited numbers." },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.0L 直列6気筒ツインターボ(S58)", "en": "3.0L twin-turbocharged inline-6 (S58)" } },
+            { "key": "power", "value": { "ja": "523馬力", "en": "523 hp" } },
+            { "key": "torque", "value": { "ja": "649Nm(479lb-ft)", "en": "479 lb-ft (649 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 3.7秒", "en": "0-60mph 3.7 sec" } },
+            { "key": "weight", "value": { "ja": "1,710kg(3,770lbs)", "en": "3,770 lbs (1,710 kg)" } },
+            { "key": "transmission", "value": { "ja": "8速AT(FR、MT設定なし)", "en": "8-speed automatic only (RWD)" } }
+          ]
+        },
+        {
+          "label": { "ja": "M2 Turbo Design Edition", "en": "M2 Turbo Design Edition" },
+          "price": { "ja": "82,900ドル(米国参考価格)", "en": "$82,900 USD (US reference price)" },
+          "production_status": { "ja": "レトロ塗装をまとった台数限定モデル。2026年に納車開始、割当がなくなり次第終了。", "en": "A retro-livery limited-run model; deliveries began in 2026, sold while allocation lasts." },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.0L 直列6気筒ツインターボ(S58)", "en": "3.0L twin-turbocharged inline-6 (S58)" } },
+            { "key": "power", "value": { "ja": "473馬力", "en": "473 hp" } },
+            { "key": "torque", "value": { "ja": "550Nm(406lb-ft)", "en": "406 lb-ft (550 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 4.1秒", "en": "0-60mph 4.1 sec" } },
+            { "key": "weight", "value": { "ja": "約1,710kg(3,770lbs)", "en": "approx. 3,770 lbs (1,710 kg)" } },
+            { "key": "transmission", "value": { "ja": "6速MT(MT専用)", "en": "6-speed manual only" } }
+          ]
+        },
+        {
+          "label": { "ja": "M2(標準グレード)", "en": "M2 (base trim)" },
+          "price": { "ja": "69,375ドル(米国参考価格)", "en": "$69,375 USD (US reference price)" },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.0L 直列6気筒ツインターボ(S58)", "en": "3.0L twin-turbocharged inline-6 (S58)" } },
+            { "key": "power", "value": { "ja": "473馬力", "en": "473 hp" } },
+            { "key": "torque", "value": { "ja": "550Nm(406lb-ft、MT)", "en": "406 lb-ft (550 Nm, manual)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 3.9秒(8速AT)", "en": "0-60mph 3.9 sec (8-speed automatic)" } },
+            { "key": "weight", "value": { "ja": "1,730kg(3,814lbs)", "en": "3,814 lbs (1,730 kg)" } },
+            { "key": "transmission", "value": { "ja": "6速MT/8速AT(FR)", "en": "6-speed manual or 8-speed automatic (RWD)" } }
+          ]
+        }
       ],
-      "production_status": { "ja": "現行生産中", "en": "In production" },
       "official_url": "https://www.bmwusa.com/vehicles/m-series/bmw-2-series-m-models/bmw-m2-coupe.html",
       "photo": {
         "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/BMW_G87_M2_1X7A6997.jpg/960px-BMW_G87_M2_1X7A6997.jpg",
@@ -251,22 +545,60 @@
       "model": "M3",
       "is_supra": false,
       "description": {
-        "ja": "4ドアセダンのボディに最大523馬力(Competition xDrive)までの直6ターボを搭載する高性能モデル。スープラより一回り上の価格帯・出力帯に位置しつつ、実用性を兼ね備える。",
-        "en": "A high-performance sedan packing up to 523 hp (Competition xDrive) from its turbocharged inline-six. It sits a step above the Supra in both price and output while adding four-door practicality."
+        "ja": "4ドアセダンのボディに最大523馬力(Competition xDrive)までの直6ターボを搭載する高性能モデル。スープラより一回り上の価格帯・出力帯に位置しつつ、実用性を兼ね備える。北米専用の6速MT特別仕様「M3 CS Handschalter」が最上位に位置する。",
+        "en": "A high-performance sedan packing up to 523 hp (Competition xDrive) from its turbocharged inline-six. It sits a step above the Supra in both price and output while adding four-door practicality. The North America-exclusive 6-speed manual 'M3 CS Handschalter' special edition tops the lineup."
       },
-      "price": {
-        "ja": "79,300ドル(ベースセダン 米国参考価格)",
-        "en": "$79,300 USD (base sedan, US reference price)"
-      },
-      "specs": [
-        { "key": "engine", "value": { "ja": "3.0L 直列6気筒ツインターボ(S58)", "en": "3.0L twin-turbocharged inline-6 (S58)" } },
-        { "key": "power", "value": { "ja": "473馬力(Competition 503馬力/Competition xDrive 523馬力)", "en": "473 hp (503 hp Competition / 523 hp Competition xDrive)" } },
-        { "key": "torque", "value": { "ja": "550Nm(406lb-ft、ベース)", "en": "406 lb-ft (550 Nm, base)" } },
-        { "key": "zero_to_60", "value": { "ja": "0-100km/h 4.1秒(ベースMT)、3.4秒(Competition xDrive)", "en": "0-60mph 4.1 sec (base, manual), 3.4 sec (Competition xDrive)" } },
-        { "key": "weight", "value": { "ja": "1,742kg(3,840lbs、ベースセダン)", "en": "3,840 lbs (1,742 kg, base sedan)" } },
-        { "key": "transmission", "value": { "ja": "6速MT(FR)/8速AT(FR・AWD)", "en": "6-speed manual (RWD) or 8-speed automatic (RWD/AWD)" } }
+      "trims": [
+        {
+          "label": { "ja": "M3 CS Handschalter(北米専用MT特別仕様)", "en": "M3 CS Handschalter (North America-exclusive manual special edition)" },
+          "price": { "ja": "107,100ドル+目的地諸費用(合計約108,450ドル、米国参考価格)", "en": "$107,100 USD + destination (approx. $108,450 USD total, US reference price)" },
+          "production_status": { "ja": "北米専用の6速MT限定モデル。2026年7月頃より納車開始予定で、現行受注中(数量限定)。", "en": "A North America-exclusive 6-speed manual special edition. Deliveries begin around July 2026; currently orderable in limited numbers." },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.0L 直列6気筒ツインターボ(S58、CSチューン)", "en": "3.0L twin-turbocharged inline-6 (S58, CS tune)" } },
+            { "key": "power", "value": { "ja": "543馬力", "en": "543 hp" } },
+            { "key": "torque", "value": { "ja": "650Nm(479lb-ft)", "en": "479 lb-ft (650 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 4.1秒", "en": "0-60mph 4.1 sec" } },
+            { "key": "weight", "value": { "ja": "約1,707kg(3,765lbs、カーボンセラミックブレーキ装着で軽量化)", "en": "approx. 3,765 lbs (1,707 kg, lighter with optional carbon-ceramic brakes)" } },
+            { "key": "transmission", "value": { "ja": "6速MT(FR専用)", "en": "6-speed manual only (RWD)" } }
+          ]
+        },
+        {
+          "label": { "ja": "M3 Competition xDrive", "en": "M3 Competition xDrive" },
+          "price": { "ja": "87,700ドル(米国参考価格)", "en": "$87,700 USD (US reference price)" },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.0L 直列6気筒ツインターボ(S58)", "en": "3.0L twin-turbocharged inline-6 (S58)" } },
+            { "key": "power", "value": { "ja": "523馬力", "en": "523 hp" } },
+            { "key": "torque", "value": { "ja": "650Nm(479lb-ft)", "en": "479 lb-ft (650 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 3.1秒", "en": "0-60mph 3.1 sec" } },
+            { "key": "weight", "value": { "ja": "1,810kg(3,990lbs)", "en": "3,990 lbs (1,810 kg)" } },
+            { "key": "transmission", "value": { "ja": "8速AT(AWD)", "en": "8-speed automatic (AWD)" } }
+          ]
+        },
+        {
+          "label": { "ja": "M3 Competition", "en": "M3 Competition" },
+          "price": { "ja": "82,600ドル(米国参考価格)", "en": "$82,600 USD (US reference price)" },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.0L 直列6気筒ツインターボ(S58)", "en": "3.0L twin-turbocharged inline-6 (S58)" } },
+            { "key": "power", "value": { "ja": "503馬力", "en": "503 hp" } },
+            { "key": "torque", "value": { "ja": "650Nm(479lb-ft)", "en": "479 lb-ft (650 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 4.1秒", "en": "0-60mph 4.1 sec" } },
+            { "key": "weight", "value": { "ja": "約1,742kg(3,840lbs)", "en": "approx. 3,840 lbs (1,742 kg)" } },
+            { "key": "transmission", "value": { "ja": "8速AT(FR)", "en": "8-speed automatic (RWD)" } }
+          ]
+        },
+        {
+          "label": { "ja": "M3(標準グレード)", "en": "M3 (base trim)" },
+          "price": { "ja": "78,400ドル(ベースセダン、米国参考価格)", "en": "$78,400 USD (base sedan, US reference price)" },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.0L 直列6気筒ツインターボ(S58)", "en": "3.0L twin-turbocharged inline-6 (S58)" } },
+            { "key": "power", "value": { "ja": "473馬力", "en": "473 hp" } },
+            { "key": "torque", "value": { "ja": "550Nm(406lb-ft)", "en": "406 lb-ft (550 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 4.1秒(MT)", "en": "0-60mph 4.1 sec (manual)" } },
+            { "key": "weight", "value": { "ja": "1,742kg(3,840lbs)", "en": "3,840 lbs (1,742 kg)" } },
+            { "key": "transmission", "value": { "ja": "6速MT(FR)", "en": "6-speed manual (RWD)" } }
+          ]
+        }
       ],
-      "production_status": { "ja": "現行生産中", "en": "In production" },
       "official_url": "https://www.bmwusa.com/vehicles/m-series/m3.html",
       "photo": {
         "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/BMW_M3_Competition_%28G80%29_1X7A1573.jpg/960px-BMW_M3_Competition_%28G80%29_1X7A1573.jpg",
@@ -280,22 +612,60 @@
       "model": "M4",
       "is_supra": false,
       "description": {
-        "ja": "M3のクーペ版。同じ直6ターボと駆動系を持ちながら2ドアクーペのプロポーションを採用しており、ボディ形状の面でよりダイレクトにスープラと競合する。",
-        "en": "The coupe counterpart to the M3. It shares the same turbocharged inline-six and driveline in a two-door coupe body, making it a more direct shape-for-shape rival to the Supra."
+        "ja": "M3のクーペ版。同じ直6ターボと駆動系を持ちながら2ドアクーペのプロポーションを採用しており、ボディ形状の面でよりダイレクトにスープラと競合する。過去には世界限定1,000台の特別仕様「M4 CSL」(完売済み)も存在した。",
+        "en": "The coupe counterpart to the M3. It shares the same turbocharged inline-six and driveline in a two-door coupe body, making it a more direct shape-for-shape rival to the Supra. A limited 1,000-unit 'M4 CSL' special edition was also offered in the past (now fully sold out)."
       },
-      "price": {
-        "ja": "82,200ドル(ベースクーペ 米国参考価格)",
-        "en": "$82,200 USD (base coupe, US reference price)"
-      },
-      "specs": [
-        { "key": "engine", "value": { "ja": "3.0L 直列6気筒ツインターボ(S58)", "en": "3.0L twin-turbocharged inline-6 (S58)" } },
-        { "key": "power", "value": { "ja": "473馬力(Competition 503馬力/Competition xDrive 523馬力)", "en": "473 hp (503 hp Competition / 523 hp Competition xDrive)" } },
-        { "key": "torque", "value": { "ja": "550Nm(406lb-ft、ベース)", "en": "406 lb-ft (550 Nm, base)" } },
-        { "key": "zero_to_60", "value": { "ja": "0-100km/h 4.1秒(ベースMT)、3.4秒(Competition xDrive)", "en": "0-60mph 4.1 sec (base, manual), 3.4 sec (Competition xDrive)" } },
-        { "key": "weight", "value": { "ja": "1,805kg(3,979lbs、Competition xDriveクーペ)", "en": "3,979 lbs (1,805 kg, Competition xDrive coupe)" } },
-        { "key": "transmission", "value": { "ja": "6速MT(FR)/8速AT(FR・AWD)", "en": "6-speed manual (RWD) or 8-speed automatic (RWD/AWD)" } }
+      "trims": [
+        {
+          "label": { "ja": "M4 CS(過去の特別仕様、現在は設定廃止)", "en": "M4 CS (past special edition, now discontinued)" },
+          "price": { "ja": "123,500ドル(2025年型、生産終了時点の参考価格)", "en": "$123,500 USD (2025 MY, reference price at end of production)" },
+          "production_status": { "ja": "2026年モデルで設定廃止となり、現在は新規注文不可。後継の特別仕様は2026年8月時点で未発表。", "en": "Dropped from the lineup for MY2026 and no longer orderable. No successor special edition has been announced as of August 2026." },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.0L 直列6気筒ツインターボ(S58)", "en": "3.0L twin-turbocharged inline-6 (S58)" } },
+            { "key": "power", "value": { "ja": "543馬力", "en": "543 hp" } },
+            { "key": "torque", "value": { "ja": "650Nm(479lb-ft)", "en": "479 lb-ft (650 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 3.2秒", "en": "0-60mph 3.2 sec" } },
+            { "key": "weight", "value": { "ja": "1,770kg(3,902lbs)", "en": "3,902 lbs (1,770 kg)" } },
+            { "key": "transmission", "value": { "ja": "8速AT(FR)", "en": "8-speed automatic (RWD)" } }
+          ]
+        },
+        {
+          "label": { "ja": "M4 Competition xDrive(現行最上位グレード)", "en": "M4 Competition xDrive (current top trim)" },
+          "price": { "ja": "90,575ドル(米国参考価格)", "en": "$90,575 USD (US reference price)" },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.0L 直列6気筒ツインターボ(S58)", "en": "3.0L twin-turbocharged inline-6 (S58)" } },
+            { "key": "power", "value": { "ja": "523馬力", "en": "523 hp" } },
+            { "key": "torque", "value": { "ja": "650Nm(479lb-ft)", "en": "479 lb-ft (650 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 3.1〜3.3秒", "en": "0-60mph 3.1-3.3 sec" } },
+            { "key": "weight", "value": { "ja": "1,805kg(3,979lbs)", "en": "3,979 lbs (1,805 kg)" } },
+            { "key": "transmission", "value": { "ja": "8速AT(AWD)", "en": "8-speed automatic (AWD)" } }
+          ]
+        },
+        {
+          "label": { "ja": "M4 Competition", "en": "M4 Competition" },
+          "price": { "ja": "85,475ドル(米国参考価格)", "en": "$85,475 USD (US reference price)" },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.0L 直列6気筒ツインターボ(S58)", "en": "3.0L twin-turbocharged inline-6 (S58)" } },
+            { "key": "power", "value": { "ja": "523馬力", "en": "523 hp" } },
+            { "key": "torque", "value": { "ja": "650Nm(479lb-ft)", "en": "479 lb-ft (650 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 3.8秒", "en": "0-60mph 3.8 sec" } },
+            { "key": "weight", "value": { "ja": "約1,760kg(3,880lbs)", "en": "approx. 3,880 lbs (1,760 kg)" } },
+            { "key": "transmission", "value": { "ja": "8速AT(FR)", "en": "8-speed automatic (RWD)" } }
+          ]
+        },
+        {
+          "label": { "ja": "M4(標準グレード)", "en": "M4 (base trim)" },
+          "price": { "ja": "81,275ドル(ベースクーペ、米国参考価格)", "en": "$81,275 USD (base coupe, US reference price)" },
+          "specs": [
+            { "key": "engine", "value": { "ja": "3.0L 直列6気筒ツインターボ(S58)", "en": "3.0L twin-turbocharged inline-6 (S58)" } },
+            { "key": "power", "value": { "ja": "473馬力", "en": "473 hp" } },
+            { "key": "torque", "value": { "ja": "550Nm(406lb-ft)", "en": "406 lb-ft (550 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 4.1秒(MT)", "en": "0-60mph 4.1 sec (manual)" } },
+            { "key": "weight", "value": { "ja": "1,737kg(3,830lbs)", "en": "3,830 lbs (1,737 kg)" } },
+            { "key": "transmission", "value": { "ja": "6速MT(FR)", "en": "6-speed manual (RWD)" } }
+          ]
+        }
       ],
-      "production_status": { "ja": "現行生産中", "en": "In production" },
       "official_url": "https://www.bmwusa.com/vehicles/m-series/bmw-4-series-m-models/bmw-m4-coupe.html",
       "photo": {
         "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/BMW_M4_%28G82%29_Competition_1X7A6103.jpg/960px-BMW_M4_%28G82%29_Competition_1X7A6103.jpg",
@@ -306,25 +676,50 @@
     },
     {
       "manufacturer": "FORD",
-      "model": "Mustang Dark Horse",
+      "model": "Mustang",
       "is_supra": false,
       "description": {
-        "ja": "第7世代マスタングの走行性能特化グレード。5.0L自然吸気V8を搭載し、スープラに近い価格帯でアメリカンマッスルらしい大排気量NAサウンドと出力を提供する。",
-        "en": "The performance-focused trim of the seventh-generation Mustang. Its naturally aspirated 5.0L V8 delivers big-displacement American muscle car character and output at a price close to the Supra's."
+        "ja": "第7世代マスタングのFRラインナップ。ターボ4気筒のEcoBoostから、走行性能特化の5.0L V8「Dark Horse」まで幅広いグレード構成を持つ。なお、1台300,000ドルを大きく超える超高性能モデル「Mustang GTD」は、本カタログの他車と価格帯があまりに乖離するため対象外としている。",
+        "en": "The seventh-generation Mustang's RWD lineup spans from the turbocharged four-cylinder EcoBoost up to the track-focused 5.0L V8 Dark Horse. The ultra-high-performance 'Mustang GTD' (priced well above $300,000) is excluded from this catalog, as its price point sits far outside the range of the other cars here."
       },
-      "price": {
-        "ja": "64,080ドル(米国参考価格)",
-        "en": "$64,080 USD (US reference price)"
-      },
-      "specs": [
-        { "key": "engine", "value": { "ja": "5.0L V8 自然吸気(Gen 4 Coyote)", "en": "5.0L naturally aspirated V8 (Gen 4 Coyote)" } },
-        { "key": "power", "value": { "ja": "500馬力", "en": "500 hp" } },
-        { "key": "torque", "value": { "ja": "567Nm(418lb-ft)", "en": "418 lb-ft (567 Nm)" } },
-        { "key": "zero_to_60", "value": { "ja": "0-100km/h 3.7秒(AT)/4.1秒(MT)", "en": "0-60mph 3.7 sec (automatic) / 4.1 sec (manual)" } },
-        { "key": "weight", "value": { "ja": "1,800kg(3,968lbs、MT仕様)", "en": "3,968 lbs (1,800 kg, manual)" } },
-        { "key": "transmission", "value": { "ja": "6速MT/10速AT(FR)", "en": "6-speed manual or 10-speed automatic (RWD)" } }
+      "trims": [
+        {
+          "label": { "ja": "Mustang Dark Horse(通常ラインナップの最上位)", "en": "Mustang Dark Horse (top of the regular lineup)" },
+          "price": { "ja": "63,080ドル(米国参考価格)", "en": "$63,080 USD (US reference price)" },
+          "specs": [
+            { "key": "engine", "value": { "ja": "5.0L V8 自然吸気(Gen 4 Coyote)", "en": "5.0L naturally aspirated V8 (Gen 4 Coyote)" } },
+            { "key": "power", "value": { "ja": "500馬力", "en": "500 hp" } },
+            { "key": "torque", "value": { "ja": "567Nm(418lb-ft)", "en": "418 lb-ft (567 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 3.7秒(AT)/4.1秒(MT)", "en": "0-60mph 3.7 sec (automatic) / 4.1 sec (manual)" } },
+            { "key": "weight", "value": { "ja": "1,800kg(3,968lbs、MT仕様)", "en": "3,968 lbs (1,800 kg, manual)" } },
+            { "key": "transmission", "value": { "ja": "6速MT/10速AT(FR)", "en": "6-speed manual or 10-speed automatic (RWD)" } }
+          ]
+        },
+        {
+          "label": { "ja": "Mustang GT", "en": "Mustang GT" },
+          "price": { "ja": "46,560ドル(米国参考価格)", "en": "$46,560 USD (US reference price)" },
+          "specs": [
+            { "key": "engine", "value": { "ja": "5.0L V8 自然吸気(Gen 4 Coyote)", "en": "5.0L naturally aspirated V8 (Gen 4 Coyote)" } },
+            { "key": "power", "value": { "ja": "480馬力(アクティブエキゾースト装着時486馬力)", "en": "480 hp (486 hp with active exhaust)" } },
+            { "key": "torque", "value": { "ja": "563Nm(415lb-ft)", "en": "415 lb-ft (563 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 約4.2秒", "en": "approx. 0-60mph 4.2 sec" } },
+            { "key": "weight", "value": { "ja": "約1,790kg(3,947lbs)", "en": "approx. 3,947 lbs (1,790 kg)" } },
+            { "key": "transmission", "value": { "ja": "6速MT/10速AT(FR)", "en": "6-speed manual or 10-speed automatic (RWD)" } }
+          ]
+        },
+        {
+          "label": { "ja": "Mustang EcoBoost(標準グレード)", "en": "Mustang EcoBoost (base trim)" },
+          "price": { "ja": "32,320ドル(米国参考価格、最廉価グレード)", "en": "$32,320 USD (US reference price, cheapest trim)" },
+          "specs": [
+            { "key": "engine", "value": { "ja": "2.3L 直列4気筒ターボ", "en": "2.3L turbocharged inline-4" } },
+            { "key": "power", "value": { "ja": "315馬力", "en": "315 hp" } },
+            { "key": "torque", "value": { "ja": "475Nm(350lb-ft)", "en": "350 lb-ft (475 Nm)" } },
+            { "key": "zero_to_60", "value": { "ja": "0-100km/h 約5秒前後", "en": "approx. 0-60mph 5 sec" } },
+            { "key": "weight", "value": { "ja": "約1,660kg(3,660lbs)", "en": "approx. 3,660 lbs (1,660 kg)" } },
+            { "key": "transmission", "value": { "ja": "10速AT(FR、MT設定なし)", "en": "10-speed automatic only (RWD)" } }
+          ]
+        }
       ],
-      "production_status": { "ja": "現行生産中", "en": "In production" },
       "official_url": "https://www.ford.com/cars/mustang/models/dark-horse/",
       "photo": {
         "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/2024_Ford_Mustang_Dark_Horse.jpg/960px-2024_Ford_Mustang_Dark_Horse.jpg",
