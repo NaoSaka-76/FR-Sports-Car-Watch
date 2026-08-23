@@ -1038,6 +1038,14 @@ a { color: inherit; }
   font-weight: 700;
 }
 
+.car-card__trims {
+  display: none;
+}
+
+.panel--trims-visible .car-card__trims {
+  display: block;
+}
+
 .car-card__trim {
   display: flex;
   flex-direction: column;

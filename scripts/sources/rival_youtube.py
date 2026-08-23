@@ -15,7 +15,13 @@ from .rivals import RIVALS
 def fetch(top_n: int = 12) -> list[dict]:
     results: list[dict] = []
     for rival in RIVALS:
-        videos = youtube.fetch(queries=rival["youtube_queries"], top_n=top_n, hl="en", gl="US")
+        videos = youtube.fetch(
+            queries=rival["youtube_queries"],
+            top_n=top_n,
+            hl="en",
+            gl="US",
+            require_any=rival.get("title_filter"),
+        )
         results.append(
             {
                 "key": rival["key"],

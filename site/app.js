@@ -184,6 +184,8 @@
         a90_a91: "A90/A91(現行GRスープラ)",
       },
       tabAll: "すべて",
+      showTrims: "グレード詳細を表示",
+      hideTrims: "グレード詳細を隠す",
     },
     en: {
       loading: "Loading data…",
@@ -332,6 +334,8 @@
         a90_a91: "A90/A91 (Current GR Supra)",
       },
       tabAll: "All",
+      showTrims: "Show grade details",
+      hideTrims: "Hide grade details",
     },
   };
 
@@ -967,6 +971,9 @@
       return specList;
     }
 
+    // グレード(トリム)詳細は既定で非表示。②パネル先頭の一括トグルボタンで
+    // 全車両まとめて表示/非表示を切り替える(CSSの.panel--trims-visibleで制御)。
+    var trimsWrap = el("div", "car-card__trims");
     if (car.trims && car.trims.length > 0) {
       // 最上位(特別仕様)〜最廉価まで、トリムごとに区切って積み上げ表示。
       car.trims.forEach(function (trim, idx) {
@@ -983,16 +990,17 @@
         var trimStatusEl = buildStatusEl(trim.production_status);
         if (trimStatusEl) trimBlock.appendChild(trimStatusEl);
         trimBlock.appendChild(buildSpecList(trim.specs));
-        body.appendChild(trimBlock);
-        if (idx < car.trims.length - 1) body.appendChild(el("hr", "car-card__trim-divider"));
+        trimsWrap.appendChild(trimBlock);
+        if (idx < car.trims.length - 1) trimsWrap.appendChild(el("hr", "car-card__trim-divider"));
       });
     } else {
       // 旧スキーマ(単一トリム)へのフォールバック。
-      body.appendChild(el("div", "car-card__price", pick(car.price)));
+      trimsWrap.appendChild(el("div", "car-card__price", pick(car.price)));
       var legacyStatusEl = buildStatusEl(car.production_status);
-      if (legacyStatusEl) body.appendChild(legacyStatusEl);
-      body.appendChild(buildSpecList(car.specs));
+      if (legacyStatusEl) trimsWrap.appendChild(legacyStatusEl);
+      trimsWrap.appendChild(buildSpecList(car.specs));
     }
+    body.appendChild(trimsWrap);
 
     var link = el("a", "series-card__link", i18n.linkOfficial);
     link.href = car.official_url;
@@ -1023,6 +1031,19 @@
     panel.appendChild(buildPanelHeader("car", i18n.sections.rivals_catalog.title, cars.length));
     var note = pick(carsData.note);
     if (note) panel.appendChild(el("p", "panel__note", note));
+
+    // グレード詳細の表示/非表示を全車両まとめて切り替える一括ボタン
+    // (車両ごとの個別ボタンは持たず、この1つだけで全カードを制御する)。
+    var trimsToggleBtn = el("button", "tab-group__btn", i18n.showTrims);
+    var trimsVisible = false;
+    trimsToggleBtn.addEventListener("click", function () {
+      trimsVisible = !trimsVisible;
+      panel.classList.toggle("panel--trims-visible", trimsVisible);
+      trimsToggleBtn.textContent = trimsVisible ? i18n.hideTrims : i18n.showTrims;
+    });
+    var toggleWrap = el("div", "tab-group");
+    toggleWrap.appendChild(trimsToggleBtn);
+    panel.appendChild(toggleWrap);
 
     var grid = el("div", "car-grid");
     cars.forEach(function (car) {

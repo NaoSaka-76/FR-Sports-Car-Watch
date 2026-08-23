@@ -80,8 +80,20 @@ def _fetch_raw_results(query: str, hl: str = "en", gl: str = "US") -> list[dict]
     return videos
 
 
-def fetch(queries: list[str], top_n: int = 20, hl: str = "en", gl: str = "US") -> dict:
-    """複数クエリ(GR Corolla / GRMN Corollaなど)を合算し、人気動画・新着動画を返す。"""
+def fetch(
+    queries: list[str],
+    top_n: int = 20,
+    hl: str = "en",
+    gl: str = "US",
+    require_any: list[str] | None = None,
+) -> dict:
+    """複数クエリ(GR Corolla / GRMN Corollaなど)を合算し、人気動画・新着動画を返す。
+
+    `require_any`: 大文字小文字を無視した正規表現のリスト。指定された場合、
+    タイトルがいずれか1つにもマッチしない動画は結果から除外する。YouTube検索は
+    Google News RSSと違い、クエリを絞っても無関係な動画(例: "フェアレディZ 試乗"
+    で日産ムラーノの動画がヒットした実例)を返すことがあるための安全弁。
+    """
     raw: list[dict] = []
     seen_ids: set[str] = set()
     fetch_failed = False
@@ -96,6 +108,10 @@ def fetch(queries: list[str], top_n: int = 20, hl: str = "en", gl: str = "US") -
                 continue
             seen_ids.add(v["video_id"])
             raw.append(v)
+
+    if require_any:
+        patterns = [re.compile(p, re.IGNORECASE) for p in require_any]
+        raw = [v for v in raw if any(p.search(v["title"]) for p in patterns)]
 
     if not raw:
         message = (
