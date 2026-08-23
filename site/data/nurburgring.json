@@ -54,6 +54,20 @@
             "ja": "8速オートメイテッドマニュアル(リア)+電動モーター(フロント、AWD)",
             "en": "8-speed automated manual (rear) + electric motors (front, AWD)"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "285/35ZR19 ミシュラン パイロット・スポーツ Cup 2 R(AMG ONE専用開発MO1)",
+            "en": "285/35ZR19 Michelin Pilot Sport Cup 2 R (bespoke MO1 development for the AMG ONE)"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "335/30ZR20 ミシュラン パイロット・スポーツ Cup 2 R(AMG ONE専用開発MO1)",
+            "en": "335/30ZR20 Michelin Pilot Sport Cup 2 R (bespoke MO1 development for the AMG ONE)"
+          }
         }
       ],
       "youtube_url": "https://www.youtube.com/watch?v=yx80Q-CVcvA",
@@ -107,6 +121,20 @@
           "value": {
             "ja": "7速PDK(FR)",
             "en": "7-speed PDK (RWD)"
+          }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "265/35ZR20 ミシュラン パイロット・スポーツ Cup 2 R(記録走行時装着)",
+            "en": "265/35ZR20 Michelin Pilot Sport Cup 2 R (fitted for the record run)"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "325/30ZR21 ミシュラン パイロット・スポーツ Cup 2 R(記録走行時装着)",
+            "en": "325/30ZR21 Michelin Pilot Sport Cup 2 R (fitted for the record run)"
           }
         }
       ],
@@ -162,6 +190,20 @@
             "ja": "7速AMG SPEEDSHIFT DCT(FR)",
             "en": "7-speed AMG SPEEDSHIFT DCT (RWD)"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "285/35ZR19 ミシュラン パイロット・スポーツ Cup 2 R(専用開発MO1A、標準装着)",
+            "en": "285/35ZR19 Michelin Pilot Sport Cup 2 R (bespoke MO1A compound, standard fitment)"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "335/30ZR20 ミシュラン パイロット・スポーツ Cup 2 R(専用開発MO1A、標準装着)",
+            "en": "335/30ZR20 Michelin Pilot Sport Cup 2 R (bespoke MO1A compound, standard fitment)"
+          }
         }
       ],
       "youtube_url": "https://www.youtube.com/watch?v=9--oZuqtlFY",
@@ -215,6 +257,20 @@
           "value": {
             "ja": "7速PDK(FR)",
             "en": "7-speed PDK (RWD)"
+          }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "275/35ZR20 ミシュラン パイロット・スポーツ Cup 2 R",
+            "en": "275/35ZR20 Michelin Pilot Sport Cup 2 R"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "335/30ZR21 ミシュラン パイロット・スポーツ Cup 2 R",
+            "en": "335/30ZR21 Michelin Pilot Sport Cup 2 R"
           }
         }
       ],
@@ -270,6 +326,20 @@
             "ja": "7速ISR自動シングルクラッチ(AWD)",
             "en": "7-speed ISR automated single-clutch (AWD)"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "255/30ZR20 ピレリ P ZERO Corsa(標準装着、Trofeo Rはオプション)",
+            "en": "255/30ZR20 Pirelli P Zero Corsa (standard; Trofeo R optional)"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "355/25ZR21 ピレリ P ZERO Corsa(標準装着、Trofeo Rはオプション)",
+            "en": "355/25ZR21 Pirelli P Zero Corsa (standard; Trofeo R optional)"
+          }
         }
       ],
       "youtube_url": "https://www.youtube.com/watch?v=QRsq35Et-EY",
@@ -324,6 +394,20 @@
             "ja": "7速PDK(FR)",
             "en": "7-speed PDK (RWD)"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "265/35ZR20 ミシュラン パイロット・スポーツ Cup 2",
+            "en": "265/35ZR20 Michelin Pilot Sport Cup 2"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "325/30ZR21 ミシュラン パイロット・スポーツ Cup 2",
+            "en": "325/30ZR21 Michelin Pilot Sport Cup 2"
+          }
         }
       ],
       "source_url": "https://www.motorauthority.com/news/1109135_lamborghini-huracn-performante-destroys-porsche-918s-nrburgring-record"
@@ -376,6 +460,20 @@
           "value": {
             "ja": "8速デュアルクラッチ(後輪)+eモーター(前輪、AWD)",
             "en": "8-speed dual-clutch (rear) + front e-motor (AWD)"
+          }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "275/30ZR20 ミシュラン パイロット・スポーツ Cup 2 R(ZTKパフォーマンスパッケージ、記録走行時装着)",
+            "en": "275/30ZR20 Michelin Pilot Sport Cup 2 R (ZTK Performance Package, fitted for the record run)"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "345/25ZR21 ミシュラン パイロット・スポーツ Cup 2 R(ZTKパフォーマンスパッケージ、記録走行時装着)",
+            "en": "345/25ZR21 Michelin Pilot Sport Cup 2 R (ZTK Performance Package, fitted for the record run)"
           }
         }
       ],
@@ -431,6 +529,20 @@
             "ja": "8速デュアルクラッチ(FR)",
             "en": "8-speed dual-clutch (RWD)"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "275/30ZR20 ミシュラン パイロット・スポーツ Cup 2 R(ZTKパフォーマンスパッケージ、記録走行時装着)",
+            "en": "275/30ZR20 Michelin Pilot Sport Cup 2 R (ZTK Performance Package, fitted for the record run)"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "345/25ZR21 ミシュラン パイロット・スポーツ Cup 2 R(ZTKパフォーマンスパッケージ、記録走行時装着)",
+            "en": "345/25ZR21 Michelin Pilot Sport Cup 2 R (ZTK Performance Package, fitted for the record run)"
+          }
         }
       ],
       "source_url": "https://news.gm.com/home.detail.html/Pages/news/us/en/2025/jul/0731-Corvette-ZR1X-ZR1.html"
@@ -483,6 +595,20 @@
           "value": {
             "ja": "7速PDK(FR)",
             "en": "7-speed PDK (RWD)"
+          }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "255/35ZR20 ミシュラン パイロット・スポーツ Cup 2",
+            "en": "255/35ZR20 Michelin Pilot Sport Cup 2"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "315/30ZR21 ミシュラン パイロット・スポーツ Cup 2",
+            "en": "315/30ZR21 Michelin Pilot Sport Cup 2"
           }
         }
       ],
@@ -538,6 +664,20 @@
             "ja": "7速デュアルクラッチ(AWD)",
             "en": "7-speed dual-clutch (AWD)"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "245/30ZR20 ピレリ P ZERO Trofeo R(専用開発、記録走行時装着)",
+            "en": "245/30ZR20 Pirelli P Zero Trofeo R (bespoke development, fitted for the record run)"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "305/30ZR20 ピレリ P ZERO Trofeo R(専用開発、記録走行時装着)",
+            "en": "305/30ZR20 Pirelli P Zero Trofeo R (bespoke development, fitted for the record run)"
+          }
         }
       ],
       "source_url": "https://www.motorauthority.com/news/1109135_lamborghini-huracn-performante-destroys-porsche-918s-nrburgring-record"
@@ -591,6 +731,20 @@
             "ja": "6速MT/7速PDK(FR)",
             "en": "6-speed manual or 7-speed PDK (RWD)"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "255/35ZR20 ミシュラン パイロット・スポーツ Cup 2",
+            "en": "255/35ZR20 Michelin Pilot Sport Cup 2"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "315/30ZR21 ミシュラン パイロット・スポーツ Cup 2",
+            "en": "315/30ZR21 Michelin Pilot Sport Cup 2"
+          }
         }
       ],
       "source_url": "https://newsroom.porsche.com/en/2022/products/porsche-911-gt3-rs-dream-lap-nuerburgring-nordschleife-30028.html"
@@ -643,6 +797,20 @@
           "value": {
             "ja": "2速AT(リア)/1速(フロント)、AWD",
             "en": "2-speed automatic (rear) / 1-speed (front), AWD"
+          }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "265/35ZR21 グッドイヤー イーグル F1 スーパースポーツ(タイカン専用開発)",
+            "en": "265/35ZR21 Goodyear Eagle F1 SuperSport (bespoke development for the Taycan)"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "305/30ZR21 グッドイヤー イーグル F1 スーパースポーツ(タイカン専用開発)",
+            "en": "305/30ZR21 Goodyear Eagle F1 SuperSport (bespoke development for the Taycan)"
           }
         }
       ],
@@ -698,6 +866,20 @@
             "ja": "7速PDK(FR)",
             "en": "7-speed PDK (RWD)"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "255/35ZR20 ミシュラン パイロット・スポーツ Cup 2",
+            "en": "255/35ZR20 Michelin Pilot Sport Cup 2"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "315/30ZR21 ミシュラン パイロット・スポーツ Cup 2",
+            "en": "315/30ZR21 Michelin Pilot Sport Cup 2"
+          }
         }
       ],
       "source_url": "https://autofreak.com/porsche-911-gt3-rs-manthey-racing-nurburgring-record-2024/"
@@ -751,6 +933,20 @@
             "ja": "7速PDK(FR)",
             "en": "7-speed PDK (RWD)"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "265/35ZR20 ミシュラン パイロット・スポーツ Cup 2",
+            "en": "265/35ZR20 Michelin Pilot Sport Cup 2"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "325/30ZR21 ミシュラン パイロット・スポーツ Cup 2",
+            "en": "325/30ZR21 Michelin Pilot Sport Cup 2"
+          }
         }
       ],
       "source_url": "https://www.autoevolution.com/cars/porsche-911-gt3-rs-2018.html"
@@ -803,6 +999,20 @@
           "value": {
             "ja": "7速PDK(AWD)",
             "en": "7-speed PDK (AWD)"
+          }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "265/35ZR20 ミシュラン パイロット・スポーツ Cup 2",
+            "en": "265/35ZR20 Michelin Pilot Sport Cup 2"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "325/30ZR21 ミシュラン パイロット・スポーツ Cup 2",
+            "en": "325/30ZR21 Michelin Pilot Sport Cup 2"
           }
         }
       ],
@@ -858,6 +1068,20 @@
             "ja": "8速デュアルクラッチ(FR)",
             "en": "8-speed dual-clutch (RWD)"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "325/30ZR20 ミシュラン パイロット・スポーツ Cup 2 R",
+            "en": "325/30ZR20 Michelin Pilot Sport Cup 2 R"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "345/30ZR20 ミシュラン パイロット・スポーツ Cup 2 R",
+            "en": "345/30ZR20 Michelin Pilot Sport Cup 2 R"
+          }
         }
       ],
       "youtube_url": "https://www.youtube.com/watch?v=Fxw6mf_5j-U",
@@ -912,6 +1136,20 @@
             "ja": "モーター直結×4(AWD)",
             "en": "Direct-drive per motor x4 (AWD)"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "325/30ZR20 ジーティー GitiSport e・GTR2 PRO(セミスリック、推定サイズ)",
+            "en": "325/30ZR20 GitiSport e-GTR2 PRO semi-slick (estimated aspect ratio)"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "325/30ZR20 ジーティー GitiSport e・GTR2 PRO(セミスリック、推定サイズ)",
+            "en": "325/30ZR20 GitiSport e-GTR2 PRO semi-slick (estimated aspect ratio)"
+          }
         }
       ],
       "youtube_url": "https://www.youtube.com/watch?v=5ijer_-uNbA",
@@ -963,8 +1201,22 @@
         {
           "key": "transmission",
           "value": {
-            "ja": "7速PDK(MT設定なし、FR)",
-            "en": "7-speed PDK only (RWD)"
+            "ja": "7速PDK(MT設定なし、MR)",
+            "en": "7-speed PDK only (MR)"
+          }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "245/35ZR20 ミシュラン パイロット・スポーツ Cup 2",
+            "en": "245/35ZR20 Michelin Pilot Sport Cup 2"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "295/30ZR20 ミシュラン パイロット・スポーツ Cup 2",
+            "en": "295/30ZR20 Michelin Pilot Sport Cup 2"
           }
         }
       ],
@@ -1020,6 +1272,20 @@
             "ja": "モーター直結(前1速/後2速)、AWD",
             "en": "Direct-drive (1-speed front / 2-speed rear), AWD"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "275/35ZR20 ミシュラン パイロット・スポーツ Cup 2 R(記録走行時装着)",
+            "en": "275/35ZR20 Michelin Pilot Sport Cup 2 R (fitted for the record run)"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "315/35ZR20 ミシュラン パイロット・スポーツ Cup 2 R(記録走行時装着)",
+            "en": "315/35ZR20 Michelin Pilot Sport Cup 2 R (fitted for the record run)"
+          }
         }
       ],
       "youtube_url": "https://www.youtube.com/watch?v=L7oRLhYHfRc",
@@ -1074,6 +1340,20 @@
             "ja": "6速デュアルクラッチ(AWD)",
             "en": "6-speed dual-clutch (AWD)"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "255/40ZR20 ダンロップ SPスポーツマックス GT600 DSST CTT",
+            "en": "255/40ZR20 Dunlop SP Sport Maxx GT600 DSST CTT"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "285/35ZR20 ダンロップ SPスポーツマックス GT600 DSST CTT",
+            "en": "285/35ZR20 Dunlop SP Sport Maxx GT600 DSST CTT"
+          }
         }
       ],
       "youtube_url": "https://www.youtube.com/watch?v=1VPm3CZiQjc",
@@ -1125,8 +1405,22 @@
         {
           "key": "transmission",
           "value": {
-            "ja": "7速PDK(MT設定なし、FR)",
-            "en": "7-speed PDK only (RWD)"
+            "ja": "7速PDK(MT設定なし、MR)",
+            "en": "7-speed PDK only (MR)"
+          }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "245/35ZR20 ミシュラン パイロット・スポーツ Cup 2",
+            "en": "245/35ZR20 Michelin Pilot Sport Cup 2"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "295/30ZR20 ミシュラン パイロット・スポーツ Cup 2",
+            "en": "295/30ZR20 Michelin Pilot Sport Cup 2"
           }
         }
       ],
@@ -1181,6 +1475,20 @@
             "ja": "8速デュアルクラッチ(FR)",
             "en": "8-speed dual-clutch (RWD)"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "275/30ZR20 ミシュラン パイロット・スポーツ Cup 2 R(Z07パフォーマンスパッケージ、記録走行時装着)",
+            "en": "275/30ZR20 Michelin Pilot Sport Cup 2 R (Z07 Performance Package, fitted for the record run)"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "345/25ZR21 ミシュラン パイロット・スポーツ Cup 2 R(Z07パフォーマンスパッケージ、記録走行時装着)",
+            "en": "345/25ZR21 Michelin Pilot Sport Cup 2 R (Z07 Performance Package, fitted for the record run)"
+          }
         }
       ],
       "youtube_url": "https://www.youtube.com/watch?v=RNPI5xCwU74",
@@ -1233,6 +1541,20 @@
           "value": {
             "ja": "6速MT(FR)",
             "en": "6-speed manual (RWD)"
+          }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "295/30ZR18 ミシュラン パイロット・スポーツ Cup",
+            "en": "295/30ZR18 Michelin Pilot Sport Cup"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "345/30ZR19 ミシュラン パイロット・スポーツ Cup",
+            "en": "345/30ZR19 Michelin Pilot Sport Cup"
           }
         }
       ],
@@ -1288,6 +1610,20 @@
             "ja": "6速AMT(ASG、FR)",
             "en": "6-speed automated manual (ASG, RWD)"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "265/35ZR20 ブリヂストン ポテンザ RE070(標準装着の公道用タイヤ)",
+            "en": "265/35ZR20 Bridgestone Potenza RE070 (standard-issue road-legal tire)"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "305/30ZR20 ブリヂストン ポテンザ RE070(標準装着の公道用タイヤ)",
+            "en": "305/30ZR20 Bridgestone Potenza RE070 (standard-issue road-legal tire)"
+          }
         }
       ],
       "youtube_url": "https://www.youtube.com/watch?v=uYYdFHK__xQ",
@@ -1341,6 +1677,20 @@
           "value": {
             "ja": "6速MT/10速AT(FR)",
             "en": "6-speed manual or 10-speed automatic (RWD)"
+          }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "305/30ZR19 グッドイヤー イーグル F1 スーパーカー 3R",
+            "en": "305/30ZR19 Goodyear Eagle F1 SuperCar 3R"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "325/30ZR19 グッドイヤー イーグル F1 スーパーカー 3R",
+            "en": "325/30ZR19 Goodyear Eagle F1 SuperCar 3R"
           }
         }
       ],
@@ -1396,6 +1746,20 @@
             "ja": "8速AT(FR)",
             "en": "8-speed automatic (RWD)"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "275/35ZR19 ミシュラン パイロット・スポーツ Cup 2",
+            "en": "275/35ZR19 Michelin Pilot Sport Cup 2"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "285/30ZR20 ミシュラン パイロット・スポーツ Cup 2",
+            "en": "285/30ZR20 Michelin Pilot Sport Cup 2"
+          }
         }
       ],
       "youtube_url": "https://www.youtube.com/watch?v=CtSqZOz3sGs",
@@ -1450,6 +1814,20 @@
             "ja": "8速AT(FR)",
             "en": "8-speed automatic (RWD)"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "275/35ZR19 ミシュラン パイロット・スポーツ Cup 2(標準、Cup 2 Rはオプション)",
+            "en": "275/35ZR19 Michelin Pilot Sport Cup 2 (standard; Cup 2 R optional)"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "285/30ZR20 ミシュラン パイロット・スポーツ Cup 2(標準、Cup 2 Rはオプション)",
+            "en": "285/30ZR20 Michelin Pilot Sport Cup 2 (standard; Cup 2 R optional)"
+          }
         }
       ],
       "source_url": "https://www.bmwusa.com/vehicles/m-series/bmw-4-series-m-models/bmw-m4-coupe.html"
@@ -1502,6 +1880,20 @@
           "value": {
             "ja": "8速AT(MT設定なし、FR)",
             "en": "8-speed automatic only (RWD)"
+          }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "245/35ZR19 ミシュラン パイロット・スポーツ Cup 2 コネクト",
+            "en": "245/35ZR19 Michelin Pilot Sport Cup 2 Connect"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "265/35ZR19 ミシュラン パイロット・スポーツ Cup 2 コネクト",
+            "en": "265/35ZR19 Michelin Pilot Sport Cup 2 Connect"
           }
         }
       ],
@@ -1556,6 +1948,20 @@
             "ja": "8速AT(FR/AWD設定あり)",
             "en": "8-speed automatic (RWD; AWD available)"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "275/35ZR19 ピレリ P ZERO Trofeo R",
+            "en": "275/35ZR19 Pirelli P Zero Trofeo R"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "285/30ZR20 ピレリ P ZERO Trofeo R",
+            "en": "285/30ZR20 Pirelli P Zero Trofeo R"
+          }
         }
       ],
       "source_url": "https://www.znmperformance.com/znm-performance-blog/bmw-m3-cs-m4-csl-nurburgring-lap-records/"
@@ -1606,8 +2012,22 @@
         {
           "key": "transmission",
           "value": {
-            "ja": "6速MT(FR)",
-            "en": "6-speed manual (RWD)"
+            "ja": "6速MT(MR)",
+            "en": "6-speed manual (MR)"
+          }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "245/35ZR20 ミシュラン パイロット・スポーツ Cup 2",
+            "en": "245/35ZR20 Michelin Pilot Sport Cup 2"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "295/30ZR20 ミシュラン パイロット・スポーツ Cup 2",
+            "en": "295/30ZR20 Michelin Pilot Sport Cup 2"
           }
         }
       ],
@@ -1662,6 +2082,20 @@
             "ja": "6速MT/8速AT(FR)",
             "en": "6-speed manual or 8-speed automatic (RWD)"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "275/35ZR19 ミシュラン パイロット・スポーツ 4S",
+            "en": "275/35ZR19 Michelin Pilot Sport 4S"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "285/30ZR20 ミシュラン パイロット・スポーツ 4S",
+            "en": "285/30ZR20 Michelin Pilot Sport 4S"
+          }
         }
       ],
       "source_url": "https://www.bmwusa.com/vehicles/m-series/bmw-2-series-m-models/bmw-m2-coupe.html"
@@ -1715,6 +2149,20 @@
             "ja": "8速AT(AWD)",
             "en": "8-speed automatic (AWD)"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "275/35ZR19 ミシュラン パイロット・スポーツ 4S",
+            "en": "275/35ZR19 Michelin Pilot Sport 4S"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "285/30ZR20 ミシュラン パイロット・スポーツ 4S",
+            "en": "285/30ZR20 Michelin Pilot Sport 4S"
+          }
         }
       ],
       "source_url": "https://www.bmwusa.com/vehicles/m-series/m3.html"
@@ -1767,6 +2215,20 @@
           "value": {
             "ja": "6速MT(FF)",
             "en": "6-speed manual (FWD)"
+          }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "265/30ZR19 ミシュラン パイロット・スポーツ 4S",
+            "en": "265/30ZR19 Michelin Pilot Sport 4S"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "265/30ZR19 ミシュラン パイロット・スポーツ 4S",
+            "en": "265/30ZR19 Michelin Pilot Sport 4S"
           }
         }
       ],
@@ -1822,6 +2284,20 @@
             "ja": "6速MT(FF)",
             "en": "6-speed manual (FWD)"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "245/35ZR19 ブリヂストン ポテンザ S007",
+            "en": "245/35ZR19 Bridgestone Potenza S007"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "245/35ZR19 ブリヂストン ポテンザ S007",
+            "en": "245/35ZR19 Bridgestone Potenza S007"
+          }
         }
       ],
       "youtube_url": "https://www.youtube.com/watch?v=jLfbxuN75lA",
@@ -1873,8 +2349,22 @@
         {
           "key": "transmission",
           "value": {
-            "ja": "6速MT/7速PDK(FR)",
-            "en": "6-speed manual or 7-speed PDK (RWD)"
+            "ja": "6速MT/7速PDK(MR)",
+            "en": "6-speed manual or 7-speed PDK (MR)"
+          }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "235/35ZR20 ミシュラン パイロット・スーパースポーツ(20インチオプション)",
+            "en": "235/35ZR20 Michelin Pilot Super Sport (optional 20-inch fitment)"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "265/35ZR20 ミシュラン パイロット・スーパースポーツ(20インチオプション)",
+            "en": "265/35ZR20 Michelin Pilot Super Sport (optional 20-inch fitment)"
           }
         }
       ],
@@ -1929,6 +2419,20 @@
             "ja": "6速MT(FF)",
             "en": "6-speed manual (FWD)"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "235/35ZR19 ミシュラン パイロット・スポーツ Cup 2",
+            "en": "235/35ZR19 Michelin Pilot Sport Cup 2"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "235/35ZR19 ミシュラン パイロット・スポーツ Cup 2",
+            "en": "235/35ZR19 Michelin Pilot Sport Cup 2"
+          }
         }
       ],
       "source_url": "https://www.volkswagen-newsroom.com/en/international-driving-presentation-the-new-golf-gti-clubsport-s-2776/record-breaking-lap-of-the-nuerburgring-the-golf-gti-clubsport-s-at-the-green-hell-2790"
@@ -1981,6 +2485,20 @@
           "value": {
             "ja": "7速DSG(AWD、4Motion)",
             "en": "7-speed DSG (AWD, 4Motion)"
+          }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "235/35ZR19 ミシュラン パイロット・スポーツ 4S",
+            "en": "235/35ZR19 Michelin Pilot Sport 4S"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "235/35ZR19 ミシュラン パイロット・スポーツ 4S",
+            "en": "235/35ZR19 Michelin Pilot Sport 4S"
           }
         }
       ],
@@ -2035,6 +2553,20 @@
             "ja": "7速DSG(FF)",
             "en": "7-speed DSG (FWD)"
           }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "225/40R18 ブリヂストン ポテンザ S005(標準装着、推定)",
+            "en": "225/40R18 Bridgestone Potenza S005 (standard fitment, best estimate)"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "225/40R18 ブリヂストン ポテンザ S005(標準装着、推定)",
+            "en": "225/40R18 Bridgestone Potenza S005 (standard fitment, best estimate)"
+          }
         }
       ],
       "source_url": "https://fastestlaps.com/tests/sgusir5z5z0k"
@@ -2085,8 +2617,22 @@
         {
           "key": "transmission",
           "value": {
-            "ja": "6速MT/7速PDK(FR)",
-            "en": "6-speed manual or 7-speed PDK (RWD)"
+            "ja": "6速MT/7速PDK(MR)",
+            "en": "6-speed manual or 7-speed PDK (MR)"
+          }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "235/35ZR20 ミシュラン パイロット・スポーツ 4S",
+            "en": "235/35ZR20 Michelin Pilot Sport 4S"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "265/35ZR20 ミシュラン パイロット・スポーツ 4S",
+            "en": "265/35ZR20 Michelin Pilot Sport 4S"
           }
         }
       ],
@@ -2140,6 +2686,20 @@
           "value": {
             "ja": "6速MT/10速AT(FR)",
             "en": "6-speed manual or 10-speed automatic (RWD)"
+          }
+        },
+        {
+          "key": "tire_front",
+          "value": {
+            "ja": "305/30ZR19 ミシュラン パイロット・スポーツ 4S",
+            "en": "305/30ZR19 Michelin Pilot Sport 4S"
+          }
+        },
+        {
+          "key": "tire_rear",
+          "value": {
+            "ja": "305/30ZR19 ミシュラン パイロット・スポーツ 4S",
+            "en": "305/30ZR19 Michelin Pilot Sport 4S"
           }
         }
       ],
