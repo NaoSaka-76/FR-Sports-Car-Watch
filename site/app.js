@@ -183,7 +183,7 @@
         a80: "A80(JZA80・4代目・2JZ)",
         a90_a91: "A90/A91(現行GRスープラ)",
       },
-      generationAll: "すべて",
+      tabAll: "すべて",
     },
     en: {
       loading: "Loading data…",
@@ -331,7 +331,7 @@
         a80: "A80 (JZA80, Mk4, 2JZ)",
         a90_a91: "A90/A91 (Current GR Supra)",
       },
-      generationAll: "All",
+      tabAll: "All",
     },
   };
 
@@ -526,48 +526,53 @@
     return panel;
   }
 
-  // ---- ③④ ライバル車別トピックス/YouTube(車種ごとのミニカード) -----------
+  // ---- ③④ ライバル車トピックス/YouTube(統合リスト + 車種選択タブ) --------
 
-  function buildRivalCard(rival, labelB) {
-    var s = t();
-    var card = el("div", "rival-card");
-    card.appendChild(el("div", "rival-card__header", rival.label));
+  function mergeAllRivals(rivals, sortKey) {
+    var seen = {};
+    var merged = [];
+    function pushUnique(item) {
+      var k = item.url || item.video_id;
+      if (k && seen[k]) return;
+      if (k) seen[k] = true;
+      merged.push(item);
+    }
+    var pools = (rivals || []).map(function (r) { return r[sortKey] || []; });
 
-    var tabs = el("div", "tab-group tab-group--sub");
-    tabs.style.padding = "10px 12px 0";
-    var tabA = el("button", "tab-group__btn is-active", s.tabNewest);
-    var tabB = el("button", "tab-group__btn", labelB);
-    tabs.appendChild(tabA);
-    tabs.appendChild(tabB);
-    card.appendChild(tabs);
-
-    var listWrap = el("div");
-    function renderList(items) {
-      listWrap.innerHTML = "";
-      if (!items || items.length === 0) {
-        listWrap.appendChild(el("p", "panel__empty", s.emptyGroup));
+    if (sortKey === "newest") {
+      // recency_seconds(YouTube)またはRSSのpublished日時(ニュース)で、
+      // 車種をまたいだ真の時系列順にソートする。
+      var flat = [].concat.apply([], pools);
+      flat.sort(function (a, b) {
+        if (a.recency_seconds !== undefined && b.recency_seconds !== undefined) {
+          return a.recency_seconds - b.recency_seconds;
+        }
+        var ta = a.published ? Date.parse(a.published) : 0;
+        var tb = b.published ? Date.parse(b.published) : 0;
+        return tb - ta;
+      });
+      flat.forEach(pushUnique);
+    } else {
+      var hasViewCount = pools.some(function (p) { return p.length > 0 && p[0].view_count !== undefined; });
+      if (hasViewCount) {
+        // YouTube再生数は車種をまたいで比較可能な実数なので、そのままグローバルソート。
+        var flat2 = [].concat.apply([], pools);
+        flat2.sort(function (a, b) { return (b.view_count || 0) - (a.view_count || 0); });
+        flat2.forEach(pushUnique);
       } else {
-        listWrap.appendChild(buildList(items));
+        // ニュースの「話題順」は検索結果内の関連度順(車種ごとの相対順位のみ)で、
+        // 車種をまたいで比較可能なスコアがないため、各車種の順位を保ったまま
+        // ラウンドロビンで均等に混ぜる(特定の車種の結果だけが上位を占めないように)。
+        var maxLen = pools.reduce(function (m, p) { return Math.max(m, p.length); }, 0);
+        for (var i = 0; i < maxLen; i++) {
+          pools.forEach(function (p) { if (i < p.length) pushUnique(p[i]); });
+        }
       }
     }
-    renderList(rival.newest);
-    card.appendChild(listWrap);
-
-    tabA.addEventListener("click", function () {
-      tabA.classList.add("is-active");
-      tabB.classList.remove("is-active");
-      renderList(rival.newest);
-    });
-    tabB.addEventListener("click", function () {
-      tabB.classList.add("is-active");
-      tabA.classList.remove("is-active");
-      renderList(rival.popular);
-    });
-
-    return card;
+    return merged;
   }
 
-  function buildRivalGroupPanel(icon, sectionKey, rivals, labelB) {
+  function buildRivalUnifiedPanel(icon, sectionKey, rivals, labelB) {
     var s = t();
     var meta = s.sections[sectionKey] || {};
     var panel = el("section", "panel panel--full");
@@ -577,11 +582,73 @@
     panel.appendChild(buildPanelHeader(icon, meta.title || sectionKey, totalCount));
     if (meta.note) panel.appendChild(el("p", "panel__note", meta.note));
 
-    var grid = el("div", "rival-grid");
-    (rivals || []).forEach(function (rival) {
-      grid.appendChild(buildRivalCard(rival, labelB));
+    var vehicleTabs = el("div", "tab-group");
+    var sortTabs = el("div", "tab-group");
+    panel.appendChild(vehicleTabs);
+    panel.appendChild(sortTabs);
+
+    var listWrap = el("div");
+    panel.appendChild(listWrap);
+
+    var ALL_RIVALS = -1;
+    var activeIndex = ALL_RIVALS; // 既定: すべて(全車種を統合表示)
+    var activeSort = "newest";
+
+    var allBtn = el("button", "tab-group__btn tab-group__btn--gen is-active", s.tabAll);
+    allBtn.addEventListener("click", function () {
+      activeIndex = ALL_RIVALS;
+      allBtn.classList.add("is-active");
+      vehicleButtons.forEach(function (b) { b.classList.remove("is-active"); });
+      renderCurrent();
     });
-    panel.appendChild(grid);
+    vehicleTabs.appendChild(allBtn);
+
+    var vehicleButtons = (rivals || []).map(function (rival, idx) {
+      var btn = el("button", "tab-group__btn tab-group__btn--gen", rival.label);
+      btn.addEventListener("click", function () {
+        activeIndex = idx;
+        allBtn.classList.remove("is-active");
+        vehicleButtons.forEach(function (b, i) { b.classList.toggle("is-active", i === idx); });
+        renderCurrent();
+      });
+      vehicleTabs.appendChild(btn);
+      return btn;
+    });
+
+    var sortNewestBtn = el("button", "tab-group__btn is-active", s.tabNewest);
+    var sortBBtn = el("button", "tab-group__btn", labelB);
+    sortNewestBtn.addEventListener("click", function () {
+      activeSort = "newest";
+      sortNewestBtn.classList.add("is-active");
+      sortBBtn.classList.remove("is-active");
+      renderCurrent();
+    });
+    sortBBtn.addEventListener("click", function () {
+      activeSort = "popular";
+      sortBBtn.classList.add("is-active");
+      sortNewestBtn.classList.remove("is-active");
+      renderCurrent();
+    });
+    sortTabs.appendChild(sortNewestBtn);
+    sortTabs.appendChild(sortBBtn);
+
+    function renderCurrent() {
+      listWrap.innerHTML = "";
+      var items;
+      if (activeIndex === ALL_RIVALS) {
+        items = mergeAllRivals(rivals, activeSort);
+      } else {
+        var rival = (rivals || [])[activeIndex];
+        items = rival ? rival[activeSort] : [];
+      }
+      if (!items || items.length === 0) {
+        listWrap.appendChild(el("p", "panel__empty", s.emptyGeneric));
+      } else {
+        listWrap.appendChild(buildList(items));
+      }
+    }
+    renderCurrent();
+
     return panel;
   }
 
@@ -611,7 +678,7 @@
     var allBtn = el(
       "button",
       "tab-group__btn tab-group__btn--gen" + (activeGenIndex === ALL_GENERATIONS ? " is-active" : ""),
-      s.generationAll
+      s.tabAll
     );
     allBtn.addEventListener("click", function () {
       activeGenIndex = ALL_GENERATIONS;
@@ -1087,9 +1154,9 @@
       if (entry.key === "motorsports") {
         panel = buildMotorsportsPanel(entry.icon, section);
       } else if (entry.key === "rival_topics") {
-        panel = buildRivalGroupPanel(entry.icon, entry.key, section.rivals, t().tabPopular);
+        panel = buildRivalUnifiedPanel(entry.icon, entry.key, section.rivals, t().tabPopular);
       } else if (entry.key === "rival_youtube") {
-        panel = buildRivalGroupPanel(entry.icon, entry.key, section.rivals, t().tabPopularViews);
+        panel = buildRivalUnifiedPanel(entry.icon, entry.key, section.rivals, t().tabPopularViews);
       } else if (entry.key === "historic_youtube") {
         panel = buildHistoricYoutubePanel(entry.icon, section);
       } else if (entry.key === "inline_six") {
