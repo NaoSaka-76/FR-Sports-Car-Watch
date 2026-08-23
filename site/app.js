@@ -20,15 +20,19 @@
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>',
     clock:
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2"/><path d="M9 2h6"/></svg>',
+    timer:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 13.5V9.2"/><path d="M10 2.5h4"/><path d="M18.5 6l1.3-1.3"/></svg>',
   };
 
   // 表示順: ①公式リリース → ②ライバル車カタログ → ③ライバル車トピックス → ④ライバル車YouTube
-  // → ⑤歴代Supra YouTube → ⑥直6エンジントピックス → ⑦顧客の声/クレーム → ⑧モータースポーツ
+  // → ⑤歴代Supra YouTube → ⑥ニュルブルクリンクラップタイム → ⑦直6エンジントピックス
+  // → ⑧顧客の声/クレーム → ⑨モータースポーツ
   var LAYOUT = [
     { key: "official_news", icon: "newspaper" },
     { key: "rival_topics", icon: "trend" },
     { key: "rival_youtube", icon: "play" },
     { key: "historic_youtube", icon: "clock" },
+    { key: "nurburgring", icon: "timer" },
     { key: "inline_six", icon: "gear" },
     { key: "complaints", icon: "alert" },
     { key: "motorsports", icon: "flag" },
@@ -73,6 +77,8 @@
       linkCalendar: "公式カレンダーを見る ↗",
       linkStandings: "公式ランキングを見る ↗",
       linkOfficial: "公式サイトを見る ↗",
+      linkOnboardVideo: "オンボード動画を見る ↗",
+      linkSource: "出典を見る ↗",
       scheduleLinkNote: "日程データの構造が不安定なため一覧化を見送っています。公式カレンダーは以下のリンクからご確認ください。",
       standingsNoteError: "ランキングの取得中にエラーが発生しました。「公式ランキングを見る」からご確認ください。",
       sentimentPositive: "ポジティブ",
@@ -116,8 +122,17 @@
             "YouTube動画を世代別に集約しています。世代タブで絞り込み、新着順/再生数順を切り替えられます。" +
             "旧世代(A40/A50・A60)は情報量が少なく該当動画が薄い場合があります。",
         },
+        nurburgring: {
+          title: "⑥ ニュルブルクリンク ラップタイムランキング",
+          note:
+            "ニュルブルクリンク・ノルドシュライフェでの公道走行可能な市販車(限定生産モデル含む)の" +
+            "ラップタイムを速い順にまとめた、手動収集の静的リファレンスです。30分毎の自動収集対象では" +
+            "なく、不定期に更新します。純レーシングカー・プロトタイプ・ワンメイクレーサー等、公道登録" +
+            "できない車両は対象外としています。タイムは年式・タイヤ・オプション装備・計測区間により" +
+            "条件が異なるため、単純比較にはご注意ください。",
+        },
         inline_six: {
-          title: "⑥ 世界の直列6気筒エンジントピックス",
+          title: "⑦ 世界の直列6気筒エンジントピックス",
           note:
             "Supra専用のセクションではなく、BMW B58・Mercedes-AMG M256・マツダ直6(e-Skyactiv)・" +
             "日産VR30DDTT・Jaguar Ingenium I6・Genesis/Hyundai Smartstream I6等、直列6気筒(インライン6)" +
@@ -126,14 +141,14 @@
             "表示順(関連度順)によるものです。",
         },
         complaints: {
-          title: "⑦ Supra 顧客の声・クレーム",
+          title: "⑧ Supra 顧客の声・クレーム",
           note:
             "社内クレーム管理システムとは未連携です。市販GRスープラに関するニュース報道(リコール等)で" +
             "公開されている情報のみを集約した簡易モニタリングです。「話題順」は検索結果内での表示順" +
             "(関連度順)を代替指標として用いています(実際のSNS拡散数やエンゲージメント数ではありません)。",
         },
         motorsports: {
-          title: "⑧ Supra モータースポーツ",
+          title: "⑨ Supra モータースポーツ",
           note:
             "GT500・GT300・フォーミュラドリフト(日本・米国)・D1GP・Supercars Championship等、" +
             "GRスープラ/Supraが参戦するシリーズを地域別に集約。日程・ランキングはSUPER GT公式サイト等" +
@@ -229,6 +244,8 @@
       linkCalendar: "View official calendar ↗",
       linkStandings: "View official ranking ↗",
       linkOfficial: "Visit official site ↗",
+      linkOnboardVideo: "Watch onboard video ↗",
+      linkSource: "View source ↗",
       scheduleLinkNote: "The schedule data structure is unstable, so it isn't listed here. Please check the official calendar via the link below.",
       standingsNoteError: "An error occurred while fetching the ranking. Please check via \"View official ranking.\"",
       sentimentPositive: "Positive",
@@ -271,8 +288,17 @@
             "current A90/A91 GR Supra, grouped by generation. Use the generation tabs to filter, and toggle " +
             "newest/most-viewed. Older generations (A40/A50, A60) may return thinner results.",
         },
+        nurburgring: {
+          title: "⑥ Nürburgring Lap Time Ranking",
+          note:
+            "A hand-curated, static reference list of road-legal production cars (including limited-run " +
+            "special editions) ranked by their Nürburgring Nordschleife lap time. Not part of the 30-minute " +
+            "auto-scrape — updated irregularly. Pure race cars, prototypes, and one-make racers that can't be " +
+            "registered for road use are excluded. Times vary by model year, tires, optional aero/weight " +
+            "packages, and exact timed section, so treat comparisons with care.",
+        },
         inline_six: {
-          title: "⑥ Worldwide Inline-Six Engine Topics",
+          title: "⑦ Worldwide Inline-Six Engine Topics",
           note:
             "Not Supra-specific — aggregates news about inline-six (straight-six) engine technology across " +
             "all manufacturers: BMW B58, Mercedes-AMG M256, Mazda's inline-six (e-Skyactiv), Nissan VR30DDTT, " +
@@ -280,14 +306,14 @@
             "engine is one thread among these, not the focus. \"Trending\" reflects search-result display order.",
         },
         complaints: {
-          title: "⑦ Supra Customer Voice & Complaints",
+          title: "⑧ Supra Customer Voice & Complaints",
           note:
             "Not connected to any internal complaint-management system. Aggregates only publicly reported " +
             "news (e.g. recalls) about the production GR Supra. \"Trending\" uses search-result display order " +
             "as a proxy for attention (not actual share/engagement counts).",
         },
         motorsports: {
-          title: "⑧ Supra Motorsports",
+          title: "⑨ Supra Motorsports",
           note:
             "GT500, GT300, Formula Drift (Japan & US), D1GP, and the Supercars Championship — every series " +
             "the GR Supra / Supra races in, grouped by region. Schedules/standings use real data from static-HTML " +
@@ -380,6 +406,7 @@
 
   var lastData = null;
   var lastCarsData = null;
+  var lastNurburgringData = null;
 
   function el(tag, className, text) {
     var node = document.createElement(tag);
@@ -1089,6 +1116,80 @@
     return panel;
   }
 
+  // ---- ⑥ ニュルブルクリンク ラップタイムランキング(静的リファレンス) -------
+
+  function buildNurburgringRow(entry) {
+    var i18n = t();
+    var row = el("div", "nurburgring-row" + (entry.is_supra ? " nurburgring-row--spotlight" : ""));
+
+    var rank = el("div", "nurburgring-row__rank", String(entry.rank));
+    row.appendChild(rank);
+
+    var body = el("div", "nurburgring-row__body");
+
+    var head = el("div", "nurburgring-row__head");
+    head.appendChild(el("span", "nurburgring-row__time", entry.lap_time));
+    var nameParts = [entry.manufacturer, pick(entry.model)].filter(Boolean).join(" ");
+    head.appendChild(el("span", "nurburgring-row__name", nameParts));
+    if (entry.is_supra) head.appendChild(el("span", "supra-tag", "GR SUPRA"));
+    body.appendChild(head);
+
+    var metaParts = [];
+    if (entry.year) metaParts.push(String(entry.year));
+    var note = pick(entry.note);
+    if (note) metaParts.push(note);
+    if (metaParts.length > 0) {
+      body.appendChild(el("p", "nurburgring-row__meta", metaParts.join(" · ")));
+    }
+
+    if (entry.specs && entry.specs.length > 0) {
+      var specList = el("dl", "car-card__specs");
+      entry.specs.forEach(function (spec) {
+        specList.appendChild(el("dt", null, i18n.carSpecs[spec.key] || spec.key));
+        specList.appendChild(el("dd", null, pick(spec.value)));
+      });
+      body.appendChild(specList);
+    }
+
+    var links = el("div", "nurburgring-row__links");
+    if (entry.youtube_url) {
+      var ytLink = el("a", "series-card__link", i18n.linkOnboardVideo);
+      ytLink.href = entry.youtube_url;
+      ytLink.target = "_blank";
+      ytLink.rel = "noopener noreferrer";
+      links.appendChild(ytLink);
+    }
+    if (entry.source_url) {
+      var srcLink = el("a", "series-card__link", i18n.linkSource);
+      srcLink.href = entry.source_url;
+      srcLink.target = "_blank";
+      srcLink.rel = "noopener noreferrer";
+      links.appendChild(srcLink);
+    }
+    if (links.childNodes.length > 0) body.appendChild(links);
+
+    row.appendChild(body);
+    return row;
+  }
+
+  function buildNurburgringPanel(icon, nurData) {
+    var i18n = t();
+    var panel = el("section", "panel panel--full");
+    var cars = nurData.cars || [];
+    panel.appendChild(buildPanelHeader(icon, i18n.sections.nurburgring.title, cars.length));
+    var meta = i18n.sections.nurburgring;
+    if (meta.note) panel.appendChild(el("p", "panel__note", meta.note));
+    var note = pick(nurData.note);
+    if (note) panel.appendChild(el("p", "panel__note", note));
+
+    var list = el("div", "nurburgring-list");
+    cars.forEach(function (entry) {
+      list.appendChild(buildNurburgringRow(entry));
+    });
+    panel.appendChild(list);
+    return panel;
+  }
+
   // ---- 集計・サマリー --------------------------------------------------
 
   function collectSentimentItems(data) {
@@ -1190,9 +1291,10 @@
     }
   }
 
-  function render(data, carsData) {
+  function render(data, carsData, nurData) {
     lastData = data;
     lastCarsData = carsData;
+    lastNurburgringData = nurData;
     applyStaticText();
     buildStats(data);
 
@@ -1205,6 +1307,12 @@
 
     LAYOUT.forEach(function (entry) {
       if (entry.key === "official_news") return; // 上で個別描画済み
+      if (entry.key === "nurburgring") {
+        // data/nurburgring.jsonという別ファイルの静的データで、30分毎の自動収集
+        // 対象(data.sections)には含まれないため、専用に扱う。
+        if (nurData) board.appendChild(buildNurburgringPanel(entry.icon, nurData));
+        return;
+      }
       var section = data.sections && data.sections[entry.key];
       if (!section) return;
       var panel;
@@ -1253,7 +1361,7 @@
       /* localStorage unavailable */
     }
     if (lastData) {
-      render(lastData, lastCarsData);
+      render(lastData, lastCarsData, lastNurburgringData);
     } else {
       applyStaticText();
       if (loadingEl) loadingEl.textContent = t().loading;
@@ -1280,13 +1388,12 @@
 
   fetchJson("data/latest.json")
     .then(function (data) {
-      fetchJson("data/rivals.json")
-        .then(function (carsData) {
-          render(data, carsData);
-        })
-        .catch(function () {
-          render(data, null);
-        });
+      Promise.all([
+        fetchJson("data/rivals.json").catch(function () { return null; }),
+        fetchJson("data/nurburgring.json").catch(function () { return null; }),
+      ]).then(function (results) {
+        render(data, results[0], results[1]);
+      });
     })
     .catch(function (err) {
       renderError(t().fetchErrorPrefix + err.message + t().fetchErrorSuffix);

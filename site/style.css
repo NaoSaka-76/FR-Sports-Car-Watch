@@ -108,6 +108,7 @@ a { color: inherit; }
   .panel:nth-child(6) { animation-delay: 0.22s; }
   .status-dot { animation: pulse 2.2s ease-in-out infinite; }
   .standings-chart__row--spotlight { animation: glow 2.4s ease-in-out infinite; }
+  .nurburgring-row--spotlight { animation: glow 2.4s ease-in-out infinite; }
 }
 @keyframes rise {
   from { opacity: 0; transform: translateY(8px); }
@@ -806,6 +807,83 @@ a { color: inherit; }
   padding: 8px 10px;
   border-radius: 6px;
   background: var(--surface-sunken);
+}
+
+/* ---- Nürburgring lap time ranking (⑥) ---- */
+
+.nurburgring-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 8px 14px 14px;
+}
+
+.nurburgring-row {
+  display: flex;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-sunken);
+}
+
+.nurburgring-row--spotlight {
+  border-color: var(--spotlight);
+  background: var(--spotlight-soft);
+}
+
+.nurburgring-row__rank {
+  flex-shrink: 0;
+  width: 26px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+}
+
+.nurburgring-row__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.nurburgring-row__head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.nurburgring-row__time {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent-ink);
+}
+
+.nurburgring-row__name {
+  font-weight: 700;
+  font-size: 0.86rem;
+}
+
+.nurburgring-row__meta {
+  margin: 0 0 6px;
+  font-size: 0.76rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+.nurburgring-row__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.nurburgring-row__links .series-card__link {
+  margin: 0;
 }
 
 /* ---- Race schedule ---- */
