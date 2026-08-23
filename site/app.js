@@ -190,6 +190,8 @@
         zero_to_60: "0-100km/h加速",
         weight: "車両重量",
         transmission: "トランスミッション",
+        tire_front: "タイヤ(前)",
+        tire_rear: "タイヤ(後)",
       },
       generations: {
         a40_a50: "A40/A50(セリカスープラ)",
@@ -355,6 +357,8 @@
         zero_to_60: "0-60mph",
         weight: "Weight",
         transmission: "Transmission",
+        tire_front: "Tire (Front)",
+        tire_rear: "Tire (Rear)",
       },
       generations: {
         a40_a50: "A40/A50 (Celica Supra)",
