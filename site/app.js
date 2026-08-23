@@ -183,6 +183,7 @@
         a80: "A80(JZA80・4代目・2JZ)",
         a90_a91: "A90/A91(現行GRスープラ)",
       },
+      generationAll: "すべて",
     },
     en: {
       loading: "Loading data…",
@@ -330,6 +331,7 @@
         a80: "A80 (JZA80, Mk4, 2JZ)",
         a90_a91: "A90/A91 (Current GR Supra)",
       },
+      generationAll: "All",
     },
   };
 
@@ -602,20 +604,54 @@
     var listWrap = el("div");
     panel.appendChild(listWrap);
 
-    var activeGenIndex = generations.length > 0 ? generations.length - 1 : 0; // 既定: 最新世代(A90/A91)
+    var ALL_GENERATIONS = -1;
+    var activeGenIndex = ALL_GENERATIONS; // 既定: すべて(全世代を統合表示)
     var activeSort = "newest";
+
+    var allBtn = el(
+      "button",
+      "tab-group__btn tab-group__btn--gen" + (activeGenIndex === ALL_GENERATIONS ? " is-active" : ""),
+      s.generationAll
+    );
+    allBtn.addEventListener("click", function () {
+      activeGenIndex = ALL_GENERATIONS;
+      allBtn.classList.add("is-active");
+      genButtons.forEach(function (b) { b.classList.remove("is-active"); });
+      renderCurrent();
+    });
+    genTabs.appendChild(allBtn);
 
     var genButtons = generations.map(function (gen, idx) {
       var label = s.generations[gen.key] || gen.label;
       var btn = el("button", "tab-group__btn tab-group__btn--gen" + (idx === activeGenIndex ? " is-active" : ""), label);
       btn.addEventListener("click", function () {
         activeGenIndex = idx;
+        allBtn.classList.remove("is-active");
         genButtons.forEach(function (b, i) { b.classList.toggle("is-active", i === idx); });
         renderCurrent();
       });
       genTabs.appendChild(btn);
       return btn;
     });
+
+    function mergeAllGenerations(sortKey) {
+      var seen = {};
+      var merged = [];
+      generations.forEach(function (gen) {
+        (gen[sortKey] || []).forEach(function (item) {
+          var dedupeKey = item.url || item.video_id;
+          if (dedupeKey && seen[dedupeKey]) return;
+          if (dedupeKey) seen[dedupeKey] = true;
+          merged.push(item);
+        });
+      });
+      if (sortKey === "popular") {
+        merged.sort(function (a, b) { return (b.view_count || 0) - (a.view_count || 0); });
+      } else {
+        merged.sort(function (a, b) { return (a.recency_seconds || 0) - (b.recency_seconds || 0); });
+      }
+      return merged;
+    }
 
     var sortNewestBtn = el("button", "tab-group__btn is-active", s.tabNewest);
     var sortPopularBtn = el("button", "tab-group__btn", s.tabPopularViews);
@@ -636,8 +672,13 @@
 
     function renderCurrent() {
       listWrap.innerHTML = "";
-      var gen = generations[activeGenIndex];
-      var items = gen ? gen[activeSort] : [];
+      var items;
+      if (activeGenIndex === ALL_GENERATIONS) {
+        items = mergeAllGenerations(activeSort);
+      } else {
+        var gen = generations[activeGenIndex];
+        items = gen ? gen[activeSort] : [];
+      }
       if (!items || items.length === 0) {
         listWrap.appendChild(el("p", "panel__empty", s.emptyGeneric));
       } else {
