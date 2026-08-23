@@ -701,6 +701,10 @@ a { color: inherit; }
   border-bottom: 1px solid var(--line);
 }
 
+.series-card > .tab-group {
+  padding: 10px 14px 0;
+}
+
 /* ---- Standings chart (実データによる順位グラフ) ---- */
 
 .standings-chart {
@@ -884,6 +888,15 @@ a { color: inherit; }
 
 .nurburgring-row__links .series-card__link {
   margin: 0;
+}
+
+.nurburgring-row__specs {
+  display: none;
+  margin-top: 6px;
+}
+
+.nurburgring-row--specs-visible .nurburgring-row__specs {
+  display: block;
 }
 
 /* ---- Race schedule ---- */
@@ -1129,11 +1142,11 @@ a { color: inherit; }
   display: none;
 }
 
-.panel--schedule-visible .series-card__schedule {
+.series-card--schedule-visible .series-card__schedule {
   display: block;
 }
 
-.panel--ranking-visible .series-card__ranking {
+.series-card--ranking-visible .series-card__ranking {
   display: block;
 }
 

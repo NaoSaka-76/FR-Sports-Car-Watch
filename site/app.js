@@ -906,6 +906,23 @@
     card.appendChild(header);
     if (desc) card.appendChild(el("p", "series-card__desc", desc));
 
+    // 日程・ランキングは既定で非表示。シリーズ(モータースポーツ)ごとに
+    // 個別のボタンを持ち、トピックスより上に配置する(他シリーズには影響しない)。
+    var toggleWrap = el("div", "tab-group");
+    var scheduleToggleBtn = el("button", "tab-group__btn", i18n.showSchedule);
+    var rankingToggleBtn = el("button", "tab-group__btn", i18n.showRanking);
+    scheduleToggleBtn.addEventListener("click", function () {
+      var visible = card.classList.toggle("series-card--schedule-visible");
+      scheduleToggleBtn.textContent = visible ? i18n.hideSchedule : i18n.showSchedule;
+    });
+    rankingToggleBtn.addEventListener("click", function () {
+      var visible = card.classList.toggle("series-card--ranking-visible");
+      rankingToggleBtn.textContent = visible ? i18n.hideRanking : i18n.showRanking;
+    });
+    toggleWrap.appendChild(scheduleToggleBtn);
+    toggleWrap.appendChild(rankingToggleBtn);
+    card.appendChild(toggleWrap);
+
     var scheduleWrap = el("div", "series-card__schedule");
     scheduleWrap.appendChild(buildScheduleBlock(s2));
     card.appendChild(scheduleWrap);
@@ -942,27 +959,6 @@
     }, 0);
     panel.appendChild(buildPanelHeader(icon, meta.title, totalCount));
     if (meta.note) panel.appendChild(el("p", "panel__note", meta.note));
-
-    // 日程・ランキングは既定で非表示。全シリーズ共通の一括ボタン2つ
-    // (シリーズごとの個別ボタンは持たない)で、全カードまとめて切り替える。
-    var toggleWrap = el("div", "tab-group");
-    var scheduleToggleBtn = el("button", "tab-group__btn", i18n.showSchedule);
-    var rankingToggleBtn = el("button", "tab-group__btn", i18n.showRanking);
-    var scheduleVisible = false;
-    var rankingVisible = false;
-    scheduleToggleBtn.addEventListener("click", function () {
-      scheduleVisible = !scheduleVisible;
-      panel.classList.toggle("panel--schedule-visible", scheduleVisible);
-      scheduleToggleBtn.textContent = scheduleVisible ? i18n.hideSchedule : i18n.showSchedule;
-    });
-    rankingToggleBtn.addEventListener("click", function () {
-      rankingVisible = !rankingVisible;
-      panel.classList.toggle("panel--ranking-visible", rankingVisible);
-      rankingToggleBtn.textContent = rankingVisible ? i18n.hideRanking : i18n.showRanking;
-    });
-    toggleWrap.appendChild(scheduleToggleBtn);
-    toggleWrap.appendChild(rankingToggleBtn);
-    panel.appendChild(toggleWrap);
 
     var container = el("div", "motorsports");
     Object.keys(regions).forEach(function (key) {
@@ -1142,16 +1138,17 @@
       body.appendChild(el("p", "nurburgring-row__meta", metaParts.join(" · ")));
     }
 
-    if (entry.specs && entry.specs.length > 0) {
-      var specList = el("dl", "car-card__specs");
-      entry.specs.forEach(function (spec) {
-        specList.appendChild(el("dt", null, i18n.carSpecs[spec.key] || spec.key));
-        specList.appendChild(el("dd", null, pick(spec.value)));
-      });
-      body.appendChild(specList);
+    var links = el("div", "nurburgring-row__links");
+
+    // 「Spec」ボタンは行の左端(動画/出典リンクより前)に配置し、押した車両だけ
+    // その場でスペック一覧が展開される(車両ごとの個別トグル、既定は非表示)。
+    var hasSpecs = entry.specs && entry.specs.length > 0;
+    var specBtn;
+    if (hasSpecs) {
+      specBtn = el("button", "tab-group__btn nurburgring-row__spec-btn", "Spec");
+      links.appendChild(specBtn);
     }
 
-    var links = el("div", "nurburgring-row__links");
     if (entry.youtube_url) {
       var ytLink = el("a", "series-card__link", i18n.linkOnboardVideo);
       ytLink.href = entry.youtube_url;
@@ -1167,6 +1164,22 @@
       links.appendChild(srcLink);
     }
     if (links.childNodes.length > 0) body.appendChild(links);
+
+    if (hasSpecs) {
+      var specWrap = el("div", "nurburgring-row__specs");
+      var specList = el("dl", "car-card__specs");
+      entry.specs.forEach(function (spec) {
+        specList.appendChild(el("dt", null, i18n.carSpecs[spec.key] || spec.key));
+        specList.appendChild(el("dd", null, pick(spec.value)));
+      });
+      specWrap.appendChild(specList);
+      body.appendChild(specWrap);
+
+      specBtn.addEventListener("click", function () {
+        var visible = row.classList.toggle("nurburgring-row--specs-visible");
+        specBtn.classList.toggle("is-active", visible);
+      });
+    }
 
     row.appendChild(body);
     return row;
