@@ -1,18 +1,29 @@
 """Race schedules for the Supra motorsports series that publish static HTML.
 
-Verified against live pages (2026-08-22) with curl before writing these parsers:
+Verified against live pages (2026-08-22, re-verified 2026-08-23) with curl before
+writing these parsers:
   - SUPER GT (GT500/GT300 share one calendar): https://supergt.net/en/calendar
   - Formula Drift Japan (Pro class only, not FDJ2/FDJ3): https://formulad.jp/race/2026/
   - D1GP: https://d1gp.co.jp/23674/
+  - Formula Drift (US) Pro: https://www.formulad.com/schedule — re-verified
+    2026-08-23 with a browser User-Agent and found to be genuine static HTML after
+    all (an earlier pass concluded it was JS-only, which was wrong — the same
+    mistake already corrected for this site's standings page, see standings.py).
+    Each round is a plain `<h3 class="text-4xl[...]uppercase italic">NAME</h3>` +
+    `<h4><time dateTime="YYYY-MM-DD">...</time></h4>` + `<p>RD N / #HASHTAG /
+    City, State, USA</p>` block — no Next.js flight-stream involved, an ordinary
+    HTML structure. The h3's class varies (`text-4xl uppercase italic` for most
+    cards, `text-4xl lg:text-5xl uppercase italic` for the featured/next-up card),
+    so the regex tolerates an optional `lg:text-5xl` fragment — re-verify if this
+    section goes empty since that variance suggests the classes aren't fully stable.
 
-Formula Drift (US) and Supercars Championship (Australia) are intentionally NOT
-scraped here even though their pages turn out to be server-rendered: the schedule/
-standings data on both sites is embedded inside a Next.js "flight" stream
-(`self.__next_f.push(...)`), an internal, undocumented serialization format that can
-change between Next.js versions without notice. This is the same category of risk the
-skill's ARA case study warns about (an unofficial site's backing JSON with no format
-guarantee) — regexing a documented HTML table is very different from regexing a
-framework-internal wire format. Both are link-out only; see motorsports.py.
+Supercars Championship (Australia)'s /schedule page IS still link-out only — this
+was re-checked 2026-08-23, not just carried over from before: unlike its standings
+page (which turned out to hold real data in a Next.js flight-stream, see
+standings.py), the schedule page is genuinely thin (~70KB vs. ~1MB for standings)
+with no event/date data anywhere in the raw response, static or flight-stream —
+it's fetched client-side after hydration from an endpoint this project has no
+visibility into.
 """
 
 from __future__ import annotations
@@ -28,6 +39,7 @@ from .common import REQUEST_TIMEOUT, USER_AGENT
 SUPER_GT_CALENDAR_URL = "https://supergt.net/en/calendar"
 FDJ_SCHEDULE_URL = "https://formulad.jp/race/2026/"
 D1GP_SCHEDULE_URL = "https://d1gp.co.jp/23674/"
+FORMULA_DRIFT_PRO_SCHEDULE_URL = "https://www.formulad.com/schedule"
 
 _EN_MONTHS = {
     "january": 1, "february": 2, "march": 3, "april": 4, "may": 5, "june": 6,
@@ -186,9 +198,51 @@ def fetch_d1gp_schedule() -> list[dict]:
     return events
 
 
+def fetch_formula_drift_pro_schedule() -> list[dict]:
+    """Formula Drift(米国PRO)公式サイトの年間スケジュール。h3(大会名)+h4/time(日付)+
+    p(RD番号・ハッシュタグ・開催地)の3点セットをラウンドごとに抽出する。"""
+    session = _session()
+    events: list[dict] = []
+    try:
+        resp = session.get(FORMULA_DRIFT_PRO_SCHEDULE_URL, timeout=REQUEST_TIMEOUT)
+        resp.raise_for_status()
+        html_text = resp.text
+
+        row_re = re.compile(
+            r'<h3 class="text-4xl[^"]*uppercase italic">([^<]+)</h3>'
+            r'<h4[^>]*><time dateTime="([^"]+)">([^<]+)</time></h4>'
+            r'<p[^>]*>(.*?)</p>',
+            re.S,
+        )
+        for name, iso_date, date_text, p_html in row_re.findall(html_text):
+            spans = [s.strip() for s in re.findall(r">([^<]+)<", p_html) if s.strip() and s.strip() != "/"]
+            round_label = spans[0] if spans else ""
+            track = spans[-1] if len(spans) > 1 else ""
+            year, month, day = (int(x) for x in iso_date.split("-"))
+            sort_key = year * 10000 + month * 100 + day
+            events.append(
+                {
+                    "round": round_label,
+                    "track": html_module.unescape(track),
+                    "name": html_module.unescape(name.strip()),
+                    "date_range": date_text.strip() + f", {year}",
+                    "status": _status(sort_key),
+                    "sort_key": sort_key,
+                }
+            )
+    except Exception:  # noqa: BLE001
+        return []
+
+    events.sort(key=lambda e: e["sort_key"])
+    for e in events:
+        del e["sort_key"]
+    return events
+
+
 def fetch_all_schedules() -> dict:
     return {
         "super_gt": fetch_super_gt_schedule(),
         "formula_drift_japan": fetch_formula_drift_japan_schedule(),
         "d1gp": fetch_d1gp_schedule(),
+        "formula_drift_pro": fetch_formula_drift_pro_schedule(),
     }

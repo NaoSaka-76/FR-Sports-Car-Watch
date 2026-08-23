@@ -4,19 +4,19 @@ Scope: GT500, GT300, Formula Drift Japan, D1GP (Japan); Formula Drift Pro (US);
 Supercars Championship (Australia). Grouped by region (REGIONS -> series list) per
 the skill's nested shape.
 
-Sources verified live on 2026-08-22 (see schedule.py / standings.py docstrings for
-exact URLs and HTML structure snippets):
+Sources verified live on 2026-08-22, re-verified/expanded 2026-08-23 (see
+schedule.py / standings.py docstrings for exact URLs and HTML structure snippets):
   - SUPER GT GT500/GT300, Formula Drift Japan, D1GP: static HTML, real schedule AND
     standings data scraped directly.
   - Formula Drift (US) Pro class: Fredric Aasbo (Papadakis Racing, Rockstar Energy
-    Toyota GR Supra) and Simen Olsen race GR Supras. formulad.com/standings/2026/pro
-    IS real, static, server-rendered HTML (re-verified 2026-08-22 with a browser
-    User-Agent, and again with this project's own bot User-Agent — both return the
-    same data) — a div-based CSS grid rather than a `<table>`, scraped directly (see
-    standings.py's fetch_formula_drift_pro_standings docstring for the exact class
-    names). The schedule page (formulad.com/schedule) is a separate Next.js route
-    that still has no data in raw HTML — schedule stays link-out only; only
-    standings were fixed here.
+    Toyota GR Supra) and Simen Olsen race GR Supras. Both formulad.com/schedule and
+    formulad.com/standings/2026/pro turned out to be real, static, server-rendered
+    HTML once fetched with a proper User-Agent (an earlier pass wrongly concluded
+    both were JS-only) — standings is a div-based CSS grid, schedule is a plain
+    h3+h4/time+p block per round (see schedule.py's
+    fetch_formula_drift_pro_schedule and standings.py's
+    fetch_formula_drift_pro_standings docstrings for the exact structure). Both are
+    now scraped directly; nothing about this series is link-out only any more.
   - Supercars Championship (Australia): the Gen3-spec GR Supra joined the grid new
     for 2026 via Walkinshaw Andretti United — confirmed 2026 driver lineup is
     #1 Chaz Mostert and #2 Ryan Wood (WAU Racing), with Toyota fielding at least 4
@@ -151,8 +151,10 @@ REGIONS = {
                         ('"Formula Drift" PRO championship standings Toyota OR "GR Supra"', "en-US", "US", "US:en"),
                     ],
                 },
-                # standings/2026/proは静的HTML(div grid)として実データを取得(standings.py参照)。
-                # scheduleページは依然として生HTMLにデータがないため、リンクのみのまま。
+                # standings/2026/proは静的HTML(div grid)、scheduleはh3+h4/time+pの
+                # ブロック構造として、いずれも実データを取得する(schedule.py/
+                # standings.py参照)。schedule_linkは日程一覧が空の場合のフォールバック
+                # 表示や「公式サイトで見る」リンクとして引き続き保持する。
                 "schedule_link": "https://www.formulad.com/schedule",
                 "standings_url": "https://www.formulad.com/standings/2026/pro",
             },
@@ -231,6 +233,10 @@ def fetch() -> dict:
             series["schedule"] = schedules.get("formula_drift_japan", [])
         elif series["key"] == "d1gp":
             series["schedule"] = schedules.get("d1gp", [])
+
+    for series in result["us"]["series"]:
+        if series["key"] == "formula_drift_pro":
+            series["schedule"] = schedules.get("formula_drift_pro", [])
 
     gt500_chart = fetch_super_gt_standings(clazz="gt500")
     gt300_chart = fetch_super_gt_standings(clazz="gt300")

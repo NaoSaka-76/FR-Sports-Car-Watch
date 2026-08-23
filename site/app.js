@@ -186,6 +186,10 @@
       tabAll: "すべて",
       showTrims: "グレード詳細を表示",
       hideTrims: "グレード詳細を隠す",
+      showSchedule: "レース日程を表示",
+      hideSchedule: "レース日程を隠す",
+      showRanking: "ランキングを表示",
+      hideRanking: "ランキングを隠す",
     },
     en: {
       loading: "Loading data…",
@@ -336,6 +340,10 @@
       tabAll: "All",
       showTrims: "Show grade details",
       hideTrims: "Hide grade details",
+      showSchedule: "Show race schedule",
+      hideSchedule: "Hide race schedule",
+      showRanking: "Show ranking",
+      hideRanking: "Hide ranking",
     },
   };
 
@@ -870,8 +878,15 @@
     header.appendChild(el("span", null, label));
     card.appendChild(header);
     if (desc) card.appendChild(el("p", "series-card__desc", desc));
-    card.appendChild(buildScheduleBlock(s2));
-    card.appendChild(buildRankingBlock(s2));
+
+    var scheduleWrap = el("div", "series-card__schedule");
+    scheduleWrap.appendChild(buildScheduleBlock(s2));
+    card.appendChild(scheduleWrap);
+
+    var rankingWrap = el("div", "series-card__ranking");
+    rankingWrap.appendChild(buildRankingBlock(s2));
+    card.appendChild(rankingWrap);
+
     card.appendChild(buildSeriesGroup(i18n.groupTopics, s2.topics));
     card.appendChild(buildSeriesGroup(i18n.groupResults, s2.results));
     card.appendChild(buildSeriesGroup(i18n.groupStandings, s2.standings));
@@ -900,6 +915,27 @@
     }, 0);
     panel.appendChild(buildPanelHeader(icon, meta.title, totalCount));
     if (meta.note) panel.appendChild(el("p", "panel__note", meta.note));
+
+    // 日程・ランキングは既定で非表示。全シリーズ共通の一括ボタン2つ
+    // (シリーズごとの個別ボタンは持たない)で、全カードまとめて切り替える。
+    var toggleWrap = el("div", "tab-group");
+    var scheduleToggleBtn = el("button", "tab-group__btn", i18n.showSchedule);
+    var rankingToggleBtn = el("button", "tab-group__btn", i18n.showRanking);
+    var scheduleVisible = false;
+    var rankingVisible = false;
+    scheduleToggleBtn.addEventListener("click", function () {
+      scheduleVisible = !scheduleVisible;
+      panel.classList.toggle("panel--schedule-visible", scheduleVisible);
+      scheduleToggleBtn.textContent = scheduleVisible ? i18n.hideSchedule : i18n.showSchedule;
+    });
+    rankingToggleBtn.addEventListener("click", function () {
+      rankingVisible = !rankingVisible;
+      panel.classList.toggle("panel--ranking-visible", rankingVisible);
+      rankingToggleBtn.textContent = rankingVisible ? i18n.hideRanking : i18n.showRanking;
+    });
+    toggleWrap.appendChild(scheduleToggleBtn);
+    toggleWrap.appendChild(rankingToggleBtn);
+    panel.appendChild(toggleWrap);
 
     var container = el("div", "motorsports");
     Object.keys(regions).forEach(function (key) {

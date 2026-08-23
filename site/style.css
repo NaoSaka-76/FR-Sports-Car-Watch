@@ -1046,6 +1046,19 @@ a { color: inherit; }
   display: block;
 }
 
+.series-card__schedule,
+.series-card__ranking {
+  display: none;
+}
+
+.panel--schedule-visible .series-card__schedule {
+  display: block;
+}
+
+.panel--ranking-visible .series-card__ranking {
+  display: block;
+}
+
 .car-card__trim {
   display: flex;
   flex-direction: column;
