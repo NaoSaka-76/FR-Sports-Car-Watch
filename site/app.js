@@ -86,11 +86,6 @@
       sentimentReasonsPrefix: "判定根拠: ",
       sentimentSuffixPositive: " という語がポジティブと判定されました",
       sentimentSuffixNegative: " という語がネガティブと判定されました",
-      summaryButton: "要約",
-      summaryToneLabel: "見出しの語調: ",
-      summaryToneNeutral: "特筆すべき傾向なし(ニュートラル)",
-      summaryDisclaimer:
-        "※記事本文は取得できないため、見出し・情報源等のメタデータのみから生成した簡易説明です。詳細は元記事でご確認ください。",
       titleUnknown: "(タイトル不明)",
       photoCredit: "写真: ",
       viaCommons: "、Wikimedia Commonsより",
@@ -260,11 +255,6 @@
       sentimentReasonsPrefix: "Detected words: ",
       sentimentSuffixPositive: " — classified as positive",
       sentimentSuffixNegative: " — classified as negative",
-      summaryButton: "Summary",
-      summaryToneLabel: "Headline tone: ",
-      summaryToneNeutral: "No notable tone detected (neutral)",
-      summaryDisclaimer:
-        "* Article body text isn't retrievable, so this is a lightweight summary generated only from headline/source metadata. See the original article for details.",
       titleUnknown: "(untitled)",
       trimTopBadge: "Top / special edition",
       trimBaseBadge: "Base / cheapest",
@@ -500,54 +490,11 @@
     return a;
   }
 
-  function buildHeadlineSummary(item) {
-    var s = t();
-    var wrap = el("div", "item__summary");
-
-    var metaLine = [item.source, formatPublished(item.published)].filter(Boolean).join(" · ");
-    if (metaLine) wrap.appendChild(el("p", null, metaLine));
-
-    var sentiment = item.sentiment;
-    var toneText;
-    if (sentiment && sentiment.label !== "neutral") {
-      var isPositive = sentiment.label === "positive";
-      toneText = s.summaryToneLabel + (isPositive ? s.sentimentPositive : s.sentimentNegative);
-      var reasons = sentiment.reasons || [];
-      if (reasons.length > 0) {
-        toneText += "(" + s.sentimentReasonsPrefix + reasons.join(" / ") + ")";
-      }
-    } else {
-      toneText = s.summaryToneLabel + s.summaryToneNeutral;
-    }
-    wrap.appendChild(el("p", null, toneText));
-
-    wrap.appendChild(el("p", "item__summary-disclaimer", s.summaryDisclaimer));
-    return wrap;
-  }
-
   function buildList(items) {
     var list = el("ul", "panel__list");
     items.forEach(function (item) {
-      var s = t();
       var li = el("li");
       li.appendChild(buildItem(item));
-
-      // 記事(ニュース)アイテムのみ「要約」ボタンを付与。YouTube動画アイテム
-      // (video_idを持つ)や、YouTube検索が0件だった場合のフォールバック
-      // メッセージ項目(video_idを持たずsource==="YouTube"で判別)には
-      // 付けない。見出しベースの簡易説明を既定非表示で展開する、記事ごとの
-      // 個別トグル。
-      if (!item.video_id && item.sentiment && item.source !== "YouTube") {
-        var summaryBtn = el("button", "tab-group__btn item__summary-btn", s.summaryButton);
-        var summaryEl = buildHeadlineSummary(item);
-        summaryBtn.addEventListener("click", function () {
-          var visible = li.classList.toggle("li--summary-visible");
-          summaryBtn.classList.toggle("is-active", visible);
-        });
-        li.appendChild(summaryBtn);
-        li.appendChild(summaryEl);
-      }
-
       list.appendChild(li);
     });
     return list;
