@@ -87,6 +87,7 @@
       sentimentSuffixPositive: " という語がポジティブと判定されました",
       sentimentSuffixNegative: " という語がネガティブと判定されました",
       titleUnknown: "(タイトル不明)",
+      newBadge: "24時間以内",
       photoCredit: "写真: ",
       viaCommons: "、Wikimedia Commonsより",
       productionStatusLabel: "生産状況: ",
@@ -256,6 +257,7 @@
       sentimentSuffixPositive: " — classified as positive",
       sentimentSuffixNegative: " — classified as negative",
       titleUnknown: "(untitled)",
+      newBadge: "Within 24h",
       trimTopBadge: "Top / special edition",
       trimBaseBadge: "Base / cheapest",
       photoCredit: "Photo: ",
@@ -434,6 +436,21 @@
     return raw;
   }
 
+  function isWithin24h(item) {
+    // YouTube動画はrecency_seconds(取得時点からの経過秒数)、ニュース記事は
+    // publishedのRSS日時文字列から判定する。
+    if (typeof item.recency_seconds === "number") {
+      return item.recency_seconds <= 86400;
+    }
+    if (item.published) {
+      var parsed = Date.parse(item.published);
+      if (!isNaN(parsed)) {
+        return Date.now() - parsed <= 86400000;
+      }
+    }
+    return false;
+  }
+
   function sentimentPill(sentiment) {
     if (!sentiment || sentiment.label === "neutral") return null;
     var s = t();
@@ -455,7 +472,8 @@
   function buildItem(item) {
     var s = t();
     var sentimentLabel = item.sentiment ? item.sentiment.label : "neutral";
-    var a = el("a", "item item--" + sentimentLabel);
+    var recent = isWithin24h(item);
+    var a = el("a", "item item--" + sentimentLabel + (recent ? " item--recent" : ""));
     a.href = item.url || "#";
     a.target = "_blank";
     a.rel = "noopener noreferrer";
@@ -476,6 +494,7 @@
     body.appendChild(el("span", "item__title", item.title || s.titleUnknown));
 
     var meta = el("div", "item__meta");
+    if (recent) meta.appendChild(el("span", "new-badge", s.newBadge));
     var pill = sentimentPill(item.sentiment);
     if (pill) meta.appendChild(pill);
     if (item.source) meta.appendChild(el("span", null, item.source));

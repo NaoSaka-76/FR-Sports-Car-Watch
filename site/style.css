@@ -487,6 +487,9 @@ a { color: inherit; }
 
 .item--positive { border-left-color: var(--good); }
 .item--negative { border-left-color: var(--critical); }
+.item--recent { background: var(--accent2-soft); }
+.item--recent:hover,
+.item--recent:focus-visible { background: var(--surface-sunken); }
 
 .item__thumb {
   width: 108px;
@@ -524,6 +527,19 @@ a { color: inherit; }
   color: var(--accent-ink);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
+}
+
+.new-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: var(--accent2-soft);
+  color: var(--accent2);
 }
 
 .sentiment-pill {
