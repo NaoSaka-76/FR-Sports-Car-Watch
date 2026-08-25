@@ -79,6 +79,9 @@
       linkOfficial: "公式サイトを見る ↗",
       linkOnboardVideo: "オンボード動画を見る ↗",
       linkSource: "出典を見る ↗",
+      overviewButton: "概要",
+      digestTitle: "直近24時間ダイジェスト",
+      digestNote: "各セクションで過去24時間以内に更新された件数です(記事・動画・レース関連ニュース等の合計)。",
       scheduleLinkNote: "日程データの構造が不安定なため一覧化を見送っています。公式カレンダーは以下のリンクからご確認ください。",
       standingsNoteError: "ランキングの取得中にエラーが発生しました。「公式ランキングを見る」からご確認ください。",
       sentimentPositive: "ポジティブ",
@@ -249,6 +252,9 @@
       linkOfficial: "Visit official site ↗",
       linkOnboardVideo: "Watch onboard video ↗",
       linkSource: "View source ↗",
+      overviewButton: "Overview",
+      digestTitle: "Last 24 Hours Digest",
+      digestNote: "Update counts per section within the last 24 hours (articles, videos, race-related news, etc.).",
       scheduleLinkNote: "The schedule data structure is unstable, so it isn't listed here. Please check the official calendar via the link below.",
       standingsNoteError: "An error occurred while fetching the ranking. Please check via \"View official ranking.\"",
       sentimentPositive: "Positive",
@@ -527,6 +533,67 @@
     header.appendChild(el("h2", "panel__title", label));
     if (count !== undefined) header.appendChild(el("span", "panel__count", count + " " + t().unitItems));
     return header;
+  }
+
+  // ---- 最上部: 直近24時間ダイジェスト(セクション別件数のみ) -----------------
+
+  function countRecent(items) {
+    return (items || []).filter(isWithin24h).length;
+  }
+
+  function buildDigestPanel(data) {
+    var i18n = t();
+    var sections = (data && data.sections) || {};
+    var rows = [];
+
+    if (sections.official_news) {
+      rows.push({ label: i18n.sections.official_news.title, count: countRecent(sections.official_news.items) });
+    }
+    if (sections.rival_topics) {
+      var rtCount = 0;
+      (sections.rival_topics.rivals || []).forEach(function (r) { rtCount += countRecent(r.newest); });
+      rows.push({ label: i18n.sections.rival_topics.title, count: rtCount });
+    }
+    if (sections.rival_youtube) {
+      var ryCount = 0;
+      (sections.rival_youtube.rivals || []).forEach(function (r) { ryCount += countRecent(r.newest); });
+      rows.push({ label: i18n.sections.rival_youtube.title, count: ryCount });
+    }
+    if (sections.historic_youtube) {
+      var hyCount = 0;
+      (sections.historic_youtube.generations || []).forEach(function (g) { hyCount += countRecent(g.newest); });
+      rows.push({ label: i18n.sections.historic_youtube.title, count: hyCount });
+    }
+    if (sections.inline_six) {
+      rows.push({ label: i18n.sections.inline_six.title, count: countRecent(sections.inline_six.newest) });
+    }
+    if (sections.complaints) {
+      rows.push({ label: i18n.sections.complaints.title, count: countRecent(sections.complaints.items_latest) });
+    }
+    if (sections.motorsports && sections.motorsports.regions) {
+      var msCount = 0;
+      Object.values(sections.motorsports.regions).forEach(function (region) {
+        (region.series || []).forEach(function (s2) {
+          msCount += countRecent(s2.topics) + countRecent(s2.results) + countRecent(s2.standings);
+        });
+      });
+      rows.push({ label: i18n.sections.motorsports.title, count: msCount });
+    }
+
+    var totalCount = rows.reduce(function (sum, r) { return sum + r.count; }, 0);
+    var panel = el("section", "panel panel--full digest-panel");
+    panel.appendChild(buildPanelHeader("clock", i18n.digestTitle, totalCount));
+    if (i18n.digestNote) panel.appendChild(el("p", "panel__note", i18n.digestNote));
+
+    var list = el("div", "digest-list");
+    rows.forEach(function (r) {
+      var row = el("div", "digest-row" + (r.count > 0 ? " digest-row--active" : ""));
+      row.appendChild(el("span", "digest-row__label", r.label));
+      row.appendChild(el("span", "digest-row__count", String(r.count)));
+      list.appendChild(row);
+    });
+    panel.appendChild(list);
+    return panel;
   }
 
   // ---- ① 公式リリース(単純リスト) ----------------------------------------
@@ -1139,72 +1206,77 @@
 
   function buildNurburgringRow(entry) {
     var i18n = t();
+    // 順位・タイム・車両名・概要/Spec/動画/出典ボタンを1行に並べた省スペース
+    // レイアウト。概要とスペックは既定非表示で、行の下に個別に展開される。
     var row = el("div", "nurburgring-row" + (entry.is_supra ? " nurburgring-row--spotlight" : ""));
 
-    var rank = el("div", "nurburgring-row__rank", String(entry.rank));
-    row.appendChild(rank);
-
-    var body = el("div", "nurburgring-row__body");
-
-    var head = el("div", "nurburgring-row__head");
-    head.appendChild(el("span", "nurburgring-row__time", entry.lap_time));
+    row.appendChild(el("span", "nurburgring-row__rank", String(entry.rank)));
+    row.appendChild(el("span", "nurburgring-row__time", entry.lap_time));
     var nameParts = [entry.manufacturer, pick(entry.model)].filter(Boolean).join(" ");
-    head.appendChild(el("span", "nurburgring-row__name", nameParts));
-    if (entry.is_supra) head.appendChild(el("span", "supra-tag", "GR SUPRA"));
-    body.appendChild(head);
+    row.appendChild(el("span", "nurburgring-row__name", nameParts));
+    if (entry.is_supra) row.appendChild(el("span", "supra-tag", "GR SUPRA"));
 
-    var metaParts = [];
-    if (entry.year) metaParts.push(String(entry.year));
+    var actions = el("div", "nurburgring-row__actions");
+    row.appendChild(actions);
+
+    var overviewParts = [];
+    if (entry.year) overviewParts.push(String(entry.year));
     var note = pick(entry.note);
-    if (note) metaParts.push(note);
-    if (metaParts.length > 0) {
-      body.appendChild(el("p", "nurburgring-row__meta", metaParts.join(" · ")));
+    if (note) overviewParts.push(note);
+    var hasOverview = overviewParts.length > 0;
+    var overviewBtn, overviewWrap;
+    if (hasOverview) {
+      overviewBtn = el("button", "tab-group__btn nurburgring-row__toggle-btn", i18n.overviewButton);
+      actions.appendChild(overviewBtn);
     }
 
-    var links = el("div", "nurburgring-row__links");
-
-    // 「Spec」ボタンは行の左端(動画/出典リンクより前)に配置し、押した車両だけ
-    // その場でスペック一覧が展開される(車両ごとの個別トグル、既定は非表示)。
     var hasSpecs = entry.specs && entry.specs.length > 0;
-    var specBtn;
+    var specBtn, specWrap;
     if (hasSpecs) {
-      specBtn = el("button", "tab-group__btn nurburgring-row__spec-btn", "Spec");
-      links.appendChild(specBtn);
+      specBtn = el("button", "tab-group__btn nurburgring-row__toggle-btn", "Spec");
+      actions.appendChild(specBtn);
     }
 
     if (entry.youtube_url) {
-      var ytLink = el("a", "series-card__link", i18n.linkOnboardVideo);
+      var ytLink = el("a", "series-card__link nurburgring-row__toggle-btn", i18n.linkOnboardVideo);
       ytLink.href = entry.youtube_url;
       ytLink.target = "_blank";
       ytLink.rel = "noopener noreferrer";
-      links.appendChild(ytLink);
+      actions.appendChild(ytLink);
     }
     if (entry.source_url) {
-      var srcLink = el("a", "series-card__link", i18n.linkSource);
+      var srcLink = el("a", "series-card__link nurburgring-row__toggle-btn", i18n.linkSource);
       srcLink.href = entry.source_url;
       srcLink.target = "_blank";
       srcLink.rel = "noopener noreferrer";
-      links.appendChild(srcLink);
+      actions.appendChild(srcLink);
     }
-    if (links.childNodes.length > 0) body.appendChild(links);
+
+    if (hasOverview) {
+      overviewWrap = el("div", "nurburgring-row__overview");
+      overviewWrap.appendChild(el("p", null, overviewParts.join(" · ")));
+      row.appendChild(overviewWrap);
+      overviewBtn.addEventListener("click", function () {
+        var visible = overviewWrap.classList.toggle("is-visible");
+        overviewBtn.classList.toggle("is-active", visible);
+      });
+    }
 
     if (hasSpecs) {
-      var specWrap = el("div", "nurburgring-row__specs");
+      specWrap = el("div", "nurburgring-row__specs");
       var specList = el("dl", "car-card__specs");
       entry.specs.forEach(function (spec) {
         specList.appendChild(el("dt", null, i18n.carSpecs[spec.key] || spec.key));
         specList.appendChild(el("dd", null, pick(spec.value)));
       });
       specWrap.appendChild(specList);
-      body.appendChild(specWrap);
-
+      row.appendChild(specWrap);
       specBtn.addEventListener("click", function () {
-        var visible = row.classList.toggle("nurburgring-row--specs-visible");
+        var visible = specWrap.classList.toggle("is-visible");
         specBtn.classList.toggle("is-active", visible);
       });
     }
 
-    row.appendChild(body);
     return row;
   }
 
@@ -1335,6 +1407,8 @@
     buildStats(data);
 
     board.innerHTML = "";
+
+    board.appendChild(buildDigestPanel(data));
 
     var official = data.sections && data.sections.official_news;
     if (official) board.appendChild(buildOfficialNewsPanel("newspaper", official));

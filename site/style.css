@@ -416,6 +416,48 @@ a { color: inherit; }
   border-bottom: 1px solid var(--line);
 }
 
+/* ---- 直近24時間ダイジェスト(最上部・セクション別件数のみ) ---- */
+
+.digest-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 20px 18px;
+}
+
+.digest-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface-sunken);
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+}
+
+.digest-row--active {
+  border-color: var(--accent2);
+  background: var(--accent2-soft);
+  color: var(--ink);
+}
+
+.digest-row__label {
+  font-weight: 600;
+}
+
+.digest-row__count {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-muted);
+}
+
+.digest-row--active .digest-row__count {
+  color: var(--accent2);
+}
+
 .tab-group {
   display: flex;
   gap: 6px;
@@ -829,21 +871,23 @@ a { color: inherit; }
   background: var(--surface-sunken);
 }
 
-/* ---- Nürburgring lap time ranking (⑥) ---- */
+/* ---- Nürburgring lap time ranking (⑥) — 1行コンパクトレイアウト ---- */
 
 .nurburgring-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 4px;
   padding: 8px 14px 14px;
 }
 
 .nurburgring-row {
   display: flex;
-  gap: 10px;
-  padding: 10px 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  padding: 6px 10px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 7px;
   background: var(--surface-sunken);
 }
 
@@ -854,64 +898,68 @@ a { color: inherit; }
 
 .nurburgring-row__rank {
   flex-shrink: 0;
-  width: 26px;
+  width: 22px;
   text-align: center;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   color: var(--ink-muted);
 }
 
-.nurburgring-row__body {
-  flex: 1;
-  min-width: 0;
-}
-
-.nurburgring-row__head {
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 2px;
-}
-
 .nurburgring-row__time {
+  flex-shrink: 0;
+  min-width: 72px;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 0.86rem;
   font-variant-numeric: tabular-nums;
   color: var(--accent-ink);
 }
 
 .nurburgring-row__name {
+  flex: 1;
+  min-width: 130px;
   font-weight: 700;
-  font-size: 0.86rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.nurburgring-row__meta {
-  margin: 0 0 6px;
-  font-size: 0.76rem;
-  color: var(--ink-muted);
-  line-height: 1.5;
-}
-
-.nurburgring-row__links {
+.nurburgring-row__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 4px;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
-.nurburgring-row__links .series-card__link {
+.nurburgring-row__toggle-btn {
+  padding: 3px 10px;
+  font-size: 0.68rem;
+}
+
+.nurburgring-row__actions .series-card__link {
   margin: 0;
+  padding: 3px 10px;
+  font-size: 0.68rem;
 }
 
+.nurburgring-row__overview,
 .nurburgring-row__specs {
   display: none;
-  margin-top: 6px;
+  flex-basis: 100%;
+  margin-top: 2px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: var(--surface);
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: var(--ink-muted);
 }
 
-.nurburgring-row--specs-visible .nurburgring-row__specs {
+.nurburgring-row__overview.is-visible,
+.nurburgring-row__specs.is-visible {
   display: block;
 }
 
