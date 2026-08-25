@@ -547,28 +547,28 @@
     var rows = [];
 
     if (sections.official_news) {
-      rows.push({ label: i18n.sections.official_news.title, count: countRecent(sections.official_news.items) });
+      rows.push({ key: "official_news", label: i18n.sections.official_news.title, count: countRecent(sections.official_news.items) });
     }
     if (sections.rival_topics) {
       var rtCount = 0;
       (sections.rival_topics.rivals || []).forEach(function (r) { rtCount += countRecent(r.newest); });
-      rows.push({ label: i18n.sections.rival_topics.title, count: rtCount });
+      rows.push({ key: "rival_topics", label: i18n.sections.rival_topics.title, count: rtCount });
     }
     if (sections.rival_youtube) {
       var ryCount = 0;
       (sections.rival_youtube.rivals || []).forEach(function (r) { ryCount += countRecent(r.newest); });
-      rows.push({ label: i18n.sections.rival_youtube.title, count: ryCount });
+      rows.push({ key: "rival_youtube", label: i18n.sections.rival_youtube.title, count: ryCount });
     }
     if (sections.historic_youtube) {
       var hyCount = 0;
       (sections.historic_youtube.generations || []).forEach(function (g) { hyCount += countRecent(g.newest); });
-      rows.push({ label: i18n.sections.historic_youtube.title, count: hyCount });
+      rows.push({ key: "historic_youtube", label: i18n.sections.historic_youtube.title, count: hyCount });
     }
     if (sections.inline_six) {
-      rows.push({ label: i18n.sections.inline_six.title, count: countRecent(sections.inline_six.newest) });
+      rows.push({ key: "inline_six", label: i18n.sections.inline_six.title, count: countRecent(sections.inline_six.newest) });
     }
     if (sections.complaints) {
-      rows.push({ label: i18n.sections.complaints.title, count: countRecent(sections.complaints.items_latest) });
+      rows.push({ key: "complaints", label: i18n.sections.complaints.title, count: countRecent(sections.complaints.items_latest) });
     }
     if (sections.motorsports && sections.motorsports.regions) {
       var msCount = 0;
@@ -577,7 +577,7 @@
           msCount += countRecent(s2.topics) + countRecent(s2.results) + countRecent(s2.standings);
         });
       });
-      rows.push({ label: i18n.sections.motorsports.title, count: msCount });
+      rows.push({ key: "motorsports", label: i18n.sections.motorsports.title, count: msCount });
     }
 
     var totalCount = rows.reduce(function (sum, r) { return sum + r.count; }, 0);
@@ -587,7 +587,15 @@
 
     var list = el("div", "digest-list");
     rows.forEach(function (r) {
-      var row = el("div", "digest-row" + (r.count > 0 ? " digest-row--active" : ""));
+      var row = el("a", "digest-row" + (r.count > 0 ? " digest-row--active" : ""));
+      row.href = "#section-" + r.key;
+      row.addEventListener("click", function (evt) {
+        var target = document.getElementById("section-" + r.key);
+        if (target) {
+          evt.preventDefault();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
       row.appendChild(el("span", "digest-row__label", r.label));
       row.appendChild(el("span", "digest-row__count", String(r.count)));
       list.appendChild(row);
@@ -602,6 +610,7 @@
     var s = t();
     var meta = s.sections.official_news;
     var panel = el("section", "panel panel--full");
+    panel.id = "section-official_news";
     var items = section.items || [];
     panel.appendChild(buildPanelHeader(icon, meta.title, items.length));
     if (meta.note) panel.appendChild(el("p", "panel__note", meta.note));
@@ -619,6 +628,7 @@
     var s = t();
     var meta = s.sections[sectionKey] || {};
     var panel = el("section", "panel panel--full");
+    panel.id = "section-" + sectionKey;
     panel.appendChild(buildPanelHeader(icon, meta.title || sectionKey, count !== undefined ? count : listA.length));
     if (meta.note) panel.appendChild(el("p", "panel__note", meta.note));
 
@@ -705,6 +715,7 @@
     var s = t();
     var meta = s.sections[sectionKey] || {};
     var panel = el("section", "panel panel--full");
+    panel.id = "section-" + sectionKey;
     var totalCount = (rivals || []).reduce(function (sum, r) {
       return sum + (r.newest ? r.newest.length : 0);
     }, 0);
@@ -788,6 +799,7 @@
     var meta = s.sections.historic_youtube;
     var generations = section.generations || [];
     var panel = el("section", "panel panel--full");
+    panel.id = "section-historic_youtube";
     var totalCount = generations.reduce(function (sum, g) { return sum + (g.newest ? g.newest.length : 0); }, 0);
     panel.appendChild(buildPanelHeader(icon, meta.title, totalCount));
     if (meta.note) panel.appendChild(el("p", "panel__note", meta.note));
@@ -1038,6 +1050,7 @@
     var i18n = t();
     var meta = i18n.sections.motorsports;
     var panel = el("section", "panel panel--full");
+    panel.id = "section-motorsports";
     var regions = section.regions || {};
     var totalCount = Object.values(regions).reduce(function (sum, r) {
       return (
