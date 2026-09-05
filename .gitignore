@@ -2,4 +2,5 @@ __pycache__/
 *.pyc
 .venv/
 site/data/latest.json
+scripts/.translation_cache.json
 .DS_Store

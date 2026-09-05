@@ -498,6 +498,9 @@
 
     var body = el("div", "item__body");
     body.appendChild(el("span", "item__title", item.title || s.titleUnknown));
+    if (item.title_ja) {
+      body.appendChild(el("span", "item__title-ja", item.title_ja));
+    }
 
     var meta = el("div", "item__meta");
     if (recent) meta.appendChild(el("span", "new-badge", s.newBadge));

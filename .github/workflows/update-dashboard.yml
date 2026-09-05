@@ -30,6 +30,18 @@ jobs:
       - name: Install dependencies
         run: pip install -r scripts/requirements.txt
 
+      - name: Restore headline translation cache
+        # このワークフローはcontents:readのみでリポジトリへコミットバックしないため、
+        # 見出し翻訳キャッシュ(scripts/.translation_cache.json)はactions/cacheで
+        # 実行間を永続化する。keyはrun_id込みで常に新規(=毎回save対象)にし、
+        # restore-keysのprefix一致で直前の実行のキャッシュを復元する。
+        uses: actions/cache@v4
+        with:
+          path: scripts/.translation_cache.json
+          key: translation-cache-${{ github.run_id }}
+          restore-keys: |
+            translation-cache-
+
       - name: Fetch FR Sports Car Watch dashboard data
         working-directory: scripts
         run: python fetch_data.py
