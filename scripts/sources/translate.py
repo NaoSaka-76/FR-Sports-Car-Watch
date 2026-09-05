@@ -51,5 +51,6 @@ def translate_to_ja(title: str) -> str | None:
         chunks = data[0] if data and isinstance(data[0], list) else []
         translated = "".join(chunk[0] for chunk in chunks if chunk and chunk[0])
         return translated or None
-    except Exception:  # noqa: BLE001
+    except Exception as exc:  # noqa: BLE001
+        print(f"[translate] failed for {title[:50]!r}: {type(exc).__name__}: {exc}")
         return None
