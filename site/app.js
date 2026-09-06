@@ -160,7 +160,12 @@
             "リンクのみです(各カード内に理由を記載)。",
         },
       },
-      regions: { japan: "日本", us: "米国", australia: "オーストラリア" },
+      regions: {
+        japan: "日本", us: "米国", canada: "カナダ", uk: "英国", germany: "ドイツ",
+        italy: "イタリア", spain: "スペイン", europe: "欧州", australia: "オーストラリア",
+        nz: "ニュージーランド", south_africa: "南アフリカ", brazil: "ブラジル",
+      },
+      regionGlobal: "グローバル",
       series: {
         super_gt_gt500: {
           label: "SUPER GT GT500クラス",
@@ -331,7 +336,12 @@
             "(reason noted on each card).",
         },
       },
-      regions: { japan: "Japan", us: "United States", australia: "Australia" },
+      regions: {
+        japan: "Japan", us: "United States", canada: "Canada", uk: "UK", germany: "Germany",
+        italy: "Italy", spain: "Spain", europe: "Europe", australia: "Australia",
+        nz: "New Zealand", south_africa: "South Africa", brazil: "Brazil",
+      },
+      regionGlobal: "Global",
       series: {
         super_gt_gt500: {
           label: "SUPER GT GT500 Class",
@@ -720,6 +730,12 @@
 
   // ---- ① 公式リリース(単純リスト) ----------------------------------------
 
+  // 表示順の目安。実際にデータへ登場した地域だけをボタン化する(「出典のある国」)。
+  var OFFICIAL_NEWS_REGION_ORDER = [
+    "japan", "us", "canada", "uk", "germany", "italy", "spain",
+    "europe", "australia", "nz", "south_africa", "brazil",
+  ];
+
   function buildOfficialNewsPanel(icon, section) {
     var s = t();
     var meta = s.sections.official_news;
@@ -728,11 +744,60 @@
     var items = section.items || [];
     panel.appendChild(buildPanelHeader(icon, meta.title, items.length));
     if (meta.note) panel.appendChild(el("p", "panel__note", meta.note));
+
     if (items.length === 0) {
       panel.appendChild(el("p", "panel__empty", s.emptyGeneric));
-    } else {
-      panel.appendChild(buildList(items));
+      return panel;
     }
+
+    // 地域タブ: 既定は「グローバル」(全件)。日本・出典のある各国は実際に
+    // 該当アイテムが存在するものだけボタン化する。
+    var presentRegions = OFFICIAL_NEWS_REGION_ORDER.filter(function (r) {
+      return items.some(function (it) { return it.region === r; });
+    });
+
+    var ALL_REGIONS = -1;
+    var activeRegionIdx = ALL_REGIONS;
+
+    var tabs = el("div", "tab-group");
+    panel.appendChild(tabs);
+
+    var listWrap = el("div");
+    panel.appendChild(listWrap);
+
+    function renderList() {
+      listWrap.innerHTML = "";
+      var region = activeRegionIdx === ALL_REGIONS ? null : presentRegions[activeRegionIdx];
+      var filtered = region === null ? items : items.filter(function (it) { return it.region === region; });
+      if (filtered.length === 0) {
+        listWrap.appendChild(el("p", "panel__empty", s.emptyGroup));
+      } else {
+        listWrap.appendChild(buildList(filtered));
+      }
+    }
+
+    var globalBtn = el("button", "tab-group__btn is-active", s.regionGlobal);
+    globalBtn.addEventListener("click", function () {
+      activeRegionIdx = ALL_REGIONS;
+      globalBtn.classList.add("is-active");
+      regionButtons.forEach(function (b) { b.classList.remove("is-active"); });
+      renderList();
+    });
+    tabs.appendChild(globalBtn);
+
+    var regionButtons = presentRegions.map(function (region, idx) {
+      var btn = el("button", "tab-group__btn", s.regions[region] || region);
+      btn.addEventListener("click", function () {
+        activeRegionIdx = idx;
+        globalBtn.classList.remove("is-active");
+        regionButtons.forEach(function (b, i) { b.classList.toggle("is-active", i === idx); });
+        renderList();
+      });
+      tabs.appendChild(btn);
+      return btn;
+    });
+
+    renderList();
     return panel;
   }
 
