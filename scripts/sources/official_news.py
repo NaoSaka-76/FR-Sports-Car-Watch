@@ -103,6 +103,73 @@ just a shop-locator page with no news):
     section): grgarage-fukuoka.net
   - AGHトヨタ札幌 (dedicated GR Garage 札幌西 site, Hokkaido — also has its own
     NEWS section): gr-garage-sad.com
+
+**Added 2026-09-06 (second pass) — TMNA/TME corporate-domain check + South America /
+China / Thailand / South Africa research** (same standard as above: every domain
+below was verified reachable and confirmed via a live Google News RSS `site:` probe
+returning genuine, on-topic, dated GR Supra/racing content before being added):
+
+*TMNA / TME corporate domains — checked, confirmed already covered, nothing added*:
+Toyota Motor North America (TMNA, the Plano-TX entity for US sales/marketing/
+manufacturing) publishes its own corporate press releases — executive changes,
+annual sales results, manufacturing announcements — directly on pressroom.toyota.com
+under its "Corporate" topic (e.g. "Toyota Motor North America Announces Executive
+Change", "Toyota Motor North America Reports 2025 U.S. Sales Results"). No distinct
+`tmna.com`-style domain exists; pressroom.toyota.com already IS TMNA's official
+newsroom. Toyota Motor Europe (TME) is the same: its own corporate news publishes
+directly on newsroom.toyota.eu's "Corporate" category
+(newsroom.toyota.eu/corporate-news/, e.g. "Toyota Motor Europe announces executive
+changes"). No separate TME-only domain found. Both are already fully covered by
+domains already in this file — nothing added for either.
+
+*South Africa (toyota.co.za) — ADDED, reversing the earlier rejection above*: GR
+Supra and Supra GT4 (raced via the SA GR Cup one-make series) are both confirmed
+officially sold/raced in South Africa (Toyota South Africa Motors / TSAM). No
+dedicated media/press subdomain (e.g. a `media.toyota.co.za`) was found to exist —
+toyota.co.za is TSAM's only site. The earlier rejection above used a generic locale
+and found only commercial pages; re-probing with the country-correct locale
+(hl=en-ZA, gl=ZA, ceid=ZA:en) surfaced genuine, dated, on-topic editorial content
+credited to "Toyota South Africa" — e.g. "TOYOTA GR COROLLA GETS 8-SPEED AUTOMATIC",
+"Driven: The new GR Corolla", "Toyota Launches GR Supra GT4 EVO2 for 2025 Season",
+"Like a pro – GR Supra" — spanning dated articles from 2019 through 2025. Same
+locale lesson already learned for the EU distributors applies here too: `site:`
+alone was not sufficient with the wrong locale. GT500 was checked too
+(`"Supra GT500" site:toyota.co.za`) and correctly returns zero — South Africa
+doesn't run SUPER GT — so reusing the shared racing-name filter carries no
+false-positive risk.
+
+*Argentina — researched and rejected*: GR Supra had a genuine limited 10-unit
+official launch in Argentina via GR Garage dealers, and Toyota Argentina has both a
+main site (toyota.com.ar, with a "/descubri/newsroom" section) and a distinct media
+subdomain (media.toyota.com.ar). A direct Google News RSS `site:` probe against both
+domains (es-AR and es-419 locale variants, gl=AR) returned no genuine GR Supra
+content at all — only one unrelated generic "Argentina en números" stats page. Not
+added: the distributor exists and the vehicle was sold, but there's no indexed press
+content to query against, same category as the South Africa/UAE/Singapore
+rejections above (unlike South Africa, retrying Argentina's locale did not surface
+anything — this is a genuine no-content case, not a locale bug).
+
+*China (toyota.com.cn) — researched and rejected*: TOYOTA SUPRA was officially
+launched in China in Nov 2020 via the FAW Toyota / GAC Toyota joint-venture retail
+network, under Toyota (China) Investment Co.'s own corporate site toyota.com.cn,
+which runs a genuine, actively-publishing media center (confirmed: dated articles
+2003-2026, recall notices, PDF press-release downloads, and real hits for other GR
+models — "TOYOTA GR86正式发布上市", "进化版GR YARIS将引进中国市场" — so this is a real
+newsroom, not a commercial-only page). But neither the exact phrase "TOYOTA SUPRA"
+nor the bare word "SUPRA" returns any genuinely on-topic indexed result for this
+vehicle specifically (zh-CN/CN/CN:zh-Hans locale) — the bare-word probe returns only
+tangential motorsport-commentary and dealer-network pages, the exact-phrase probe
+returns zero. Not added: the model is sold and the domain is a real newsroom, but
+Supra-specific content isn't indexed there in a way Google News RSS can retrieve.
+
+*Thailand (toyota.co.th) — researched and rejected*: Toyota Motor Thailand does
+officially sell GR Supra (confirmed: toyota.co.th/model/grsupra with current
+pricing) and publishes ข่าวประชาสัมพันธ์ ("press release") content on its own main
+site (toyota.co.th/news — no separate press subdomain exists, same "whole domain is
+the local distributor's own site" situation as New Zealand above). But
+`site:toyota.co.th` probes for `"GR Supra"` across three locale variants (th/TH/
+TH:th and en/TH/TH:en) returned only generic catalogue/model/promotion pages (Camry,
+Hilux, Alphard, GR86, etc.) — no on-topic GR Supra press content indexed. Not added.
 """
 
 from __future__ import annotations
@@ -176,8 +243,17 @@ def _term_filter(terms: list[str]) -> str:
     return "(" + " OR ".join(f'"{t}"' for t in terms) + ")"
 
 
-# 欧州各国の販売代理店ニュースルームで検索する車名(ロード/レーシング共通、OR結合)。
-_EU_DISTRIBUTOR_NAME_FILTER = _term_filter(["GR Supra"] + _RACING_NAMES_EN)
+# 欧州各国・その他地域の販売代理店ニュースルームで検索する車名(ロード/レーシング共通、OR結合)。
+_DISTRIBUTOR_NAME_FILTER = _term_filter(["GR Supra"] + _RACING_NAMES_EN)
+
+# 欧州以外の地域の公式販売代理店ニュースルーム(2026-09-06追加、第2弾)。
+# 南アフリカ(TSAM)は専用メディアサブドメインが見つからず、toyota.co.za本体がそれを兼ねる。
+# EU各国と同様、国ごとのロケールを合わせないと0件になる(南アフリカはen-US等では検索結果
+# 0件、en-ZA/ZA/ZA:enに合わせて初めて公式記事がヒットすることを確認済み)。
+_OTHER_DISTRIBUTOR_SITES: dict[str, tuple[str, str, str, str]] = {
+    # country_code: (domain, hl, gl, ceid)
+    "ZA": ("toyota.co.za", "en-ZA", "ZA", "ZA:en"),
+}
 
 
 QUERIES = [
@@ -191,8 +267,13 @@ QUERIES = [
     *[(f"{name} site:toyotagazooracing.com", "ja", "JP", "JP:ja") for name in _RACING_NAMES_JP],
     # 欧州各国の公式販売代理店(英・独・伊・西) — newsroom.toyota.euとは別ドメイン
     *[
-        (f"{_EU_DISTRIBUTOR_NAME_FILTER} site:{domain}", hl, gl, ceid)
+        (f"{_DISTRIBUTOR_NAME_FILTER} site:{domain}", hl, gl, ceid)
         for domain, hl, gl, ceid in _EU_DISTRIBUTOR_SITES.values()
+    ],
+    # 南アフリカ(TSAM) — toyota.co.za本体(専用メディアサブドメインなし)
+    *[
+        (f"{_DISTRIBUTOR_NAME_FILTER} site:{domain}", hl, gl, ceid)
+        for domain, hl, gl, ceid in _OTHER_DISTRIBUTOR_SITES.values()
     ],
     # 日本の販売会社(GR Garage網中心の代表サンプル) — production(グレード別)
     (f"GRスープラ {_site_filter(_JP_DEALER_SITES)}", "ja", "JP", "JP:ja"),
